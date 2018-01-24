@@ -1,2 +1,3 @@
 com\bc\web_project\MainController.class
-com\bc\question\answer\box\Q_list.class
+com\bc\web_project\adminController\AdminController.class
+com\bc\web_project\qna\Q_list.class
