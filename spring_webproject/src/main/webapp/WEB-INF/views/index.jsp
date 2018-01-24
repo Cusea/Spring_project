@@ -40,7 +40,7 @@
 						<p class="card-text">6개 이상의 여행일정을 확인하고 나만의 일정을 계획해 보세요</p>
 					</div>
 				</div>
-				<div class="card" onclick="location.href='${contextpath}/QnA/QnA.jsp';">
+				<div class="card" onclick="location.href='${contextpath}/QnA/QnA.do';">
 					<img class="card-img-top" src='img/hosang/qna.PNG' alt="">
 					<div class="card-body">
 						<h5 class="text-primary card-title"><strong>커뮤니티</strong></h5>

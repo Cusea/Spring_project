@@ -40,13 +40,15 @@
 						<p class="card-text">6개 이상의 여행일정을 확인하고 나만의 일정을 계획해 보세요</p>
 					</div>
 				</div>
-				<div class="card" onclick="location.href='${contextpath}/QnA/QnA.jsp';">
-					<img class="card-img-top" src='img/hosang/qna.PNG' alt="">
-					<div class="card-body">
-						<h5 class="text-primary card-title"><strong>커뮤니티</strong></h5>
-						<p class="card-text">여행자들과 정보를 공유하고, 궁금한 것은 언제든 물어보세요</p>
+				<a href="QnA/QnA.do">
+					<%-- <div class="card" onclick="location.href='${contextpath}/QnA/QnA.jsp';"> --%>
+						<img class="card-img-top" src='img/hosang/qna.PNG' alt="">
+						<div class="card-body">
+							<h5 class="text-primary card-title"><strong>커뮤니티</strong></h5>
+							<p class="card-text">여행자들과 정보를 공유하고, 궁금한 것은 언제든 물어보세요</p>
+						</div>
 					</div>
-				</div>
+				</a>
 			</div>
 		</div>
 	</div>
