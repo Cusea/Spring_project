@@ -29,24 +29,26 @@ conn japan_dba/dba123
 create sequence users_seq start with 1 increment by 1;
 create table users(
 	num number(8) constraint users_pk_num primary key,
-	email varchar2(320) constraint users_uk_email unique,
+	id varchar2(320) constraint users_uk_id unique,
 	pw varchar2(40) not null,
 	name varchar2(30) not null,
-	admin number(1) constraint users_ck_admin default 1 check admin in(0,1,2),	-- 0:관리자, 1:일반유저, 2:탈퇴유저
-	gender varchar2(20) constraint users_ck_gender check gender in('F','M'),
+	admin number(1) constraints users_ck_admin check(admin in(0,1,2)),	
+	gender varchar2(20) constraint users_ck_gender check(gender in('F','M')),
 	mypage varchar2(100) constraint users_uk_mypage unique,
 	signupTime timestamp not null,
 	imageadd varchar2(100),
 	withdraw timestamp,
 	likeTipList varchar2(4000)
 );
-
-insert into users(num, email, pw, name, admin, gender, mypage, signupTime, imageadd)
+-- 0:관리자, 1:일반유저, 2:탈퇴유저
+insert into users(num, id, pw, name, admin, gender, mypage, signupTime, imageadd)
 	values(users_seq.nextval, 'admin@test.com', '123', '관리자', 0, 'M', '/admin123', sysdate, '/resources/img/user.png');
-insert into users(num, email, pw, name, admin, gender, mypage, signupTime, imageadd)
+insert into users(num, id, pw, name, admin, gender, mypage, signupTime, imageadd)
 	values(users_seq.nextval, 'user1@test.com', '123', '유저1', 1, 'M', '/user1', sysdate, '/resources/img/user.png');
-insert into users(num, email, pw, name, admin, gender, mypage, signupTime, imageadd)
+insert into users(num, id, pw, name, admin, gender, mypage, signupTime, imageadd)
 	values(users_seq.nextval, 'user2@test.com', '123', '유저2', 1, 'F', '/user2', sysdate, '/resources/img/user.png');
+
+commit;
 
 -- 2. 도시 table 생성
 create sequence city_seq start with 1 increment by 1;
@@ -60,9 +62,9 @@ create table city(
 create sequence category_seq start with 1 increment by 1;
 create table category(
 	num number(8) constraint category_pk_num primary key,
-	main_category not null,
-	mid_category,					-- main_category가 관광 명소이면 있고, 나머지는 없음
-	sub_category not null			
+	main_category varchar2(60) not null,
+	mid_category varchar2(60),					-- main_category가 관광 명소이면 있고, 나머지는 없음
+	sub_category varchar2(60) not null			
 );
 
 -- 4. place table 생성
@@ -87,10 +89,11 @@ create table place(
 create sequence message_seq start with 1 increment by 1;
 create table message(
 	num number(8) constraint message_pk_num primary key,
-	users_num number(8) constraint message_fk_users_num references users(num) not null,
+	send_users_num number(8) constraint message_fk_send_users_num references users(num) not null,
+	get_users_num number(8) constraint message_fk_get_users_users_num references users(num) not null,
 	text varchar2(300) not null,
 	sendDate timestamp not null,
-	ischeck number(1) constraint users_ck_gender check ischeck in(0,1) 		-- 0: 확인 x, 1:확인함
+	ischeck number(1) constraint message_ck_ischeck check(ischeck in(0,1)) 		-- 0: 확인 x, 1:확인함
 );
 
 -- 6. clip table 생성
@@ -105,10 +108,109 @@ create table clip(
 
 -- 7. tag table 생성
 create table TAG(
-	name varchar(30) constraint tag_pk_name primary key
+	name varchar2(30) constraint tag_pk_name primary key
 );
 
 insert into TAG values ('오사카');
 insert into TAG values ('후쿠오카');
 insert into TAG values ('오사카 맛집');
 
+commit;
+-- 8. QUESTION Table 생성
+create sequence question_seq start with 1 increment by 1;
+create table question(
+	NUM number(8) constraint question_pk_num primary key,
+	USERS_num number(8) not null constraint QUESTION_fk_USERS_num references USERS(num),
+	TAG_NAME varchar2(50) constraint question_fk_tag_name references tag(name),
+	TEXT varchar2(4000) not null,
+	TITLE varchar2(300) not null,
+	indate timestamp not null
+);
+
+insert into QUESTION (NUM, USERS_num, TAG_NAME, TEXT, TITLE, indate)
+	values (question_seq.nextval, 2, '오사카', '오사카 좋은지 추천좀요!!!', '오사카 좋나요?', sysdate);
+insert into QUESTION (NUM, USERS_num, TAG_NAME, TEXT, TITLE, indate)
+	values (question_seq.nextval, 3, '후쿠오카', '후쿠오카 좋은지 추천좀요!!!', '후쿠오카 좋나요?', sysdate);
+insert into QUESTION (NUM, USERS_num, TAG_NAME, TEXT, TITLE, indate)
+	values (question_seq.nextval, 2, '오사카 맛집', '오사카 맛집 추천좀요!!!', '오사카 맛집 많나요?', sysdate);
+
+commit;
+-- 9. answer table 생성
+create sequence anwer_seq start with 1 increment by 1;
+create table ANSWER(
+	NUM number(8) constraint answer_pk_num primary key,
+	USERS_num number(8) not null constraint ANSWER_fk_USERS_ID references USERS(num),
+	question_num number(8) constraint anwer_fk_question_num references question(num),
+	TAG_NAME varchar2(50) constraint ANSWER_fk_TAG_NAME references TAG(NAME),
+	TEXT varchar2(4000) not null,
+	indate timestamp not null
+);
+
+-- 10. review table 생성
+create sequence review_seq start with 1 increment by 1;
+create table review(
+	num number(8) constraint review_pk_num primary key,
+	users_num number(8) constraint review_fk_users_num references users(num) not null,
+	reference_num number(8) not null,		
+	check_ref_num number(1) constraint review_ck_check_ref_num check(check_ref_num in (0,1,2)),
+	text varchar2(4000) not null,
+	indate timestamp not null
+);
+-- 리뷰를 단 테이블의 pk num을 reference_num에 저장, 참조는 안하고 자바에서 check_ref_num을 확인해서
+-- 0: place_num, 1:planInfo_num, 2:Tip_num으로 reference_num을 넣어준다
+
+-- 11. planInfo table 생성
+create sequence planInfo_seq start with 1 increment by 1;
+create table planInfo(
+	num number(8) constraint planInfo_pk_num primary key,
+	users_num number(8) constraint planInfo_fk_users_num references users(num) not null,
+	name varchar2(300) not null,
+	planDay number(8) not null,
+	theme number(1) constraint planInfo_ck_theme check(theme in (0,1,2,3,4)),
+	isFinish number(1) constraint planInfo_ck_isFinish check(isFinish in (0,1)),
+	isOpen number(1) constraint planInfo_ck_isOpen check(isOpen in (0,1))
+);
+-- theme 는 0:가족여행, 1:나홀로 여행, 2:커플 여행, 3:친구와 함께, 4: 비지니스 여행
+
+-- 12. planDetail table 생성
+create sequence planDetail_seq start with 1 increment by 1;
+create table planDetail(
+	num number(8) constraint planDetail_pk_num primary key,
+	plan_num number(8) constraint planDetail_fk_plan_num references planInfo(num) not null,
+	day number(4) not null,
+	data varchar2(4000)
+);
+
+-- 13. contactUs table 생성
+create sequence contactUs_seq start with 1 increment by 1;
+create table contactUs(
+	num number(8) constraint contactUs_pk_num primary key,
+	email varchar2(320) not null,
+	text varchar2(4000) not null,
+	inTime timestamp not null,
+	isanswer number(1) constraint contactUs_ck_isanswer check(isanswer in(0,1)),
+	anwer varchar2(4000)
+);
+
+-- 14. TipList table 생성
+create sequence TipList_seq start with 1 increment by 1;
+create table TipList(
+ 	num number(8) constraint TipList_pk_num primary key,
+ 	users_num number(8) constraint TipList_fk_users_num references users(num) not null,
+ 	place_num number(8) constraint TipList_fk_place_num references place(num) not null,
+ 	text varchar2(300) not null
+);
+ 
+-- 15. Tip table 생성
+create sequence Tip_seq start with 1 increment by 1;
+create table Tip(
+ 	num number(8) constraint Tip_pk_num primary key,
+ 	name varchar2(300) not null,
+ 	title varchar2(300) not null,
+ 	text varchar2(4000) not null,
+ 	tag_name varchar2(30) constraint Tip_fk_tag_name references tag(name) not null,
+ 	isFinish number(1) constraint Tip_ck_isFinish check(isFinish in(0,1)),
+ 	likeCount number(8) default 0,
+ 	tipList_num number(8) constraint Tip_fk_tipList_num references TipList(num) not null
+);
+commit;

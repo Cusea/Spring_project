@@ -20,7 +20,6 @@
 <link href='<c:url value="/CSS/lhs.css" />' rel="stylesheet">
 </head>
 <body>
-<c:set var="contextpath" value="${pageContext.request.contextPath}" />
 <header>
 	<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
