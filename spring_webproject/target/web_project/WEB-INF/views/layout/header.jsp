@@ -45,7 +45,7 @@
 				</li>
 				<li class="nav-item active">
 
-					<a class="btn nav-link" role="button" href='${contextpath}/LSH/MyPage.jsp'>
+					<a class="btn nav-link" role="button" href='${contextpath}/LSH/01cl.do'>
 						<img src='${contextpath}/img/user.png' class="rounded-circle btn btn-light user_icon">
 
 					</a>
