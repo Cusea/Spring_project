@@ -4,8 +4,8 @@
 
 <div class="wrap qa col-sm-12 text-center jumbotron container">
 	<div class="qa_nav_box col-sm-12 text-center">
-		<a href="/TeamProject/index.jsp">일본여행사이트</a> >
-		<a href="/TeamProject/QnA/QnA.jsp">QnA</a> >
+		<a href="${contextpath}/">일본여행사이트</a> >
+		<a href="${contextpath}/QnA/QnA.do">QnA</a> >
 		<span>(여기는 게시판의 제목이 나옴)</span>
 	</div>
 	

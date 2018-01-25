@@ -12,4 +12,11 @@ public class Q_list {
 		
 		return "QnA/QnA";
 	}
+	
+	@RequestMapping(value="DetailQnA.do", method=RequestMethod.GET)
+	public String DetailQnA() {
+		
+		return "QnA/DetailQnA";
+	}
+	
 }

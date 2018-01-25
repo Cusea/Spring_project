@@ -40,7 +40,7 @@
 		<!-- 질문리스트 샘플 -->
 		<div class="qa_list">
 			<div class="box">
-				<a class="q_num_box" href="${contextpath}/QnA/DetailQnA.jsp">i번째 질문게시판</a>  <!-- 경로로 왜 안가는 것임??? -->
+				<a class="q_num_box" href="${contextpath}/QnA/DetailQnA.do">i번째 질문게시판</a>  <!-- 경로로 왜 안가는 것임??? -->
 				<div class="user_img" style="background-image: url(${contextpath}/img/QnA/작은표범.png)"></div>
 				<div class="content_box"> 
 					<div class="subject">제목: 오사카 추천좀요</div>
@@ -85,6 +85,8 @@
 				<div class="clear"></div>  
 			</div>
 		</div>  <!-- qa list end -->
+		
+		
 		<div class="more_btn" onclick="get_list('2');$(this).remove();">더보기</div>  <!-- 더보기 버튼 누를때마다 get_list('up') --> <!-- $(this).remove(); 이건뭐임??? -->
 	</div>  <!-- wrap qa end -->
 	
