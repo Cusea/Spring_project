@@ -4,7 +4,7 @@
 
 	<div class="wrap qa col-sm-12 text-center jumbotron container">  <!-- jumbotron (뭔가 회색배경을 주는데?) -->
 		<div class="qa_nav_box col-sm-12 text-center">
-			<a href="/TeamProject/index.jsp">일본여행사이트</a> >
+			<a href="${contextpath}/">일본여행사이트</a> >
 			<span>QnA</span>
 		</div>
 		
@@ -100,8 +100,8 @@
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			<div class="modal-header">
-			<div align="left" class="modal-header_qa">질문하기 : </div>
-				<input type="text" class="qa_title_text" placeholder="제목" maxlength="30" data-length="30"> 
+			<div align="left" class="modal-header_qa"><strong>질문하기 : </strong></div>
+				<input type="text" class="qa_title_text col-sm-6 col-md-4" placeholder="제목" maxlength="30" data-length="30"> 
 				<small>0/30</small>
 				<button type="button" class="close" data-dismiss="modal">
 					      &times;
