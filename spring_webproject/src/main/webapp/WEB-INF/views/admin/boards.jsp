@@ -17,19 +17,19 @@
 								<a class="nav-link board_col" id="/Schedule/make1.jsp">여행일정 게시판</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link board_col" id="/QnA/QnA.jsp">커뮤니티 게시판</a>
+								<a class="nav-link board_col" id="/QnA/QnA.do">커뮤니티 게시판</a>
 							</li>
 						</ul>
 					</div>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="${contextpath}/Admin/users.jsp">유저 관리</a>
+					<a class="nav-link" href="${contextpath}/admin/users">유저 관리</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="${contextpath}/Admin/spotupdate.jsp">여행정보 update 관리</a>
+					<a class="nav-link" href="${contextpath}/admin/spotupdate">여행정보 update 관리</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="${contextpath}/Admin/pp.jsp">고객센터 관리</a>
+					<a class="nav-link" href="${contextpath}/admin/pp">고객센터 관리</a>
 				</li>
 				
 			</ul>

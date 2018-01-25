@@ -39,13 +39,13 @@
 			</ul>
 			<ul class="navbar-nav al">
 				<li class="nav-item active align-center admin">
-					<a class="admin btn btn-success nav-link mr-2 mt-2" role="button" href='${contextpath}/admin/main.do' aria-pressed="true">
+					<a class="admin btn btn-success nav-link mr-2 mt-2" role="button" href='${contextpath}/admin/main' aria-pressed="true">
 						관리자 page로
 					</a>
 				</li>
 				<li class="nav-item active">
 
-					<a class="btn nav-link" role="button" href='${contextpath}/LSH/MyPage.jsp'>
+					<a class="btn nav-link" role="button" href='${contextpath}/LSH/01cl.do'>
 						<img src='${contextpath}/img/user.png' class="rounded-circle btn btn-light user_icon">
 
 					</a>

@@ -16,19 +16,19 @@
 		<!-- 서비스 센터 사이드 버튼 -->
 		<div class="col-sm-3 row justify-content-end sc_btn">
 			<div class="col-8 list-group text-center " id="list-tab">
-				<a class="list-group-item list-group-item-action" id="list-intro-list" href='${contextpath}/ServiceCenter/intro.jsp' aria-controls="">
+				<a class="list-group-item list-group-item-action" id="list-intro-list" href='${contextpath}/ServiceCenter/intro' aria-controls="">
 					프로젝트 소개
 				</a>
-				<a class="list-group-item list-group-item-action" id="list-faq-list" href='${contextpath}/ServiceCenter/faq.jsp' aria-controls="">
+				<a class="list-group-item list-group-item-action" id="list-faq-list" href='${contextpath}/ServiceCenter/faq' aria-controls="">
 					FAQ
 				</a>
-				<a class="list-group-item list-group-item-action" id="list-contactUs-list" href='${contextpath}/ServiceCenter/ContactUs.jsp' aria-controls="">
+				<a class="list-group-item list-group-item-action" id="list-contactUs-list" href='${contextpath}/ServiceCenter/ContactUs' aria-controls="">
 					문의하기
 				</a>
-				<a class="list-group-item list-group-item-action" id="list-terms-list"  href='${contextpath}/ServiceCenter/terms.jsp' aria-controls="">
+				<a class="list-group-item list-group-item-action" id="list-terms-list"  href='${contextpath}/ServiceCenter/terms' aria-controls="">
 					이용약관
 				</a>
-				<a class="list-group-item list-group-item-action active" id="list-pp-list" href='${contextpath}/ServiceCenter/pp.jsp' aria-controls="">
+				<a class="list-group-item list-group-item-action active" id="list-pp-list" href='${contextpath}/ServiceCenter/pp' aria-controls="">
 					개인정보 처리방침	<!-- pp는 Privacy policy -->
 				</a>
 			</div>
