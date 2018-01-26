@@ -33,7 +33,7 @@
 						<p class="card-text">일본 2개의 지역, 30개의 관광명소, 음식점, 쇼핑 정보를 확인하세요</p>
 					</div>
 				</div>
-				<div class="card" onclick="location.href='${contextpath}/Schedule/make1.jsp';">
+				<div class="card" onclick="location.href='${contextpath}/Schedule/make1.do';">
 					<img class="card-img-top" src='img/hosang/spot.PNG' alt="">
 					<div class="card-body">
 						<h5 class="text-primary card-title"><strong>여행 일정</strong></h5>

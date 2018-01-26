@@ -10,6 +10,7 @@
 <link href='<c:url value="/resources/bootstrap-4.0.0/css/bootstrap.min.css" />' rel="stylesheet">
 <link href='<c:url value="/resources/font-awesome-4.7.0/css/font-awesome.min.css" />' rel="stylesheet">
 <script src='<c:url value="/resources/js/jquery-3.2.1.min.js" />' ></script>
+<script src='<c:url value="/resources/js/popper.min.js"/>'></script>
 <script src='<c:url value="/resources/bootstrap-4.0.0/js/bootstrap.min.js" />' ></script>
 <link href='<c:url value="/CSS/template.css" />' rel="stylesheet">
 <link href='<c:url value="/CSS/jds.css" />' rel="stylesheet">
