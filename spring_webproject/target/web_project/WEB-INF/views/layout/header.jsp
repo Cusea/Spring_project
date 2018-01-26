@@ -27,9 +27,24 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
-		<a class="navbar-brand h1" href='${contextpath}/'>일본 여행</a>
+		<h1><a class="navbar-brand" href='${contextpath}/'><span class="h2">일본 여행</span></a></h1>
 
-		<div class="collapse navbar-collapse col" id="navbarNav">
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link mr-2 mb-2 h4" href='${contextpath}/'>여행 정보</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link mr-2 mb-2 h4" href='${contextpath}/schedule/make1'>일정 만들기</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link mr-2 mb-2 h4" href='${contextpath}/QnA/QnA.do'>커뮤니티</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link mr-2 mb-2 h4" href='${contextpath}/KBJ/TipofTravel.do'>여행 Tip</a>
+				</li>
+			</ul>
+			
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active">
 					<a role="button" class="btn btn-warning nav-link mr-2 mb-2" data-toggle="modal" data-target="#login">로그인</a>
