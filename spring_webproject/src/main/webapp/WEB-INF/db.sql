@@ -32,7 +32,7 @@ create table users(
 	id varchar2(320) constraint users_uk_id unique,
 	pw varchar2(40) not null,
 	name varchar2(30) not null,
-	admin number(1) constraints users_ck_admin check(admin in(0,1,2)),	
+	admin number(1) constraints users_ck_admin check(admin in(0,1,2)),			-- 0:관리자, 1:일반유저, 2:탈퇴유저
 	gender varchar2(20) constraint users_ck_gender check(gender in('F','M')),
 	mypage varchar2(100) constraint users_uk_mypage unique,
 	signupTime timestamp not null,
@@ -40,13 +40,15 @@ create table users(
 	withdraw timestamp,
 	likeTipList varchar2(4000)
 );
--- 0:관리자, 1:일반유저, 2:탈퇴유저
+
 insert into users(num, id, pw, name, admin, gender, mypage, signupTime, imageadd)
 	values(users_seq.nextval, 'admin@test.com', '123', '관리자', 0, 'M', '/admin123', sysdate, '/resources/img/user.png');
 insert into users(num, id, pw, name, admin, gender, mypage, signupTime, imageadd)
 	values(users_seq.nextval, 'user1@test.com', '123', '유저1', 1, 'M', '/user1', sysdate, '/resources/img/user.png');
 insert into users(num, id, pw, name, admin, gender, mypage, signupTime, imageadd)
 	values(users_seq.nextval, 'user2@test.com', '123', '유저2', 1, 'F', '/user2', sysdate, '/resources/img/user.png');
+insert into users(num, id, pw, name, admin, gender, mypage, signupTime, imageadd)
+	values(users_seq.nextval, 'user3@test.com', '123', '유저3', 1, 'F', '/user3', sysdate, '/resources/img/user.png');
 
 commit;
 
