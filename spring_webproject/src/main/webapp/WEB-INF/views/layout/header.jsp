@@ -10,6 +10,7 @@
 <link href='<c:url value="/resources/bootstrap-4.0.0/css/bootstrap.min.css" />' rel="stylesheet">
 <link href='<c:url value="/resources/font-awesome-4.7.0/css/font-awesome.min.css" />' rel="stylesheet">
 <script src='<c:url value="/resources/js/jquery-3.2.1.min.js" />' ></script>
+<script src='<c:url value="/resources/js/popper.min.js" />' ></script>
 <script src='<c:url value="/resources/bootstrap-4.0.0/js/bootstrap.min.js" />' ></script>
 <link href='<c:url value="/CSS/template.css" />' rel="stylesheet">
 <link href='<c:url value="/CSS/jds.css" />' rel="stylesheet">
@@ -26,28 +27,41 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
-		<a class="navbar-brand h1" href='${contextpath}/'>일본 여행</a>
+		<h1><a class="navbar-brand" href='${contextpath}/'><span class="h2">일본 여행</span></a></h1>
 
-		<div class="collapse navbar-collapse col" id="navbarNav">
-			<ul class="navbar-nav ml-auto bl"> <!-- class bl은 before login -->
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
-					<button type="button" class="btn btn-warning nav-link mr-2 mb-2" data-toggle="modal" data-target="#login">로그인</button>
+					<a class="nav-link mr-2 mb-2 h4" href='${contextpath}/'>여행 정보</a>
 				</li>
 				<li class="nav-item active">
-					<button type="button" class="btn btn-primary nav-link mr-2" data-toggle="modal" data-target="#signUp">회원가입</button>
+					<a class="nav-link mr-2 mb-2 h4" href='${contextpath}/schedule/make1'>일정 만들기</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link mr-2 mb-2 h4" href='${contextpath}/QnA/QnA.do'>커뮤니티</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link mr-2 mb-2 h4" href='${contextpath}/KBJ/TipofTravel.do'>여행 Tip</a>
 				</li>
 			</ul>
-			<ul class="navbar-nav al">
+			
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a role="button" class="btn btn-warning nav-link mr-2 mb-2" data-toggle="modal" data-target="#login">로그인</a>
+				</li>
+				<li class="nav-item active">
+					<a role="button" class="btn btn-primary nav-link mr-2" data-toggle="modal" data-target="#signUp">회원가입</a>
+				</li>
+			</ul>
+			<ul class="navbar-nav">
 				<li class="nav-item active align-center admin">
 					<a class="admin btn btn-success nav-link mr-2 mt-2" role="button" href='${contextpath}/admin/main' aria-pressed="true">
 						관리자 page로
 					</a>
 				</li>
 				<li class="nav-item active">
-
 					<a class="btn nav-link" role="button" href='${contextpath}/LSH/01cl.do'>
 						<img src='${contextpath}/img/user.png' class="rounded-circle btn btn-light user_icon">
-
 					</a>
 				</li>
 			</ul>
