@@ -96,29 +96,32 @@
 <!-- The Modal -->
 <!-- form해야 button reset 됨. -->
 <form action="insert.do" method="post" name="updateForm">
-	<div class="modal fade" id="myModal">  
+	<div class="modal fade" id="myModal">  <!-- modal뜨면 배경 div -->
 		<div class="modal-dialog modal-lg">
-			<div class="modal-content pl-3">  
+			<div class="modal-content pl-3" style="background-color: skyblue">  
 			<div class="modal-header">
-			<div align="left" class="modal-header_qa"><strong>질문하기  </strong></div>
+			<div align="left" class="modal-header_qa"><strong>질문하기 </strong></div>
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 			</div>
 			<br>
-			<div align="left" class="modal-header_qa pl-2"><strong>제목  </strong></div>
-			<input type="text" class="pl-5 qa_title_te col-sm-8" placeholder="제목" maxlength="30" data-length="30"> 
-			<small style="display: inline-block;">0/30</small>
-			<strong><hr></strong>  <!-- 밑줄은 이렇게 밖에 안되나? -->
-			<div align="left" class="modal-header_qa pl-2"><strong>내용  </strong></div> 
+			<div class="modal-header_qa pl-2 pb-1" align="left">
+				<label for="modal_title_text"><strong>제목 </strong></label>
+				<input type="text" class="qa_title_te px-1 form-control" id="modal_title_text" style="width: 700px;" placeholder="제목" maxlength="30" data-length="30"> 
+				<small style="display: inline-block;" id="modal_title_text">0/30</small>
+				<hr>
+			</div>
 			<div class="modal-body">
-					<textarea class="q_textarea" rows="11" cols="60" maxlength="1000" onkeyup="keyup()"></textarea>
-					<small>0/1000</small>
+				<label for="modal_body_text"><strong>내용</strong></label>
+				<textarea class="q_textarea px-1 form-control" style="width: 700px;" rows="10" cols="60" maxlength="1000" onkeyup="keyup()"></textarea>
+				<small id="modal_body_text">0/1000</small>
 			</div>
 			<div class="modal-footer">
 				<div class="modal_footer_tagText">  <!-- modal-footer  -->
-					태그   <input type="text" class="modal_footer_tagText" maxlength="30" placeholder="태그입력"> 
+					<label>태그</label>
+				   <input type="text" class="modal_footer_tagText" maxlength="30" placeholder="태그입력"> 
 					<small>0/30</small>
 				</div>
-				<button type="reset" class="btn btn-info"><small>초기화</small></button>
+				<button type="reset" class="btn btn-info">초기화</button>
 				<button type="submit" class="btn btn-primary" data-dismiss="modal">완료</button>
 			</div>
 			</div>
@@ -153,7 +156,7 @@
 	    };
 	    
 	    /* 글자수 세기 만드는중... */
-		$('.qa_search').keyup(function(e){
+		$('.qa_search').keyup(function(){
 			
 		});
 	    

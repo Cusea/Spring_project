@@ -98,22 +98,24 @@
 <form action="insert.do" method="post" name="updateForm">
 	<div class="modal fade" id="myModal">  
 		<div class="modal-dialog modal-lg">
-			<div class="modal-content">
+			<div class="modal-content pl-3">  
 			<div class="modal-header">
-			<div align="left" class="modal-header_qa"><strong>질문하기 : </strong></div>
-				<input type="text" class="qa_title_text col-sm-6 col-md-4" placeholder="제목" maxlength="30" data-length="30"> 
-				<small>0/30</small>
-				<button type="button" class="close" data-dismiss="modal">
-					      &times;
-				</button>
+			<div align="left" class="modal-header_qa"><strong>질문하기  </strong></div>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
 			</div>
+			<br>
+			<div align="left" class="modal-header_qa pl-2"><strong>제목  </strong></div>
+			<input type="text" class="pl-5 qa_title_te col-sm-8" placeholder="제목" maxlength="30" data-length="30"> 
+			<small style="display: inline-block;">0/30</small>
+			<strong><hr></strong>  <!-- 밑줄은 이렇게 밖에 안되나? -->
+			<div align="left" class="modal-header_qa pl-2"><strong>내용  </strong></div> 
 			<div class="modal-body">
-					내용 : <textarea class="q_textarea" rows="11" cols="60" maxlength="1000" onkeyup="keyup()"></textarea>
+					<textarea class="q_textarea" rows="11" cols="60" maxlength="1000" onkeyup="keyup()"></textarea>
 					<small>0/1000</small>
 			</div>
 			<div class="modal-footer">
 				<div class="modal_footer_tagText">  <!-- modal-footer  -->
-					태그 :  <input type="text" class="modal_footer_tagText" maxlength="30" placeholder="태그입력"> 
+					태그   <input type="text" class="modal_footer_tagText" maxlength="30" placeholder="태그입력"> 
 					<small>0/30</small>
 				</div>
 				<button type="reset" class="btn btn-info"><small>초기화</small></button>
