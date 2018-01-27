@@ -4,15 +4,15 @@
 		<div class="col-sm-4 col-md-3 d-none d-sm-block bg-light sidebar ">
 			<ul class="nav nav-pills flex-column">
 				<li class="nav-item">
-					<a class="nav-link" href="${contextpath}/Admin/boards.jsp" aria-expanded="false" aria-controls="collapseBoard">
+					<a class="nav-link" href="${contextpath}/admin/boards" aria-expanded="false" aria-controls="collapseBoard">
 						게시판 관리
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="${contextpath}/Admin/users.jsp">유저 관리</a>
+					<a class="nav-link" href="${contextpath}/admin/users">유저 관리</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="${contextpath}/Admin/spotupdate.jsp">여행정보 update 관리</a>
+					<a class="nav-link" href="${contextpath}/admin/spotupdate">여행정보 update 관리</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" data-toggle="collapse" href="#collapseBoardPP" aria-expanded="false" aria-controls="collapseBoard">
@@ -150,11 +150,11 @@
 							<form>
 								<div class="form-group">
 									<label for="faq_title" class="col-form-label">faq 제목:</label>
-									<input type="text" class="form-control" id="faq_title" value="db에서 가져오기">
+									<input type="text" class="form-control" id="add_faq_title" value="db에서 가져오기">
 								</div>
 								<div class="form-group">
 									<label for="faq-text" class="col-form-label">text:</label>
-									<textarea class="form-control" id="faq-text" rows="10">db에서 가져오기</textarea>
+									<textarea class="form-control" id="add_faq-text" rows="10">db에서 가져오기</textarea>
 								</div>
 								<div class="row justify-content-end mr-2 mb-2">
 									<button type="submit" class="btn btn-primary">send</button>
@@ -183,11 +183,11 @@
 								</div>
 								<div class="form-group">
 									<label for="contactUs" class="col-form-label">문의 내용</label>
-									<input type="text" class="form-control" id="contactUs_email" value="db에서 가져오기" disabled>
+									<input type="text" class="form-control" id="contactUs_text" value="db에서 가져오기" disabled>
 								</div>
 								<div class="form-group">
 									<label for="contactUs_text" class="col-form-label">text:</label>
-									<textarea class="form-control" id="contactUs_text" rows="10"></textarea>
+									<textarea class="form-control" id="contactUs_answer" rows="10"></textarea>
 								</div>
 								<div class="row justify-content-end mr-2 mb-2">
 									<button type="submit" class="btn btn-primary">send</button>

@@ -2,24 +2,22 @@
 
 	<!-- header 아래 부분 -->
 	<div class="index_back_img" style='background-image:url(img/hosang/japan.jpg);'>
-		<div class="text-center" style="color:white;">
-			<div class="pt-5">
-				<h1 class="display-4">나만의 일본 여행 플래너!</h1>
+		<div class="pt-5 container text-center">
+			<div class="py-3" style="color:white; background-color: rgba(0,0,0,0.5)">
+				<h1 class="display-4 mt-2">나만의 일본 여행 플래너!</h1>
+				<h2 class="pt-2">쉽고 빠르게 여행을 계획하세요</h2>
+				<!-- 검색 창 시작 -->
+				<div class="input-group mt-5  col-sm-6 mx-auto">
+					<input type="text" class="form-control " placeholder="원하는 도시를 입력하세요" aria-label="" aria-describedby="basic-addon2">
+					<div class="input-group-append">
+						<a class="btn p-0" role="button" href='${contextpath}/Travel/Japan.jsp'>
+							<img src='img/hosang/search.png' class="btn btn-light search_icon">
+						</a>
+					</div>
+				</div>
 			</div>
-			<div class="pt-2">
-				<h2 class="">쉽고 빠르게 여행을 계획하세요</h2>
-			</div>
+			<!-- 검색 창 끝 -->
 		</div>
-		<!-- 검색 창 시작 -->
-		<div class="input-group mt-5  col-sm-6 mx-auto">
-			<input type="text" class="form-control " placeholder="" aria-label="" aria-describedby="basic-addon2">
-			<div class="input-group-append">
-				<a class="btn p-0" role="button" href='${contextpath}/Travel/Japan.jsp'>
-					<img src='img/hosang/search.png' class="btn btn-light search_icon">
-				</a>
-			</div>
-		</div>
-		<!-- 검색 창 끝 -->
 	</div>
 	<!-- div container 1 여행 정보, 일정, 커뮤니티로 이동 -->
 	<div class="bg-white pt-1 mb-4">
@@ -33,7 +31,7 @@
 						<p class="card-text">일본 2개의 지역, 30개의 관광명소, 음식점, 쇼핑 정보를 확인하세요</p>
 					</div>
 				</div>
-				<div class="card" onclick="location.href='${contextpath}/Schedule/make1.jsp';">
+				<div class="card" onclick="location.href='${contextpath}/Schedule/make1.do';">
 					<img class="card-img-top" src='img/hosang/spot.PNG' alt="">
 					<div class="card-body">
 						<h5 class="text-primary card-title"><strong>여행 일정</strong></h5>
@@ -89,7 +87,7 @@
 			</div>
 		</div>
 		<div class="container-fluid text-center mb-3">
-			<a class="btn btn-outline-info btn-lg" role="button" href="${contextpath}/Schedule/make1.jsp">
+			<a class="btn btn-outline-info btn-lg" role="button" href="${contextpath}/Schedule/make1.do">
 					???개의 추천일정 모두 보기
 			</a>
 		</div>
@@ -104,21 +102,21 @@
 		</div>
 		<div class="card-deck container-fluid">
 			<div class="row mx-auto my-2">
-				<div class="card col-sm-6" onclick="location.href='${contextpath}/KBJ/TipofTravel.jsp';">
+				<div class="card col-sm-6" onclick="location.href='${contextpath}/KBJ/TipofTravel.do';">
 					<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
 					<div class="card-body">
 						<h5 class="text-primary card-title"><strong>Tip 제목</strong></h5>
 						<p class="card-text">Tip 내용들....~~~~~~~~~~~~~~~~</p>
 					</div>
 				</div>
-				<div class="card col-sm-3" onclick="location.href='${contextpath}/KBJ/TipofTravel.jsp';">
+				<div class="card col-sm-3" onclick="location.href='${contextpath}/KBJ/TipofTravel.do';">
 					<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
 					<div class="card-body">
 						<h5 class="text-primary card-title"><strong>Tip 제목</strong></h5>
 						<p class="card-text">Tip 내용들....~~~~~~~~~~~~~~~~</p>
 					</div>
 				</div>
-				<div class="card col-sm-3" onclick="location.href='${contextpath}/KBJ/TipofTravel.jsp';">
+				<div class="card col-sm-3" onclick="location.href='${contextpath}/KBJ/TipofTravel.do';">
 					<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
 					<div class="card-body">
 						<h5 class="text-primary card-title"><strong>Tip 제목</strong></h5>
@@ -127,21 +125,21 @@
 				</div>
 			</div>
 			<div class="row mx-auto my-2">
-				<div class="card col-sm-3" onclick="location.href='${contextpath}/KBJ/TipofTravel.jsp';">
+				<div class="card col-sm-3" onclick="location.href='${contextpath}/KBJ/TipofTravel.do';">
 					<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
 					<div class="card-body">
 						<h5 class="text-primary card-title"><strong>Tip 제목</strong></h5>
 						<p class="card-text">Tip 내용들....~~~~~~~~~~~~~~~~</p>
 					</div>
 				</div>
-				<div class="card col-sm-3" onclick="location.href='${contextpath}/KBJ/TipofTravel.jsp';">
+				<div class="card col-sm-3" onclick="location.href='${contextpath}/KBJ/TipofTravel.do';">
 					<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
 					<div class="card-body">
 						<h5 class="text-primary card-title"><strong>Tip 제목</strong></h5>
 						<p class="card-text">Tip 내용들....~~~~~~~~~~~~~~~~</p>
 					</div>
 				</div>
-				<div class="card col-sm-6" onclick="location.href='${contextpath}/KBJ/TipofTravel.jsp';">
+				<div class="card col-sm-6" onclick="location.href='${contextpath}/KBJ/TipofTravel.do';">
 					<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
 					<div class="card-body">
 						<h5 class="text-primary card-title"><strong>Tip 제목</strong></h5>
@@ -149,5 +147,10 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="container-fluid text-center mb-3">
+			<a class="btn btn-outline-success btn-lg" role="button" href="${contextpath}/KBJ/TipofTravel.do">
+					???개의 추천Tip 모두 보기
+			</a>
 		</div>
 	</div>
