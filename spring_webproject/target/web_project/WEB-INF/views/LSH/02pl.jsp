@@ -16,13 +16,15 @@
 			<div class="clear"></div>
 			<div>
 			<div class="container">
-			<br>
+			<br><br>
 				<ul class="nav nav-pills">
 					<li class="nav-item"><a data-toggle="pill" href="#home">완성된 일정</a></li>
 					<h5>　|　</h5>
 					<li><a data-toggle="pill" href="#menu1">계획중인 일정</a></li>
 					<h5>　|　</h5>
 					<li><a data-toggle="pill" href="#menu2">좋아한 여행</a></li>
+					<h5>　　　　　　　　　　　　　　　　　　　　　　　　　　</h5>
+					<li><button class="mtop_btn" target="_blank">여행일정 만들기</button></li>
 				</ul>
 				<div class="tab-content">
 					<div id="home" class="tab-pane fade in active">
@@ -43,7 +45,6 @@
 				</div>
 			</div>
 				
-				<button class="mtop_btn" target="_blank">여행일정 만들기</button>
 			</div>
 		</div>
 		

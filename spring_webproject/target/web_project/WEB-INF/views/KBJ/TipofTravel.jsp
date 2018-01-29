@@ -4,8 +4,7 @@
 		<div class="container">
 			<div class="jumbotron">
 			    <h1>사진을 업로드 해주세요.</h1>
-				   	<i class="fa-file-image-o">
-			   		</i>
+				   	
 			</div>
 		</div>
 	    <div class="container">
@@ -17,7 +16,7 @@
 		    </div>
 	  		</form>
 		</div>
-	    <button id="nextBtn" type="button" class="btn btn-warning">다음</button>     
+	    <button id="nextBtn" type="button" class="btn btn-warning" onclick="location.href='${contextpath}/KBJ/tip2.do';">다음</button>     
 	</div>
 	<script>
 		

@@ -7,23 +7,23 @@
 				<hr class="my-2 hr_color">
 				<h6 class="text-left"><a class="text-white" href='${contextpath}/Travel/Japan.jsp'>여행 정보</a></h6>
 				<h6 class="text-left"><a class="text-white" href='${contextpath}/Schedule/make1.jsp'>여행 일정</a></h6>
-				<h6 class="text-left"><a class="text-white" href='${contextpath}/QnA/QnA.jsp'>커뮤니티</a></h6>
+				<h6 class="text-left"><a class="text-white" href='${contextpath}/QnA/QnA.do'>커뮤니티</a></h6>
 			</div>
 			<div class="col-sm-3 mt-2">
 				<h6 class="text-secondary text-left">프로젝트 이야기</h6>
 				<hr class="my-2 hr_color">
-				<h6 class="text-left"><a class="text-white" href='${contextpath}/ServiceCenter/intro.jsp'>프로젝트 소개</a></h6>
-				<h6 class="text-left"><a class="text-white" href='${contextpath}/ServiceCenter/intro.jsp'>멤버 소개</a></h6>
-				<h6 class="text-left"><a class="text-white" href='${contextpath}/ServiceCenter/intro.jsp'>사용한 툴</a></h6>
-				<h6 class="text-left"><a class="text-white" href='${contextpath}/ServiceCenter/intro.jsp'>ERD</a></h6>
+				<h6 class="text-left"><a class="text-white" href='${contextpath}/ServiceCenter/intro'>프로젝트 소개</a></h6>
+				<h6 class="text-left"><a class="text-white" href='${contextpath}/ServiceCenter/intro'>멤버 소개</a></h6>
+				<h6 class="text-left"><a class="text-white" href='${contextpath}/ServiceCenter/intro'>사용한 툴</a></h6>
+				<h6 class="text-left"><a class="text-white" href='${contextpath}/ServiceCenter/intro'>ERD</a></h6>
 			</div>
 			<div class="col-sm-3 mt-2">
 				<h6 class="text-secondary text-left">고객센터</h6>
 				<hr class="my-2 hr_color">
-				<h6 class="text-left"><a class="text-white" href='${contextpath}/ServiceCenter/faq.jsp'>FAQ</a></h6>
-				<h6 class="text-left"><a class="text-white" href='${contextpath}/ServiceCenter/ContactUs.jsp'>문의하기</a></h6>
-				<h6 class="text-left"><a class="text-white" href='${contextpath}/ServiceCenter/terms.jsp'>이용약관</a></h6>
-				<h6 class="text-left"><a class="text-white" href='${contextpath}/ServiceCenter/pp.jsp'>개인정보 처리방침</a></h6>
+				<h6 class="text-left"><a class="text-white" href='${contextpath}/ServiceCenter/faq'>FAQ</a></h6>
+				<h6 class="text-left"><a class="text-white" href='${contextpath}/ServiceCenter/ContactUs'>문의하기</a></h6>
+				<h6 class="text-left"><a class="text-white" href='${contextpath}/ServiceCenter/terms'>이용약관</a></h6>
+				<h6 class="text-left"><a class="text-white" href='${contextpath}/ServiceCenter/pp'>개인정보 처리방침</a></h6>
 			</div>
 		</div>
 		<div class="bg-dark py-1 mt-2">

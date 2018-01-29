@@ -9,7 +9,9 @@
 
 <link href='<c:url value="/resources/bootstrap-4.0.0/css/bootstrap.min.css" />' rel="stylesheet">
 <link href='<c:url value="/resources/font-awesome-4.7.0/css/font-awesome.min.css" />' rel="stylesheet">
+<script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
 <script src='<c:url value="/resources/js/jquery-3.2.1.min.js" />' ></script>
+<script src='<c:url value="/resources/js/popper.min.js" />' ></script>
 <script src='<c:url value="/resources/bootstrap-4.0.0/js/bootstrap.min.js" />' ></script>
 <link href='<c:url value="/CSS/template.css" />' rel="stylesheet">
 <link href='<c:url value="/CSS/jds.css" />' rel="stylesheet">
@@ -26,28 +28,41 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
-		<a class="navbar-brand h1" href='${contextpath}/'>일본 여행</a>
+		<h1><a class="navbar-brand" href='${contextpath}/'><span class="h2">일본 여행</span></a></h1>
 
-		<div class="collapse navbar-collapse col" id="navbarNav">
-			<ul class="navbar-nav ml-auto bl"> <!-- class bl은 before login -->
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
-					<button type="button" class="btn btn-warning nav-link mr-2 mb-2" data-toggle="modal" data-target="#login">로그인</button>
+					<a class="nav-link h4 mb-0" href='${contextpath}/'>여행 정보</a>
 				</li>
 				<li class="nav-item active">
-					<button type="button" class="btn btn-primary nav-link mr-2" data-toggle="modal" data-target="#signUp">회원가입</button>
+					<a class="nav-link h4 mb-0" href='${contextpath}/Schedule/make1.do'>일정 만들기</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link h4 mb-0" href='${contextpath}/QnA/QnA.do'>커뮤니티</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link h4 mb-0" href='${contextpath}/KBJ/TipofTravel.do'>여행 Tip</a>
 				</li>
 			</ul>
-			<ul class="navbar-nav al">
+			
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a role="button" class="btn btn-warning nav-link mr-2 mb-2" data-toggle="modal" data-target="#login">로그인</a>
+				</li>
+				<li class="nav-item active">
+					<a role="button" class="btn btn-primary nav-link mr-2" data-toggle="modal" data-target="#signUp">회원가입</a>
+				</li>
+			</ul>
+			<ul class="navbar-nav">
 				<li class="nav-item active align-center admin">
-					<a class="admin btn btn-success nav-link mr-2 mt-2" role="button" href='${contextpath}/admin/main.do' aria-pressed="true">
+					<a class="admin btn btn-success nav-link mr-2 mt-2" role="button" href='${contextpath}/admin/main' aria-pressed="true">
 						관리자 page로
 					</a>
 				</li>
 				<li class="nav-item active">
-
 					<a class="btn nav-link" role="button" href='${contextpath}/LSH/01cl.do'>
 						<img src='${contextpath}/img/user.png' class="rounded-circle btn btn-light user_icon">
-
 					</a>
 				</li>
 			</ul>
@@ -163,7 +178,20 @@
 					<hr>
 					<div class="">
 						<button class="btn btn-danger btn-block">구글</button>
-						<button class="btn btn-success btn-block">네이버</button>
+						<div id="naverIdLogin"></div>
+						<script>
+							var naverLogin = new naver.LoginWithNaverId(
+									{
+										clientId: "BYGUjJrxhO95iuUIsKGm",
+										callbackUrl: "http://localhost:8989/web_project/",
+										isPopup: true, /* 팝업을 통한 연동처리 여부 */
+										loginButton: {color: "green", type: 3, height: 60} /* 버튼의 타입을 지정 */
+									}
+								);
+								
+								/* 설정정보를 초기화하고 연동을 준비 */
+								naverLogin.init();
+						</script>
 						<button class="btn btn-warning btn-block">카카오</button>
 					</div>
 					<hr>

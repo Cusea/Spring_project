@@ -11,7 +11,7 @@
 			<tbody>
 				<tr>
 					<!-- 유저아이디 -->
-					<th>이메일 주소</th>
+					<th>　　이메일 주소</th>
 					<td><input type="text" name="email_address" class="t_input" value="rbfksep@gmail.com" disabled></td>
 				</tr>
 				<tr>
@@ -19,14 +19,14 @@
 				</tr>
 				<tr>
 					<!-- 유저이름 -->
-					<th>이름</th>
+					<th>　　이름</th>
 					<td><input type="text" name="name" class="t_input" value="이승현"></td>
 				</tr>
 				<tr>
 					<td class="space">&nbsp;</td>
 				</tr>
 				<tr>
-					<th>성별</th>
+					<th>　　성별</th>
 					<td>
 						<input type="radio" class="radio" data-val="female" data-on="off" data-name="gender">
 						<span class="et-radio">&nbsp;</span>
@@ -49,7 +49,7 @@
 				<tr>
 					
 					<!-- 비밀번호변경 -->
-					<th>비밀번호</th>
+					<th>　　비밀번호</th>
 					<td>
 						<button type="button" class="pw_reset" data-toggle="modal" data-target="#myModal">비밀번호 변경</button>
 						<div class="modal fade" id="myModal" role="dialog">

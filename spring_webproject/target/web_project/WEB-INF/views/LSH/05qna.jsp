@@ -14,7 +14,7 @@
 			<a id="qna" href="${contextpath}/LSH/05qna.do" class="my_menu">Q&A</a>
 			<a id="set" href="${contextpath}/LSH/set.do" class="set">설정</a>
 			<div class="clear"></div>
-			<br>
+			<br><br>
 			<div class="container">
 				<ul class="nav nav-pills">
 					<li class="nav-item"><a data-toggle="pill" href="#home">나의 질문</a></li>
@@ -22,10 +22,13 @@
 					<li><a data-toggle="pill" href="#menu1">나의 답변</a></li>
 					<h5>　|　</h5>
 					<li><a data-toggle="pill" href="#menu2">북마크</a></li>
+					<h5>　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　</h5>
+					<li><button class="mtop_btn" target="_blank">질문하기</button></li>
 				</ul>
 				<div class="tab-content">
 					<div id="home" class="tab-pane fade in active">
-						<p>나의 질문</p>
+						<img src="${contextpath}/img/SH/로마.jpg" alt class="box_img">
+						<p>로마</p>
 					</div>
 					<div id="menu1" class="tab-pane fade">
 						<p>나의 답변</p>
@@ -35,7 +38,6 @@
 					</div>
 				</div>
 			</div>
-			<button class="mtop_btn" target="_blank">질문하기</button>
 		</div>
 	</div>
 </div><!-- 바디끝 -->

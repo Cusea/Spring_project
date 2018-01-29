@@ -32,7 +32,7 @@ create table users(
 	id varchar2(320) constraint users_uk_id unique,
 	pw varchar2(40) not null,
 	name varchar2(30) not null,
-	admin number(1) constraints users_ck_admin check(admin in(0,1,2)),	
+	admin number(1) constraints users_ck_admin check(admin in(0,1,2)),			-- 0:관리자, 1:일반유저, 2:탈퇴유저
 	gender varchar2(20) constraint users_ck_gender check(gender in('F','M')),
 	mypage varchar2(100) constraint users_uk_mypage unique,
 	signupTime timestamp not null,
@@ -40,13 +40,15 @@ create table users(
 	withdraw timestamp,
 	likeTipList varchar2(4000)
 );
--- 0:관리자, 1:일반유저, 2:탈퇴유저
+
 insert into users(num, id, pw, name, admin, gender, mypage, signupTime, imageadd)
 	values(users_seq.nextval, 'admin@test.com', '123', '관리자', 0, 'M', '/admin123', sysdate, '/resources/img/user.png');
 insert into users(num, id, pw, name, admin, gender, mypage, signupTime, imageadd)
 	values(users_seq.nextval, 'user1@test.com', '123', '유저1', 1, 'M', '/user1', sysdate, '/resources/img/user.png');
 insert into users(num, id, pw, name, admin, gender, mypage, signupTime, imageadd)
 	values(users_seq.nextval, 'user2@test.com', '123', '유저2', 1, 'F', '/user2', sysdate, '/resources/img/user.png');
+insert into users(num, id, pw, name, admin, gender, mypage, signupTime, imageadd)
+	values(users_seq.nextval, 'user3@test.com', '123', '유저3', 1, 'F', '/user3', sysdate, '/resources/img/user.png');
 
 commit;
 
@@ -54,19 +56,89 @@ commit;
 create sequence city_seq start with 1 increment by 1;
 create table city(
 	num number(8) constraint city_pk_num primary key,
-	area varchar2(100) not null, 		-- 지역 이름 넣을 것 ex: 규슈, 간사이, 훗카이도 ..... 
+	area varchar2(100) not null, 		-- 도시 이름 넣을 것
 	imageaddList varchar2(4000)
 );
 
+insert into city(num, area, imageaddList)
+	values(city_seq.nextval,'후쿠오카', '{후쿠오카1.jpg,후쿠오카2.jpg,후쿠오카3.jpg}');
+insert into city(num, area, imageaddList)
+	values(city_seq.nextval,'오사카', '{오사카1.jpg,오사카2.jpg,오사카3.jpg}');
+	
+commit;
 -- 3.category table 생성
 create sequence category_seq start with 1 increment by 1;
 create table category(
 	num number(8) constraint category_pk_num primary key,
-	main_category varchar2(60) not null,
-	mid_category varchar2(60),					-- main_category가 관광 명소이면 있고, 나머지는 없음
-	sub_category varchar2(60) not null			
+	main-category varchar2(60) not null,
+	mid-category varchar2(60),					-- main_category가 관광 명소이면 있고, 나머지는 없음
+	sub-category varchar2(60) not null			
 );
 
+insert into category(num, main-category, mid-category, sub-category)
+	values(category_seq.nextval,'관광명소','관광지','공원/정원/광장');
+insert into category(num, main-category, mid-category, sub-category)
+	values(category_seq.nextval,'관광명소','관광지','건축물');
+insert into category(num, main-category, mid-category, sub-category)
+	values(category_seq.nextval,'관광명소','관광지','관공서/학교');
+insert into category(num, main-category, mid-category, sub-category)
+	values(category_seq.nextval,'관광명소','관광지','교통');
+insert into category(num, main-category, mid-category, sub-category)
+	values(category_seq.nextval,'관광명소','관광지','유명거리/이색장소');
+insert into category(num, main-category, mid-category, sub-category)
+	values(category_seq.nextval,'관광명소','관광지','랜드마크');
+insert into category(num, main-category, mid-category, sub-category)
+	values(category_seq.nextval,'관광명소','관광지','박물관/미술관');
+insert into category(num, main-category, mid-category, sub-category)
+	values(category_seq.nextval,'관광명소','관광지','역사/종교');
+insert into category(num, main-category, mid-category, sub-category)
+	values(category_seq.nextval,'관광명소','레저/액티비티','데이투어/액티비티');
+insert into category(num, main-category, mid-category, sub-category)
+	values(category_seq.nextval,'관광명소','레저/액티비티','스포츠');
+insert into category(num, main-category, mid-category, sub-category)
+	values(category_seq.nextval,'관광명소','레저/액티비티','오락/이벤트');
+insert into category(num, main-category, mid-category, sub-category)
+	values(category_seq.nextval,'관광명소','레저/액티비티','전시/공연/관람');
+insert into category(num, main-category, mid-category, sub-category)
+	values(category_seq.nextval,'관광명소','레저/액티비티','테마파크/동물원');
+insert into category(num, main-category, mid-category, sub-category)
+	values(category_seq.nextval,'관광명소','레저/액티비티','웰니스/스파');
+insert into category(num, main-category, mid-category, sub-category)
+	values(category_seq.nextval,'관광명소','나이트라이프','나이트스팟');
+insert into category(num, main-category, mid-category, sub-category)
+	values(category_seq.nextval,'관광명소','나이트라이프','펍/선술집');
+insert into category(num, main-category, sub-category)
+	values(category_seq.nextval,'음식점', '현지요리');
+insert into category(num, main-category, sub-category)
+	values(category_seq.nextval,'음식점', '카페/디저트/베이커리');
+insert into category(num, main-category, sub-category)
+	values(category_seq.nextval,'음식점', '돈까스');
+insert into category(num, main-category, sub-category)
+	values(category_seq.nextval,'음식점', '딤섬');
+insert into category(num, main-category, sub-category)
+	values(category_seq.nextval,'음식점', '면요리');
+insert into category(num, main-category, sub-category)
+	values(category_seq.nextval,'음식점', '북미요리');
+insert into category(num, main-category, sub-category)
+	values(category_seq.nextval,'음식점', '뷔페');
+insert into category(num, main-category, sub-category)
+	values(category_seq.nextval,'음식점', '스테이크/바비큐');
+insert into category(num, main-category, sub-category)
+	values(category_seq.nextval,'쇼핑', '마트/식료품');
+insert into category(num, main-category, sub-category)
+	values(category_seq.nextval,'쇼핑', '면세점/아울렛');
+insert into category(num, main-category, sub-category)
+	values(category_seq.nextval,'쇼핑', '생활소품/기념품');
+insert into category(num, main-category, sub-category)
+	values(category_seq.nextval,'쇼핑', '쇼핑몰/백화점');
+insert into category(num, main-category, sub-category)
+	values(category_seq.nextval,'쇼핑', '시장/쇼핑거리');
+insert into category(num, main-category, sub-category)
+	values(category_seq.nextval,'쇼핑', '의류/잡화');
+insert into category(num, main-category, sub-category)
+	values(category_seq.nextval,'쇼핑', '전문상점');
+	
+commit;
 -- 4. place table 생성
 create sequence place_seq start with 1 increment by 1;
 create table place(
@@ -188,8 +260,8 @@ create table contactUs(
 	email varchar2(320) not null,
 	text varchar2(4000) not null,
 	inTime timestamp not null,
-	isanswer number(1) constraint contactUs_ck_isanswer check(isanswer in(0,1)),
-	anwer varchar2(4000)
+	anwer varchar2(4000),
+	isanswer number(1) default 0 check(isanswer in(0,1))
 );
 
 -- 14. TipList table 생성

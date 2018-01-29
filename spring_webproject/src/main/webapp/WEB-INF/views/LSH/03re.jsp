@@ -25,18 +25,11 @@
 						<option value="regdate">최신순</option>
 						<option value="name">이름순</option>
 					</select>
-					<div class="box">
-					<div class="img_box" style="cursor:pointer;">
-						<img src="${contextpath}/img/SH/로마.jpg" alt class="box_img">
-					</div>
-					<div class="bottom_title"></div>
 				</div>
-				</div>
-				<br>
 				<button class="mtop_btn" target="_blank">리뷰쓰기</button>
+				</div>
 				<div class="clear"></div>
 				<br>
-				<%-- <img src="${contextpath}/img/SH/3.jpg" alt="Einstein" class="w3-hover-sepia"> --%>
 			<div class="review_inner"></div>
 		</div>
 		

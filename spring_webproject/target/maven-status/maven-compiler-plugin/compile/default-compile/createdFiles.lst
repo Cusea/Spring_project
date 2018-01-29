@@ -1,4 +1,8 @@
 com\bc\web_project\MainController.class
+com\bc\web_project\login\NaverLogin.class
+com\bc\web_project\PlanController\planController.class
+com\bc\web_project\hosangController\ServiceCenterController.class
 com\bc\web_project\qna\Q_list.class
+com\bc\web_project\TipController\TipController.class
 com\bc\web_project\mypageController\MypageController.class
-com\bc\web_project\adminController\AdminController.class
+com\bc\web_project\hosangController\AdminController.class
