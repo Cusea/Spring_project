@@ -48,12 +48,13 @@
 			
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active">
-					<a role="button" class="btn btn-warning nav-link mr-2 mb-2" data-toggle="modal" data-target="#login">로그인</a>
+					<a role="button" class="btn btn-warning nav-link mr-2 mb-2" data-toggle="modal" data-target="#login" id="btn_login">로그인</a>
 				</li>
 				<li class="nav-item active">
 					<a role="button" class="btn btn-primary nav-link mr-2" data-toggle="modal" data-target="#signUp">회원가입</a>
 				</li>
 			</ul>
+			
 			<ul class="navbar-nav">
 				<li class="nav-item active align-center admin">
 					<a class="admin btn btn-success nav-link mr-2 mt-2" role="button" href='${contextpath}/admin/main' aria-pressed="true">
@@ -61,11 +62,12 @@
 					</a>
 				</li>
 				<li class="nav-item active">
-					<a class="btn nav-link" role="button" href='${contextpath}/LSH/01cl.do'>
+					<a class="btn nav-link" role="button" href='${contextpath}/LSH/01cl.do' id="profile">
 						<img src='${contextpath}/img/user.png' class="rounded-circle btn btn-light user_icon">
 					</a>
 				</li>
 			</ul>
+			
 		</div>
 	</nav>
 	
@@ -102,13 +104,55 @@
 							</div>
 						</div>
 						<div class="form-row">
-							<button type="submit" class="btn btn-block btn-primary">로그인</button>
+							<button type="submit" class="btn btn-block btn-primary" id="login">로그인</button>
 						</div>
 					</form>
 					<hr>
 					<div class="">
 						<button class="btn btn-danger btn-block">구글</button>
-						<button class="btn btn-success btn-block">네이버</button>
+						<div id="naverIdLogin">
+							<a id="naverIdLogin_loginButton" href="#" role="button">
+								<img src="https://static.nid.naver.com/oauth/big_g.PNG?version=js-2.0.0" height="60">
+							</a>
+						</div>
+						<script>
+						var naverLogin = new naver.LoginWithNaverId(
+								{
+									clientId: "BYGUjJrxhO95iuUIsKGm",
+									callbackUrl: "http://" + window.location.hostname + ((location.port==""||location.port==undefined)?"":":" + location.port) + "/web_project/",
+									isPopup: false,
+									loginButton: {color: "green", type: 3, height: 60}
+								}
+							);
+							/* (4) 네아로 로그인 정보를 초기화하기 위하여 init을 호출 */
+							naverLogin.init();
+							
+							$("#btn_login").attr("href", naverLogin.generateAuthorizeUrl());
+							
+							/* (5) 현재 로그인 상태를 확인 */
+							window.addEventListener('load', function () {
+								naverLogin.getLoginStatus(function (status) {
+									if (status) {
+										setLoginStatus();
+										console.log(naverLogin);
+										
+									}
+								});
+							});
+
+							/* (6) 로그인 상태가 "true" 인 경우 로그인 버튼을 없애고 사용자 정보를 출력합니다. */
+							function setLoginStatus() {
+								var profileImage = naverLogin.user.getProfileImage();
+								$("#profile").html('<img src="' + profileImage + '" height=50 /> ');
+								$("#btn_login").html("로그아웃");
+								$("#btn_login").attr("href", "/");
+								/* (7) 로그아웃 버튼을 설정하고 동작을 정의합니다. */
+								$("#btn_login").click(function () {
+									naverLogin.logout();
+									location.reload();
+								});
+							}
+						</script>
 						<button class="btn btn-warning btn-block">카카오</button>
 					</div>
 				</div>		
@@ -178,20 +222,8 @@
 					<hr>
 					<div class="">
 						<button class="btn btn-danger btn-block">구글</button>
-						<div id="naverIdLogin"></div>
-						<script>
-							var naverLogin = new naver.LoginWithNaverId(
-									{
-										clientId: "BYGUjJrxhO95iuUIsKGm",
-										callbackUrl: "http://localhost:8989/web_project/",
-										isPopup: true, /* 팝업을 통한 연동처리 여부 */
-										loginButton: {color: "green", type: 3, height: 60} /* 버튼의 타입을 지정 */
-									}
-								);
-								
-								/* 설정정보를 초기화하고 연동을 준비 */
-								naverLogin.init();
-						</script>
+						<div id="naverIdLogin">네이버</div>
+						
 						<button class="btn btn-warning btn-block">카카오</button>
 					</div>
 					<hr>

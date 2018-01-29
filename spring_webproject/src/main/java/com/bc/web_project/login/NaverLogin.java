@@ -1,13 +1,20 @@
 package com.bc.web_project.login;
 
-import java.math.BigInteger;
-import java.security.SecureRandom;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
+
+@RestController
+@RequestMapping("/layout/*")
 public class NaverLogin {
-	public String generate() {
-		SecureRandom random = new SecureRandom();
-		return new BigInteger(130, random).toString(32);
-	}
 	
+	/*@RequestMapping("naverCallback")
+	public ModelAndView main() {
+		ModelAndView model = new ModelAndView();
+		
+		model.setViewName("layout/naverCallback");
+		return model;
+	}*/
 	
 }
