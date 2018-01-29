@@ -9,6 +9,7 @@
 
 <link href='<c:url value="/resources/bootstrap-4.0.0/css/bootstrap.min.css" />' rel="stylesheet">
 <link href='<c:url value="/resources/font-awesome-4.7.0/css/font-awesome.min.css" />' rel="stylesheet">
+<script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
 <script src='<c:url value="/resources/js/jquery-3.2.1.min.js" />' ></script>
 <script src='<c:url value="/resources/js/popper.min.js" />' ></script>
 <script src='<c:url value="/resources/bootstrap-4.0.0/js/bootstrap.min.js" />' ></script>
@@ -32,16 +33,16 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
-					<a class="nav-link mr-2 mb-2 h4" href='${contextpath}/'>여행 정보</a>
+					<a class="nav-link h4 mb-0" href='${contextpath}/'>여행 정보</a>
 				</li>
 				<li class="nav-item active">
-					<a class="nav-link mr-2 mb-2 h4" href='${contextpath}/Schedule/make1.do'>일정 만들기</a>
+					<a class="nav-link h4 mb-0" href='${contextpath}/Schedule/make1.do'>일정 만들기</a>
 				</li>
 				<li class="nav-item active">
-					<a class="nav-link mr-2 mb-2 h4" href='${contextpath}/QnA/QnA.do'>커뮤니티</a>
+					<a class="nav-link h4 mb-0" href='${contextpath}/QnA/QnA.do'>커뮤니티</a>
 				</li>
 				<li class="nav-item active">
-					<a class="nav-link mr-2 mb-2 h4" href='${contextpath}/KBJ/TipofTravel.do'>여행 Tip</a>
+					<a class="nav-link h4 mb-0" href='${contextpath}/KBJ/TipofTravel.do'>여행 Tip</a>
 				</li>
 			</ul>
 			
@@ -177,7 +178,20 @@
 					<hr>
 					<div class="">
 						<button class="btn btn-danger btn-block">구글</button>
-						<button class="btn btn-success btn-block">네이버</button>
+						<div id="naverIdLogin"></div>
+						<script>
+							var naverLogin = new naver.LoginWithNaverId(
+									{
+										clientId: "BYGUjJrxhO95iuUIsKGm",
+										callbackUrl: "http://localhost:8989/web_project/",
+										isPopup: true, /* 팝업을 통한 연동처리 여부 */
+										loginButton: {color: "green", type: 3, height: 60} /* 버튼의 타입을 지정 */
+									}
+								);
+								
+								/* 설정정보를 초기화하고 연동을 준비 */
+								naverLogin.init();
+						</script>
 						<button class="btn btn-warning btn-block">카카오</button>
 					</div>
 					<hr>

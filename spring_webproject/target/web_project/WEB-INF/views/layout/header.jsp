@@ -35,7 +35,7 @@
 					<a class="nav-link mr-2 mb-2 h4" href='${contextpath}/'>여행 정보</a>
 				</li>
 				<li class="nav-item active">
-					<a class="nav-link mr-2 mb-2 h4" href='${contextpath}/schedule/make1'>일정 만들기</a>
+					<a class="nav-link mr-2 mb-2 h4" href='${contextpath}/Schedule/make1.do'>일정 만들기</a>
 				</li>
 				<li class="nav-item active">
 					<a class="nav-link mr-2 mb-2 h4" href='${contextpath}/QnA/QnA.do'>커뮤니티</a>
