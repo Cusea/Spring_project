@@ -14,7 +14,7 @@
 			<a id="qna" href="${contextpath}/LSH/05qna.do" class="my_menu">Q&A</a>
 			<a id="set" href="${contextpath}/LSH/set.do" class="set">설정</a>
 			<div class="clear"></div>
-			<br>
+			<br><br>
 			<div class="container">
 				<ul class="nav nav-pills">
 					<li class="nav-item"><a data-toggle="pill" href="#home">완성된 여행Tip</a></li>
@@ -22,18 +22,15 @@
 					<li><a data-toggle="pill" href="#menu1">작성중인 여행Tip</a></li>
 					<h5>　|　</h5>
 					<li><a data-toggle="pill" href="#menu2">좋아한 여행Tip</a></li>
+					<h5>　　　　　　　　　　　　　　　　　　　　　　</h5>
+					<li><button class="mtop_btn" target="_blank">여행Tip 만들기</button></li>
 				</ul>
 				<div class="tab-content">
 					<div id="home" class="tab-pane fade in active">
 						<p>완성완성!</p>
 					</div>
 					<div id="menu1" class="tab-pane fade">
-						<div class="box">
-							<div class="img_box" style="cursor:pointer;">
-								<img src="${contextpath}/img/SH/홍콩.jpg" class="box_img">
-							</div>
-							<div class="bottom_title"></div>
-						</div>
+							<img src="${contextpath}/img/SH/홍콩.jpg" class="box_img">
 						<p>답변답변</p>
 					</div>
 				    <div id="menu2" class="tab-pane fade">
@@ -41,7 +38,6 @@
 					</div>
 				</div>
 			</div>
-			<button class="mtop_btn" target="_blank">여행Tip 만들기</button>
 		</div>
 	</div>
 </div>

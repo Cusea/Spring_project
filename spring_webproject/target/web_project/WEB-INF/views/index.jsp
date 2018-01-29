@@ -57,28 +57,28 @@
 			<p class="font-weight-light">다른 여행자들의 일정을 참고해 나만의 여행을 계획해보세요</p>
 		</div>
 		<div class="container-fluid card-deck" style="margin: auto;">
-			<div class="card mb-3" onclick="location.href='${contextpath}/Schedule/make1.jsp';">
+			<div class="card mb-3" onclick="location.href='${contextpath}/Schedule/make3.do';">
 				<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
 				<div class="card-body">
 					<h5 class="text-primary card-title"><strong>커뮤니티</strong></h5>
 					<p class="card-text">여행자들과 정보를 공유하고, 궁금한 것은 언제든 물어보세요</p>
 				</div>
 			</div>
-			<div class="card mb-3" onclick="location.href='${contextpath}/Schedule/make1.jsp';">
+			<div class="card mb-3" onclick="location.href='${contextpath}/Schedule/make3.do';">
 				<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
 				<div class="card-body">
 					<h5 class="text-primary card-title"><strong>커뮤니티</strong></h5>
 					<p class="card-text">여행자들과 정보를 공유하고, 궁금한 것은 언제든 물어보세요</p>
 				</div>
 			</div>
-			<div class="card mb-3" onclick="location.href='${contextpath}/Schedule/make1.jsp';">
+			<div class="card mb-3" onclick="location.href='${contextpath}/Schedule/make3.do';">
 				<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
 				<div class="card-body">
 					<h5 class="text-primary card-title"><strong>커뮤니티</strong></h5>
 					<p class="card-text">여행자들과 정보를 공유하고, 궁금한 것은 언제든 물어보세요</p>
 				</div>
 			</div>
-			<div class="card mb-3" onclick="location.href='${contextpath}/Schedule/make1.jsp';">
+			<div class="card mb-3" onclick="location.href='${contextpath}/Schedule/make3.do';">
 				<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
 				<div class="card-body">
 					<h5 class="text-primary card-title"><strong>커뮤니티</strong></h5>
@@ -87,7 +87,7 @@
 			</div>
 		</div>
 		<div class="container-fluid text-center mb-3">
-			<a class="btn btn-outline-info btn-lg" role="button" href="${contextpath}/Schedule/make1.do">
+			<a class="btn btn-outline-info btn-lg" role="button" href="${contextpath}/Schedule/make3.do">
 					???개의 추천일정 모두 보기
 			</a>
 		</div>
