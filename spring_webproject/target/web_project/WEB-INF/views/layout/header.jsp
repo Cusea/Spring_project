@@ -45,7 +45,8 @@
 					<a class="nav-link h4 mb-0" href='${contextpath}/KBJ/TipofTravel.do'>여행 Tip</a>
 				</li>
 			</ul>
-			
+			<c:choose>
+			<c:when test="${empty login}">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active">
 					<a role="button" class="btn btn-warning nav-link mr-2 mb-2" href='${contextpath}/layout/loginPage'>로그인</a>
@@ -54,11 +55,19 @@
 					<a role="button" class="btn btn-primary nav-link mr-2" data-toggle="modal" data-target="#signUp">회원가입</a>
 				</li>
 			</ul>
-			
+			</c:when>
+			<c:otherwise>
 			<ul class="navbar-nav">
+			<c:if test="${login.admin eq 0}">
 				<li class="nav-item active align-center admin">
 					<a class="admin btn btn-success nav-link mr-2 mt-2" role="button" href='${contextpath}/admin/main' aria-pressed="true">
 						관리자 page로
+					</a>
+				</li>
+			</c:if>
+				<li class="nav-item active align-center admin">
+					<a class="admin btn btn-danger nav-link mr-2 mt-2" role="button" href='${contextpath}/layout/logout' aria-pressed="true">
+						로그아웃
 					</a>
 				</li>
 				<li class="nav-item active">
@@ -67,7 +76,8 @@
 					</a>
 				</li>
 			</ul>
-			
+			</c:otherwise>
+			</c:choose>
 		</div>
 	</nav>
 	
