@@ -1,28 +1,18 @@
-<<<<<<< HEAD
 C:\Users\5CLASS-184\Documents\SPRING_PROJECT\SPRING_PROJECT\spring_webproject\src\main\java\com\bc\web_project\dao\UserDaoImpl.java
 C:\Users\5CLASS-184\Documents\SPRING_PROJECT\SPRING_PROJECT\spring_webproject\src\main\java\com\bc\web_project\controller\MainController.java
+C:\Users\5CLASS-184\Documents\SPRING_PROJECT\SPRING_PROJECT\spring_webproject\src\main\java\com\bc\web_project\dao\QnADAO.java
 C:\Users\5CLASS-184\Documents\SPRING_PROJECT\SPRING_PROJECT\spring_webproject\src\main\java\com\bc\web_project\service\UserService.java
+C:\Users\5CLASS-184\Documents\SPRING_PROJECT\SPRING_PROJECT\spring_webproject\src\main\java\com\bc\web_project\controller\planController.java
 C:\Users\5CLASS-184\Documents\SPRING_PROJECT\SPRING_PROJECT\spring_webproject\src\main\java\com\bc\web_project\Interceptor\LoginInterceptor.java
 C:\Users\5CLASS-184\Documents\SPRING_PROJECT\SPRING_PROJECT\spring_webproject\src\main\java\com\bc\web_project\vo\UserVo.java
-C:\Users\5CLASS-184\Documents\SPRING_PROJECT\SPRING_PROJECT\spring_webproject\src\main\java\com\bc\web_project\PlanController\planController.java
+C:\Users\5CLASS-184\Documents\SPRING_PROJECT\SPRING_PROJECT\spring_webproject\src\main\java\com\bc\web_project\dao\QnADAOImp.java
+C:\Users\5CLASS-184\Documents\SPRING_PROJECT\SPRING_PROJECT\spring_webproject\src\main\java\com\bc\web_project\vo\QuestionVO.java
 C:\Users\5CLASS-184\Documents\SPRING_PROJECT\SPRING_PROJECT\spring_webproject\src\main\java\com\bc\web_project\service\UserServiceImpl.java
 C:\Users\5CLASS-184\Documents\SPRING_PROJECT\SPRING_PROJECT\spring_webproject\src\main\java\com\bc\web_project\controller\ServiceCenterController.java
 C:\Users\5CLASS-184\Documents\SPRING_PROJECT\SPRING_PROJECT\spring_webproject\src\main\java\com\bc\web_project\dto\LoginDTO.java
 C:\Users\5CLASS-184\Documents\SPRING_PROJECT\SPRING_PROJECT\spring_webproject\src\main\java\com\bc\web_project\mypageController\MypageController.java
-C:\Users\5CLASS-184\Documents\SPRING_PROJECT\SPRING_PROJECT\spring_webproject\src\main\java\com\bc\web_project\qna\Q_list.java
 C:\Users\5CLASS-184\Documents\SPRING_PROJECT\SPRING_PROJECT\spring_webproject\src\main\java\com\bc\web_project\TipController\TipController.java
 C:\Users\5CLASS-184\Documents\SPRING_PROJECT\SPRING_PROJECT\spring_webproject\src\main\java\com\bc\web_project\controller\Logincontroller.java
+C:\Users\5CLASS-184\Documents\SPRING_PROJECT\SPRING_PROJECT\spring_webproject\src\main\java\com\bc\web_project\controller\Q_list.java
 C:\Users\5CLASS-184\Documents\SPRING_PROJECT\SPRING_PROJECT\spring_webproject\src\main\java\com\bc\web_project\controller\AdminController.java
 C:\Users\5CLASS-184\Documents\SPRING_PROJECT\SPRING_PROJECT\spring_webproject\src\main\java\com\bc\web_project\dao\UserDao.java
-=======
-C:\Users\gunma\Documents\weProject_Spring_git_kdh88\Spring_project\spring_webproject\src\main\java\com\bc\web_project\mypageController\MypageController.java
-C:\Users\gunma\Documents\weProject_Spring_git_kdh88\Spring_project\spring_webproject\src\main\java\com\bc\web_project\qna\QnADAOImp.java
-C:\Users\gunma\Documents\weProject_Spring_git_kdh88\Spring_project\spring_webproject\src\main\java\com\bc\web_project\MainController.java
-C:\Users\gunma\Documents\weProject_Spring_git_kdh88\Spring_project\spring_webproject\src\main\java\com\bc\web_project\qna\QuestionVO.java
-C:\Users\gunma\Documents\weProject_Spring_git_kdh88\Spring_project\spring_webproject\src\main\java\com\bc\web_project\qna\Q_list.java
-C:\Users\gunma\Documents\weProject_Spring_git_kdh88\Spring_project\spring_webproject\src\main\java\com\bc\web_project\hosangController\ServiceCenterController.java
-C:\Users\gunma\Documents\weProject_Spring_git_kdh88\Spring_project\spring_webproject\src\main\java\com\bc\web_project\hosangController\AdminController.java
-C:\Users\gunma\Documents\weProject_Spring_git_kdh88\Spring_project\spring_webproject\src\main\java\com\bc\web_project\TipController\TipController.java
-C:\Users\gunma\Documents\weProject_Spring_git_kdh88\Spring_project\spring_webproject\src\main\java\com\bc\web_project\qna\QnADAO.java
-C:\Users\gunma\Documents\weProject_Spring_git_kdh88\Spring_project\spring_webproject\src\main\java\com\bc\web_project\PlanController\planController.java
->>>>>>> d52c619c10b035139c76d8c1e9a65aa14ea68862
