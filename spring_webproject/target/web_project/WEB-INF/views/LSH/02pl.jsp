@@ -24,7 +24,7 @@
 					<h5>　|　</h5>
 					<li><a data-toggle="pill" href="#menu2">좋아한 여행</a></li>
 					<h5>　　　　　　　　　　　　　　　　　　　　　　　　　　</h5>
-					<li><a role="button" class="btn btn-primary nav-link mr-2" data-toggle="modal" data-target="#signUp" href="${contextpath}/Schedule/make1.do">여행일정 만들기</a></li>
+					<li><button class="mtop_btn" target="_blank">여행일정 만들기</button></li>
 				</ul>
 				<div class="tab-content">
 					<div id="home" class="tab-pane fade in active">

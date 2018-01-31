@@ -58,27 +58,27 @@
 						<h3 class="font-weight-bold">멤버 소개</h3>
 						<div class="row col-11">
 							<p class="col-sm-3 text-secondary"><strong class="text-primary">김대현</strong>	:	010-0000-0001</p>
-							<p class="col-sm-9 text-secondary"><strong class="text-success">담당한 역할</strong>	:	QnA 페이지 front 구성,</p>
+							<p class="col-sm-9 text-secondary"><strong class="text-success">담당한 역할</strong>	:	QnA 페이지, db 설계 및 구현</p>
 						</div>
 						<div class="row col-11">
 							<p class="col-sm-3 text-secondary"><strong class="text-primary">김봉준</strong>	:	010-0000-0002</p>
-							<p class="col-sm-9 text-secondary"><strong class="text-success">담당한 역할</strong>	:	Tip 페이지 front 구성,</p>
+							<p class="col-sm-9 text-secondary"><strong class="text-success">담당한 역할</strong>	:	Tip 페이지, db 설계 및 구현</p>
 						</div>
 						<div class="row col-11">
 							<p class="col-sm-3 text-secondary"><strong class="text-primary">유기상</strong>	:	010-0000-0003</p>
-							<p class="col-sm-9 text-secondary"><strong class="text-success">담당한 역할</strong>	:	spot 페이지 front 구성,</p>
+							<p class="col-sm-9 text-secondary"><strong class="text-success">담당한 역할</strong>	:	spot 페이지, db 설계 및 구현</p>
 						</div>
 						<div class="row col-11">
 							<p class="col-sm-3 text-secondary"><strong class="text-primary">이승현</strong>	:	010-0000-0004</p>
-							<p class="col-sm-9 text-secondary"><strong class="text-success">담당한 역할</strong>	:	마이 페이지 front 구성,</p>
+							<p class="col-sm-9 text-secondary"><strong class="text-success">담당한 역할</strong>	:	마이 페이지, db 설계 및 구현</p>
 						</div>
 						<div class="row col-11">
 							<p class="col-sm-3 text-secondary"><strong class="text-primary">이호상</strong>	:	010-0000-0005</p>
-							<p class="col-sm-9 text-secondary"><strong class="text-success">담당한 역할</strong>	:	관리자 페이지 front 구성,</p>
+							<p class="col-sm-9 text-secondary"><strong class="text-success">담당한 역할</strong>	:	관리자 페이지 front 구성, db 설계 및 구현, 로그인-로그 아웃</p>
 						</div>
 						<div class="row col-11">
 							<p class="col-sm-3 text-secondary"><strong class="text-primary">지동석</strong>	:	010-0000-0006</p>
-							<p class="col-sm-9 text-secondary"><strong class="text-success">담당한 역할</strong>	:	일정만들기 페이지 front 구성,</p>
+							<p class="col-sm-9 text-secondary"><strong class="text-success">담당한 역할</strong>	:	일정만들기 페이지, db 설계 및 구현</p>
 						</div>
 					</div>
 					<div class="border border-secondary border-top-0 border-left-0 border-right-0 py-2 pl-3">

@@ -7,6 +7,7 @@
 				   	
 			</div>
 		</div>
+		
 	    <div class="container">
 		<p>여행팁의 제목을 입력하세요.(최대 30글자)</p>
 	  		<form>

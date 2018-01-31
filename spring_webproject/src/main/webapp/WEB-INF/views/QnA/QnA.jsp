@@ -43,7 +43,7 @@
 				<a class="q_num_box" href="${contextpath}/QnA/DetailQnA.do">i번째 질문게시판</a>  <!-- 경로로 왜 안가는 것임??? -->
 				<div class="user_img" style="background-image: url(${contextpath}/img/QnA/작은표범.png)"></div>
 				<div class="content_box"> 
-					<div class="subject">제목: 오사카 추천좀요</div>
+					<div class="subject">제목: 오사카 추천좀요  ${questionVo}</div>
 					<div class="content"><pre>내용: 맛집 위주로 추천해주세요.</pre></div>
 					<div class="tag_box">
 						<div class="tag">오사카</div>
@@ -95,8 +95,8 @@
 	
 <!-- The Modal -->
 <!-- form해야 button reset 됨. -->
-<form action="insert.do" method="post" name="updateForm">
-	<div class="modal fade" id="myModal">  <!-- modal뜨면 배경 div -->
+<form action="QnA.do" method="post" name="insertForm">
+	<div class="modal fade" id="myModal">  <!-- modal뜨면 배경 div (배경은 안눌리게 하고싶은데) -->
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content pl-3" style="background-color: skyblue">  
 			<div class="modal-header">
@@ -111,7 +111,7 @@
 				<hr>
 			</div>
 			<div class="modal-body">
-				<label for="modal_body_text"><strong>내용</strong></label>
+				<label for="modal_body_text"><strong>내용:</strong></label>
 				<textarea class="q_textarea px-1 form-control" style="width: 700px;" rows="10" cols="60" maxlength="1000" onkeyup="keyup()"></textarea>
 				<small id="modal_body_text">0/1000</small>
 			</div>
@@ -122,7 +122,7 @@
 					<small>0/30</small>
 				</div>
 				<button type="reset" class="btn btn-info">초기화</button>
-				<button type="submit" class="btn btn-primary" data-dismiss="modal">완료</button>
+				<button type="submit" class="btn btn-primary">완료</button>  <!-- data-dismiss="modal" ??? -->
 			</div>
 			</div>
 		</div>
