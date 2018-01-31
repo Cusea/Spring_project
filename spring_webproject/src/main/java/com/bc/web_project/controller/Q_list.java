@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.bc.web_project.dao.QnADAO;
 import com.bc.web_project.vo.QuestionVO;
+
+
 
 //do 없어도 되고
 
@@ -19,8 +20,7 @@ import com.bc.web_project.vo.QuestionVO;
 public class Q_list {
 	
 	@Inject
-	QnADAO QnADao;
-	QuestionVO questionVo;
+	
 	
 	
 	//main 질문리스트
