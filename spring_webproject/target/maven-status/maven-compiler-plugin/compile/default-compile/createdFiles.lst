@@ -1,4 +1,5 @@
 com\bc\web_project\PlanController\planController.class
+<<<<<<< HEAD
 com\bc\web_project\controller\AdminController.class
 com\bc\web_project\controller\MainController.class
 com\bc\web_project\dao\UserDaoImpl.class
@@ -13,3 +14,14 @@ com\bc\web_project\service\UserServiceImpl.class
 com\bc\web_project\qna\Q_list.class
 com\bc\web_project\dao\UserDao.class
 com\bc\web_project\mypageController\MypageController.class
+=======
+com\bc\web_project\hosangController\ServiceCenterController.class
+com\bc\web_project\qna\QnADAO.class
+com\bc\web_project\TipController\TipController.class
+com\bc\web_project\hosangController\AdminController.class
+com\bc\web_project\MainController.class
+com\bc\web_project\qna\Q_list.class
+com\bc\web_project\qna\QuestionVO.class
+com\bc\web_project\mypageController\MypageController.class
+com\bc\web_project\qna\QnADAOImp.class
+>>>>>>> d52c619c10b035139c76d8c1e9a65aa14ea68862

@@ -8,7 +8,7 @@
 	<bean id="dbSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<!-- property == set**() -->
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl" />
 		<property name="username" value="japan_dba"/>
 		<property name="password" value="dba123"/>		
 	</bean>
@@ -31,8 +31,26 @@
 	<bean id="sqlsession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
 		<constructor-arg ref="sessionFactory" />
 	</bean>
+<<<<<<< HEAD
 	
 	<context:component-scan base-package="com.bc.web_project.dao"/>
 	<context:component-scan base-package="com.bc.web_project.service"/>
+=======
+>>>>>>> d52c619c10b035139c76d8c1e9a65aa14ea68862
+	
+	<bean id="QnADAO" class="com.bc.web_project.qna.QnADAOImp"/>
+	<context:component-scan base-package="com.bc.web_project.qna"/>
 	
 </beans>
+
+
+
+
+
+
+
+
+
+
+
+

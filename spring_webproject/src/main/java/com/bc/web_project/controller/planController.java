@@ -1,4 +1,4 @@
-package com.bc.web_project.PlanController;
+package com.bc.web_project.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

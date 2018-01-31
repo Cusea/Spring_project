@@ -36,7 +36,11 @@
 					<a class="nav-link h4 mb-0" href='${contextpath}/'>여행 정보</a>
 				</li>
 				<li class="nav-item active">
+<<<<<<< HEAD
 					<a class="nav-link h4 mb-0" href='${contextpath}/Schedule/make1.do'>일정 만들기</a>
+=======
+					<a class="nav-link mr-2 mb-2 h4" href='${contextpath}/Schedule/make1.do'>일정 만들기</a>
+>>>>>>> d52c619c10b035139c76d8c1e9a65aa14ea68862
 				</li>
 				<li class="nav-item active">
 					<a class="nav-link h4 mb-0" href='${contextpath}/QnA/QnA.do'>커뮤니티</a>

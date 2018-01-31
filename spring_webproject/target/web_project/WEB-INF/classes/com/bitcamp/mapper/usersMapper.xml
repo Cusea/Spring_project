@@ -2,8 +2,15 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<<<<<<< HEAD
 <mapper namespace="com.bitcamp.mapper.usersMapper">
 	<select	id = "login" resultType="com.bc.web_project.vo.UserVo">
 		select * from users where id = #{id} and pw=#{pw}
 	</select>
+=======
+<mapper namespace="com.bc.mapper.usersMapper">
+	<!-- <select id="select" resultType="com.bc.web_project.qna.QuestionVO">
+		select * from QUESTION
+	</select> -->
+>>>>>>> d52c619c10b035139c76d8c1e9a65aa14ea68862
 </mapper>
