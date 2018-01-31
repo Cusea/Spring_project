@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bitcamp.mapper.qnaMapper">
-	<select id="select" resultType="com.bc.web_project.qna.QuestionVO">
+	<select id="select" resultType="com.bc.web_project.vo.QuestionVO">
 		select * from QUESTION
 	</select>
 </mapper>
