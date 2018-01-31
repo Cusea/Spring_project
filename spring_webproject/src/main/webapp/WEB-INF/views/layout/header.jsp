@@ -45,20 +45,29 @@
 					<a class="nav-link h4 mb-0" href='${contextpath}/KBJ/TipofTravel.do'>여행 Tip</a>
 				</li>
 			</ul>
-			
+			<c:choose>
+			<c:when test="${empty login}">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active">
-					<a role="button" class="btn btn-warning nav-link mr-2 mb-2" data-toggle="modal" data-target="#login" id="btn_login">로그인</a>
+					<a role="button" class="btn btn-warning nav-link mr-2 mb-2" href='${contextpath}/layout/loginPage'>로그인</a>
 				</li>
 				<li class="nav-item active">
 					<a role="button" class="btn btn-primary nav-link mr-2" data-toggle="modal" data-target="#signUp">회원가입</a>
 				</li>
 			</ul>
-			
+			</c:when>
+			<c:otherwise>
 			<ul class="navbar-nav">
+			<c:if test="${login.admin eq 0}">
 				<li class="nav-item active align-center admin">
 					<a class="admin btn btn-success nav-link mr-2 mt-2" role="button" href='${contextpath}/admin/main' aria-pressed="true">
 						관리자 page로
+					</a>
+				</li>
+			</c:if>
+				<li class="nav-item active align-center admin">
+					<a class="admin btn btn-danger nav-link mr-2 mt-2" role="button" href='${contextpath}/layout/logout' aria-pressed="true">
+						로그아웃
 					</a>
 				</li>
 				<li class="nav-item active">
@@ -67,101 +76,10 @@
 					</a>
 				</li>
 			</ul>
-			
+			</c:otherwise>
+			</c:choose>
 		</div>
 	</nav>
-	
-	<!-- login modal -->
-	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title">로그인</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<form action="">
-						<div class="form-group">
-							<label for="login_id">이메일</label>
-							<input type="email" class="form-control" id="login_id" aria-describedby="login_id" placeholder="email을 입력하세요" required>
-						</div>
-						<div class="form-group">
-							<label for="login_pw">비밀번호</label>
-							<input type="password" class="form-control" id="login_pw" placeholder="Password" required>
-						</div>
-						<div class="form-row mb-2">
-							<div class="form-check-inline col-sm-4">
-								<input class="form-check-input" type="checkbox" value="" id="isAutoLogin">
-								<label class="form-check-label" for="isAutoLogin">자동 로그인</label>
-							</div>
-							<div class="col-sm">
-								<div class="row justify-content-end">
-									<span class="col-sm-3"><a href="" class="text-dark">id 찾기</a></span>
-									<span class="col-sm-5 pl-0"><a href="" class="text-dark">password 찾기</a></span>
-								</div>
-							</div>
-						</div>
-						<div class="form-row">
-							<button type="submit" class="btn btn-block btn-primary" id="login">로그인</button>
-						</div>
-					</form>
-					<hr>
-					<div class="">
-						<button class="btn btn-danger btn-block">구글</button>
-						<div id="naverIdLogin">
-							<a id="naverIdLogin_loginButton" href="#" role="button">
-								<img src="https://static.nid.naver.com/oauth/big_g.PNG?version=js-2.0.0" height="60">
-							</a>
-						</div>
-						<script>
-						var naverLogin = new naver.LoginWithNaverId(
-								{
-									clientId: "BYGUjJrxhO95iuUIsKGm",
-									callbackUrl: "http://" + window.location.hostname + ((location.port==""||location.port==undefined)?"":":" + location.port) + "/web_project/",
-									isPopup: false,
-									loginButton: {color: "green", type: 3, height: 60}
-								}
-							);
-							/* (4) 네아로 로그인 정보를 초기화하기 위하여 init을 호출 */
-							naverLogin.init();
-							
-							$("#btn_login").attr("href", naverLogin.generateAuthorizeUrl());
-							
-							/* (5) 현재 로그인 상태를 확인 */
-							window.addEventListener('load', function () {
-								naverLogin.getLoginStatus(function (status) {
-									if (status) {
-										setLoginStatus();
-										console.log(naverLogin);
-										
-									}
-								});
-							});
-
-							/* (6) 로그인 상태가 "true" 인 경우 로그인 버튼을 없애고 사용자 정보를 출력합니다. */
-							function setLoginStatus() {
-								var profileImage = naverLogin.user.getProfileImage();
-								$("#profile").html('<img src="' + profileImage + '" height=50 /> ');
-								$("#btn_login").html("로그아웃");
-								$("#btn_login").attr("href", "/");
-								/* (7) 로그아웃 버튼을 설정하고 동작을 정의합니다. */
-								$("#btn_login").click(function () {
-									naverLogin.logout();
-									location.reload();
-								});
-							}
-						</script>
-						<button class="btn btn-warning btn-block">카카오</button>
-					</div>
-				</div>		
-				<div class="modal-footer">
-					<button type="button" class="btn btn-block" data-toggle="modal" data-target="#signUp" data-dismiss="modal"><strong>회원가입</strong></button>
-				</div>		
-			</div>
-		</div>
-	</div>
 	
 	<!-- signUp modal -->
 	<div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="signUp" aria-hidden="true">

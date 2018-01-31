@@ -31,6 +31,8 @@
 	<bean id="sqlsession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
 		<constructor-arg ref="sessionFactory" />
 	</bean>
-
+	
+	<context:component-scan base-package="com.bc.web_project.dao"/>
+	<context:component-scan base-package="com.bc.web_project.service"/>
 	
 </beans>
