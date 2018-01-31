@@ -35,4 +35,23 @@
 	
 	<context:component-scan base-package="com.bc.web_project" />
 	<!-- context:component-scan으로 Controller 를 찾아서 Servlet container에서 객체로 관리한다 -->
+	
+	<!-- <beans:bean id="QnADAO" class="com.bc.web_project.qna.QnADAOImp"/> -->
+	
+	
+		
 </beans:beans>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
