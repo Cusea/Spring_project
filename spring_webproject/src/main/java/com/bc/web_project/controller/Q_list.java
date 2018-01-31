@@ -46,8 +46,8 @@ public class Q_list {
 		ModelAndView model = new ModelAndView();
 		
 		//questionVo가 안받아 지는듯? 이거쓰면 오류남..
-		List<QuestionVO> questionVo = QnADao.QnAselect();
-		model.addObject("questionVo", questionVo);  
+		List<QuestionVO> questionList = QnADao.QnAselect();
+		model.addObject("questionList", questionList);  
 		
 		System.out.println("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
 		model.setViewName("QnA/QnA");

@@ -42,13 +42,13 @@ create table users(
 );
 
 insert into users(num, id, pw, name, admin, gender, mypage, signupTime, imageadd)
-	values(users_seq.nextval, 'admin@test.com', '123', '관리자', 0, 'M', '/admin123', sysdate, '/resources/img/user.png');
+	values(users_seq.nextval, 'admin@test.com', '123', '관리자', 0, 'M', '/admin123', sysdate, '/img/user.png');
 insert into users(num, id, pw, name, admin, gender, mypage, signupTime, imageadd)
-	values(users_seq.nextval, 'user1@test.com', '123', '유저1', 1, 'M', '/user1', sysdate, '/resources/img/user.png');
+	values(users_seq.nextval, 'user1@test.com', '123', '유저1', 1, 'M', '/user1', sysdate, '/img/user.png');
 insert into users(num, id, pw, name, admin, gender, mypage, signupTime, imageadd)
-	values(users_seq.nextval, 'user2@test.com', '123', '유저2', 1, 'F', '/user2', sysdate, '/resources/img/user.png');
+	values(users_seq.nextval, 'user2@test.com', '123', '유저2', 1, 'F', '/user2', sysdate, '/img/user.png');
 insert into users(num, id, pw, name, admin, gender, mypage, signupTime, imageadd)
-	values(users_seq.nextval, 'user3@test.com', '123', '유저3', 1, 'F', '/user3', sysdate, '/resources/img/user.png');
+	values(users_seq.nextval, 'user3@test.com', '123', '유저3', 1, 'F', '/user3', sysdate, '/img/user.png');
 
 commit;
 

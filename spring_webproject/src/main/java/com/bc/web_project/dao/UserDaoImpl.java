@@ -21,4 +21,18 @@ public class UserDaoImpl implements UserDao{
 		return session.selectOne(namespace+".login", dto);
 	}
 
+	@Override
+	public UserVo signup(UserVo userVo) throws Exception {
+		System.out.println(userVo);
+		int insert = session.insert(namespace+".signup", userVo);
+		if (insert>0) {
+			LoginDTO dto = new LoginDTO();
+			dto.setId(userVo.getId());
+			dto.setPw(userVo.getPw());
+			return login(dto);
+		}else {
+			return userVo;
+		}
+	}
+
 }

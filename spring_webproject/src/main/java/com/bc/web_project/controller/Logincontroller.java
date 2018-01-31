@@ -28,13 +28,11 @@ public class Logincontroller {
 	private UserService service;
 	
 	@RequestMapping(value="login", method=RequestMethod.GET)
-	public void loginGET(@ModelAttribute("dto") LoginDTO dto) {
-		
-	}
+	public void loginGET(@ModelAttribute("dto") LoginDTO dto) {}
 	
 	@RequestMapping(value="loginPage", method=RequestMethod.POST)
 	public void loginPOST(LoginDTO dto, HttpSession session, Model model){
-		System.out.println(dto);
+		//System.out.println(dto);
 		try {
 			UserVo userVo = service.login(dto);
 			if(userVo ==null) {
@@ -65,6 +63,28 @@ public class Logincontroller {
 		}
 	}
 	
+	@RequestMapping(value="signupPage", method=RequestMethod.GET)
+	public ModelAndView signupGET() {
+		ModelAndView model = new ModelAndView();
+		
+		model.setViewName("layout/signupPage");
+		return model;
+	}
+	@RequestMapping(value="signupPage", method=RequestMethod.POST)
+	public void signup(UserVo user,HttpSession session, Model model) {
+		System.out.println(user);
+		try {
+			UserVo userVo = service.signup(user);
+			if(user.getNum()==0) {
+				return;
+			}else {
+				model.addAttribute("userVo",userVo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 	/*public String generateState() {
 		SecureRandom random = new SecureRandom();
 	    return new BigInteger(130, random).toString(32);

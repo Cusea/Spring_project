@@ -19,4 +19,9 @@ public class UserServiceImpl implements UserService{
 		return dao.login(dto);
 	}
 
+	@Override
+	public UserVo signup(UserVo userVo) throws Exception {
+		return dao.signup(userVo);
+	}
+
 }
