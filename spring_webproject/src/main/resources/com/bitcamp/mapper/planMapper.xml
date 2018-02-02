@@ -3,5 +3,14 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bitcamp.mapper.planMapper">
-	
+	<insert id="insert">
+		INSERT INTO planInfo (num, name, planDay, theme, isFinish, isOpen)
+			VALUES (planInfo_seq_num.nextval.#{name},#{planDay},#{theme},#{isFinish},#{isOpen})
+	</insert>
+	<select id="selectList" resultType="int">
+		SELECT * FROM planInfo 
+	</select>
+	<select id="selectNum" resultType="int">
+		SELECT * FROM planDetail
+	</select>	
 </mapper>

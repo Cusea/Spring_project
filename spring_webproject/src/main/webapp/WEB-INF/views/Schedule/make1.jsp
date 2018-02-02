@@ -117,7 +117,6 @@
 
 
 <!--일정 만들기 클릭 후 모달이 뜹니다.  -->
-
 	<div class="modal fade" id="myModal">
 		<div class="modal-dialog modal-md">
 			<div class="modal-content">
@@ -128,6 +127,7 @@
         		
         		<!-- 이름과 테마를 정해서 DB에 저장~  -->
 				<br><br>
+			<form action="insert.do" method="post" name="insertForm">
 				<h3>1. 이름 정해주세요.</h3>
 				<input type="text" placeholder="여행이름을 지어주세요." value="">
 				<br><br><br>
@@ -136,7 +136,7 @@
 				<div class="form-group col-sm-6 col-md-4">
 				<select name="admin" id="memberAdmin" class="form-control">
 					<option value="0" 
-						<c:if test="">selected</c:if>>
+						<c:if test="0">selected</c:if>>
 						가족여행</option>
 					<option value="1"
 						<c:if test="">selected</c:if>>
@@ -157,6 +157,7 @@
           				<button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="location.href='${contextpath}/Schedule/make2.do';" >완료</button>
         		</div>
 			</div>
+			</form>
 		</div>
 	</div>
 </div>
