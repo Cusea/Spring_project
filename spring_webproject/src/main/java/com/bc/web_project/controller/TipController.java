@@ -23,4 +23,12 @@ public class TipController {
 		return model;	
 		
 	}
+	@RequestMapping(value="tipmain.do", method=RequestMethod.GET)
+	public ModelAndView testtip() {
+		ModelAndView model = new ModelAndView();
+		model.setViewName("/KBJ/tipmain");
+		
+		return model;
+	}
+	
 }

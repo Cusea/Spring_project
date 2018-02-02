@@ -102,21 +102,21 @@
 		</div>
 		<div class="card-deck container-fluid">
 			<div class="row mx-auto my-2">
-				<div class="card col-sm-6" onclick="location.href='${contextpath}/KBJ/TipofTravel.do';">
+				<div class="card col-sm-6" onclick="location.href='${contextpath}/KBJ/tipmain.do';">
 					<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
 					<div class="card-body">
 						<h5 class="text-primary card-title"><strong>Tip 제목</strong></h5>
 						<p class="card-text">Tip 내용들....~~~~~~~~~~~~~~~~</p>
 					</div>
 				</div>
-				<div class="card col-sm-3" onclick="location.href='${contextpath}/KBJ/TipofTravel.do';">
+				<div class="card col-sm-3" onclick="location.href='${contextpath}/KBJ/tipmain.do';">
 					<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
 					<div class="card-body">
 						<h5 class="text-primary card-title"><strong>Tip 제목</strong></h5>
 						<p class="card-text">Tip 내용들....~~~~~~~~~~~~~~~~</p>
 					</div>
 				</div>
-				<div class="card col-sm-3" onclick="location.href='${contextpath}/KBJ/TipofTravel.do';">
+				<div class="card col-sm-3" onclick="location.href='${contextpath}/KBJ/tipmain.do';">
 					<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
 					<div class="card-body">
 						<h5 class="text-primary card-title"><strong>Tip 제목</strong></h5>
@@ -125,21 +125,21 @@
 				</div>
 			</div>
 			<div class="row mx-auto my-2">
-				<div class="card col-sm-3" onclick="location.href='${contextpath}/KBJ/TipofTravel.do';">
+				<div class="card col-sm-3" onclick="location.href='${contextpath}/KBJ/tipmain.do';">
 					<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
 					<div class="card-body">
 						<h5 class="text-primary card-title"><strong>Tip 제목</strong></h5>
 						<p class="card-text">Tip 내용들....~~~~~~~~~~~~~~~~</p>
 					</div>
 				</div>
-				<div class="card col-sm-3" onclick="location.href='${contextpath}/KBJ/TipofTravel.do';">
+				<div class="card col-sm-3" onclick="location.href='${contextpath}/KBJ/tipmain.do';">
 					<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
 					<div class="card-body">
 						<h5 class="text-primary card-title"><strong>Tip 제목</strong></h5>
 						<p class="card-text">Tip 내용들....~~~~~~~~~~~~~~~~</p>
 					</div>
 				</div>
-				<div class="card col-sm-6" onclick="location.href='${contextpath}/KBJ/TipofTravel.do';">
+				<div class="card col-sm-6" onclick="location.href='${contextpath}/KBJ/tipmain.do';">
 					<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
 					<div class="card-body">
 						<h5 class="text-primary card-title"><strong>Tip 제목</strong></h5>
@@ -149,7 +149,7 @@
 			</div>
 		</div>
 		<div class="container-fluid text-center mb-3">
-			<a class="btn btn-outline-success btn-lg" role="button" href="${contextpath}/KBJ/TipofTravel.do">
+			<a class="btn btn-outline-success btn-lg" role="button" href="${contextpath}/KBJ/Ttipmain.do">
 					???개의 추천Tip 모두 보기
 			</a>
 		</div>

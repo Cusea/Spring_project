@@ -42,7 +42,7 @@
 					<a class="nav-link h4 mb-0" href='${contextpath}/QnA/QnA.do'>커뮤니티</a>
 				</li>
 				<li class="nav-item active">
-					<a class="nav-link h4 mb-0" href='${contextpath}/KBJ/TipofTravel.do'>여행 Tip</a>
+					<a class="nav-link h4 mb-0" href='${contextpath}/KBJ/tipmain.do'>여행 Tip</a>
 				</li>
 			</ul>
 			<c:choose>
