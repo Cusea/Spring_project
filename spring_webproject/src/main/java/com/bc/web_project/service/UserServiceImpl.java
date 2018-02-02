@@ -24,4 +24,11 @@ public class UserServiceImpl implements UserService{
 		return dao.signup(userVo);
 	}
 
+	@Override
+	public UserVo selectId(String id) throws Exception {
+		return dao.select(id);
+	}
+
+	
+
 }

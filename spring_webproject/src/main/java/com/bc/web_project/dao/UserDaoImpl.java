@@ -23,7 +23,7 @@ public class UserDaoImpl implements UserDao{
 
 	@Override
 	public UserVo signup(UserVo userVo) throws Exception {
-		System.out.println(userVo);
+		//System.out.println(userVo);
 		int insert = session.insert(namespace+".signup", userVo);
 		if (insert>0) {
 			LoginDTO dto = new LoginDTO();
@@ -33,6 +33,11 @@ public class UserDaoImpl implements UserDao{
 		}else {
 			return userVo;
 		}
+	}
+
+	@Override
+	public UserVo select(String id) {	// id 체크
+		return session.selectOne(namespace+".selectId",id);
 	}
 
 }

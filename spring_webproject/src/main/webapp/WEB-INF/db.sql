@@ -214,11 +214,11 @@ insert into QUESTION (NUM, USERS_num, TAG_NAME, TEXT, TITLE, indate)
 
 commit;
 -- 9. answer table 생성
-create sequence anwer_seq start with 1 increment by 1;
+create sequence answer_seq start with 1 increment by 1;
 create table ANSWER(
 	NUM number(8) constraint answer_pk_num primary key,
 	USERS_num number(8) not null constraint ANSWER_fk_USERS_ID references USERS(num),
-	question_num number(8) constraint anwer_fk_question_num references question(num),
+	question_num number(8) constraint answer_fk_question_num references question(num),
 	TAG_NAME varchar2(50) constraint ANSWER_fk_TAG_NAME references TAG(NAME),
 	TEXT varchar2(4000) not null,
 	indate timestamp not null

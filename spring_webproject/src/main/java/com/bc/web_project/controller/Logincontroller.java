@@ -1,48 +1,52 @@
 package com.bc.web_project.controller;
 
 import java.io.IOException;
-import java.math.BigInteger;
-import java.security.SecureRandom;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.bc.web_project.dao.UserDao;
 import com.bc.web_project.dto.LoginDTO;
 import com.bc.web_project.service.UserService;
 import com.bc.web_project.vo.UserVo;
 
-@Controller
+@RestController
 @RequestMapping("/layout/*")
 public class Logincontroller {
 	
 	@Inject
 	private UserService service;
+	@Inject
+	private UserDao dao;
 	
 	@RequestMapping(value="login", method=RequestMethod.GET)
 	public void loginGET(@ModelAttribute("dto") LoginDTO dto) {}
 	
 	@RequestMapping(value="loginPage", method=RequestMethod.POST)
-	public void loginPOST(LoginDTO dto, HttpSession session, Model model){
-		//System.out.println(dto);
+	public ModelAndView loginPOST(LoginDTO dto, HttpSession session, Model model){
+		ModelAndView modelAndView = new ModelAndView();
 		try {
 			UserVo userVo = service.login(dto);
 			if(userVo ==null) {
-				return;
+				modelAndView.setViewName("layout/loginPage");
 			}else {
 				model.addAttribute("userVo",userVo);
+				modelAndView.setViewName("/");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return modelAndView;
 	}
 	
 	@RequestMapping(value="loginPage", method=RequestMethod.GET)
@@ -71,36 +75,38 @@ public class Logincontroller {
 		return model;
 	}
 	@RequestMapping(value="signupPage", method=RequestMethod.POST)
-	public void signup(UserVo user,HttpSession session, Model model) {
-		System.out.println(user);
+	public ModelAndView signup(UserVo user,HttpSession session, Model model) {
+		ModelAndView modelAndView = new ModelAndView();
 		try {
 			UserVo userVo = service.signup(user);
-			if(user.getNum()==0) {
-				return;
+			if(userVo.getNum()==0) {
+				modelAndView.setViewName("layout/signupPage");
 			}else {
+				LoginDTO dto = new LoginDTO();
+				dto.setId(userVo.getId());
+				dto.setPw(userVo.getPw());
+				userVo = service.login(dto);
 				model.addAttribute("userVo",userVo);
+				modelAndView.setViewName("layout/loginPage");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-	}
-	/*public String generateState() {
-		SecureRandom random = new SecureRandom();
-	    return new BigInteger(130, random).toString(32);
+		return modelAndView;
 	}
 	
-	@RequestMapping(value="naver", method=RequestMethod.GET)
-	public  String naver() {
-		ModelAndView model = new ModelAndView();
+	@RequestMapping(value="checkId/{id}/", method=RequestMethod.GET)
+	public String checkId(@PathVariable String id) {
+		//System.out.println(id);
+		UserVo userVo = null;
+		try {
+			userVo = service.selectId(id);
+			//System.out.println(userVo);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
-		String client_id = "BYGUjJrxhO95iuUIsKGm";
-		String redirect_uri = "http%3a%2f%2flocalhost%3a8989%2fweb_project%2f";
-		String state = generateState();
-		HttpRequest requrest = 
-		String viewName = "https://nid.naver.com/oauth2.0/authorize?client_id="+client_id+"&response_type=code&redirect_uri="+redirect_uri+"&state="+state;
-		model.setViewName(viewName);
-		return "redirect:"+viewName;
-	}*/
+		return "{\"checkId\":"+((userVo!=null)?true:false)+"}";
+	}
 	
 }

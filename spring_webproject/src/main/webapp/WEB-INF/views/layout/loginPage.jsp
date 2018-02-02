@@ -8,11 +8,11 @@
 <body>
 	<br><br>
 	<div class="container my-2">
-		<div class="card border-dark" >
+		<div class="card border-dark mx-auto" style="width: 40rem;">
 			<div class="card-header">
 				<h4 class="text-center">로그인</h4>
 			</div>	
-			<div class="card-body text-dark">
+			<div class="card-body">
 				<form action="../layout/loginPage" method="post">
 					<div class="form-group">
 						<label for="id">이메일</label>
@@ -35,22 +35,13 @@
 						</div>
 					</div>
 					<div class="form-row">
-						<button type="submit" class="btn btn-block btn-primary">로그인</button>
+						<button type="submit" class="btn d-inline btn-primary mx-auto col-sm-5">로그인</button>
+						<a role="button" class="btn btn-outline-secondary d-inline mx-auto col-sm-5" href='${contextpath}/'>취소</a>
 					</div>
 				</form>
-				<hr>
-				<div class="">
-					<button class="btn btn-danger btn-block">구글</button>
-					<div id="naverIdLogin">
-						<a id="naverIdLogin_loginButton" href='${contextpath}/layout/naver' role="button">
-							<img src="https://static.nid.naver.com/oauth/big_g.PNG?version=js-2.0.0" height="60">
-						</a>
-					</div>
-					<button class="btn btn-warning btn-block">카카오</button>
-				</div>
 			</div>		
 			<div class="card-footer">
-				<button type="button" class="btn btn-block" data-toggle="modal" data-target="#signUp" data-dismiss="modal"><strong>회원가입</strong></button>
+				<a role="button" class="btn btn-success nav-link mr-2" href='${contextpath}/layout/signupPage'>회원가입</a>
 			</div>		
 		</div>
 	</div>
