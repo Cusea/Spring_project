@@ -124,6 +124,20 @@
     background: url(/res/img/mypage/setting_ico.png) no-repeat;
     background-position: left center;
 }
+.btn_submit {
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    display: block;
+    width: 121px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #3099dd;
+    background: #49b2e9;
+    text-align: center;
+    float: right;
+    margin-top: 21px;
+}
 .clear {
     clear: both;
 }
@@ -207,4 +221,12 @@ table {
     padding-right: 22px;
     line-height: 82px;
     height: 82px;
+}
+/* 이미지 변경 */
+.my_img_change {
+    top: 12px;
+    left: 2px;
+    z-index: 5;
+    height: 40px;
+    cursor: pointer;
 }
