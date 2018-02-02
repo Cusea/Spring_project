@@ -18,7 +18,8 @@ public class QuestionVO {
 	private String text;
 	private String title;
 	private String indate;
-	
+	private String user_name;
+	private String user_imageadd;
 	public int getNum() {
 		return num;
 	}
@@ -55,11 +56,23 @@ public class QuestionVO {
 	public void setIndate(String indate) {
 		this.indate = indate;
 	}
-	
+	public String getUser_name() {
+		return user_name;
+	}
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
+	}
+	public String getUser_imageadd() {
+		return user_imageadd;
+	}
+	public void setUser_imageadd(String user_imageadd) {
+		this.user_imageadd = user_imageadd;
+	}
 	@Override
 	public String toString() {
 		return "{ \"num\":" + num + ", \"users_num\":" + users_num + ", \"tag_name\":" + tag_name + ", \"text\":\"" + text
-				+ "\", \"title\":\"" + title + "\", \"indate\":\"" + indate + "\" }";
+				+ "\", \"title\":\"" + title + "\", \"indate\":\"" + indate + "\", \"user_name\":\"" + user_name + "\""
+				+ ", \"user_imageadd\":\"" + user_imageadd + "\" }";
 	}
 	
 }
