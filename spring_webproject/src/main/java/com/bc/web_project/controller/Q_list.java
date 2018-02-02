@@ -40,8 +40,9 @@ public class Q_list {
 		return model;
 	}
 	
-	@RequestMapping(value="DetailQnA.do?={num}", method=RequestMethod.GET)
+	@RequestMapping(value="DetailQnA/{num}", method=RequestMethod.GET)
 	public ModelAndView DetailQnA(@PathVariable int num) {  //@RequestParam(defaultValue="0")?
+		System.out.println(num);
 		ModelAndView model = new ModelAndView();
 		
 		QuestionVO questionVO = QnADao.detail(num);

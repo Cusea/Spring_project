@@ -64,7 +64,7 @@
 			<c:forEach items="${questionList}" var="questionVo">
 				<div class="qa_list">
 					<div class="box">												<!-- ?num="+num+"   ?num="${questionVo.num} -->
-						<a class="q_num_box" href="${contextpath}/QnA/DetailQnA.do?${questionVo.num}">${questionVo.num}번째 질문게시판</a>
+						<a class="q_num_box" href="${contextpath}/QnA/DetailQnA/${questionVo.num}">${questionVo.num}번째 질문게시판</a>
 						<div class="user_img" style="background-image: url(${contextpath}${questionVo.user_imageadd})"></div>
 						<div class="content_box"> 
 							<div class="subject"><strong>제목: ${questionVo.title}</strong></div>

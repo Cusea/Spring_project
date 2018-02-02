@@ -3,7 +3,32 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bitcamp.mapper.qnaMapper">
+	<!-- 전체 질문게시판 list -->
 	<select id="select" resultType="com.bc.web_project.vo.QuestionVO">
-		select * from QUESTION
+		select q.*, u.NAME USER_NAME, u.IMAGEADD USER_IMAGEADD from QUESTION q, USERS u where q.USERS_NUM=U.NUM
+		<!-- select * from QUESTION -->
+	</select>
+	
+	<!-- 게시판 상세보기 -->
+	<select id="detail" resultType="com.bc.web_project.vo.QuestionVO">
+		select * from QUESTION where NUM=#{NUM}
+	</select>
+	
+	<!-- 답변수 -->
+	<select id="answerCount" resultType="com.bc.web_project.vo.AnswerVO">
+		select count(*) from ANSWER QUESTION_NUM=#{NUM}
 	</select>
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
