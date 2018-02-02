@@ -1,14 +1,22 @@
 package com.bc.web_project.controller;
 
+import javax.inject.Inject;
+
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.bc.web_project.service.ServiceCenterService;
+import com.bc.web_project.vo.ContactusVo;
+
 @RestController
 @RequestMapping("/ServiceCenter/*")
 public class ServiceCenterController {
 	
+	@Inject
+	private ServiceCenterService service;
 	
 	@RequestMapping(value="ContactUs", method=RequestMethod.GET)
 	public ModelAndView ContactUs() {
@@ -46,5 +54,16 @@ public class ServiceCenterController {
 		return model;
 	}
 	
-	
+	@RequestMapping(value="SendContactUs", method=RequestMethod.POST)
+	public String SendContactUs(@RequestBody ContactusVo contactusVo) {
+		System.out.println(contactusVo);
+		boolean regist = false;
+		try {
+			regist = service.regist(contactusVo);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return "{\"regist\":"+regist+"}";
+	}
 }

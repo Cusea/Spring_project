@@ -42,19 +42,17 @@
 				<div class="tab-pane fade  show active" id="list-contactUs" role="tabpanel" aria-labelledby="list-contactUs-list" style="height: 600px;">
 					<div class="border border-secondary border-top-0 border-left-0 border-right-0 py-2 pl-3">
 						<h3 class="font-weight-bold mb-3">문의하기</h3>
-						<h5 class="text-secondary">서비스 이용에 관한 문의하항이나 개선 아이디어를 제안해 주세요</h5>
+						<h5 class="text-secondary">서비스 이용에 관한 문의사항이나 개선 아이디어를 제안해 주세요</h5>
 					</div>
 					<div class="container-fluid mt-4">
-						<form action="${contextpath}/Test/test.do" method="post" id="contactUsForm">
+						<form action="${contextpath}/ServiceCenter/SendContactUs" method="post" id="contactUsForm" name="contactUsForm">
 							<div class="form-group">
 								<label for="emailInput">이메일</label>
-								<input type="email" class="form-control" id="emailInput" placeholder="(로그인했으면 로그인한 메일주소)">
+								<input type="email" class="form-control" name="mail" placeholder="이메일을 입력하세요" value="${sessionScope.login.id}">
 							</div>
 							<div class="form-group">
 								<label for="contactUsText">문의사항</label>
-								<textarea class="form-control" id="contactUsText" rows="5">일단 test.do로 가서 index.jsp로 가게끔 해놨음.
-								여기는 back하는 사람이 지우고 경로랑 나머지 수정해야됨
-								</textarea>
+								<textarea class="form-control" name="text" rows="5"></textarea>
 							</div>
 							<div class="form-group row justify-content-end">
 								<button class="btn btn-primary" type="submit">보내기</button>
@@ -63,8 +61,46 @@
 					</div>
 				</div>
 				<!-- 문의하기 끝 -->
-			
 			</div>
 		</div>
 	</div>
 </div>
+<script>
+/* document.forms.contactUsForm.onsubmit=function(){
+	var formData=$(this).serializeArray();
+	var dataJson=new Object();
+	$(formData).each(function(){
+		console.log(this);
+		
+	});
+
+	return false;
+} */
+$(document).ready(function(){
+ 	var contactus = document.forms.contactUsForm;
+	$(contactus).submit(function(){
+		var formData=$(this).serializeArray();
+		var dataJson=new Object();
+		$(formData).each(function(){
+			dataJson[this.name]=this.value;
+		});
+		console.log(dataJson);
+		$.ajax({
+			url: "<c:url value='/ServiceCenter/SendContactUs'/>",
+			type: "POST",
+			contentType:"application/json; charset=UTF-8",
+			data: JSON.stringify(dataJson),
+			dataType: "json",
+			success: function(data){
+				if(data.regist){
+					alert("문의하신 내용은 내일까지 메일로 답변드리겠습니다")
+					window.history.back();
+				}else{
+					alert("문의하신 내용의 등록이 실패했습니다 수정하세요")
+				}
+			}
+		});
+		return false;
+	}); 
+});
+</script>

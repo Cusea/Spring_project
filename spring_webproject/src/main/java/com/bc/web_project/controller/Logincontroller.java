@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.bc.web_project.dao.UserDao;
 import com.bc.web_project.dto.LoginDTO;
 import com.bc.web_project.service.UserService;
 import com.bc.web_project.vo.UserVo;
@@ -26,8 +25,6 @@ public class Logincontroller {
 	
 	@Inject
 	private UserService service;
-	@Inject
-	private UserDao dao;
 	
 	@RequestMapping(value="login", method=RequestMethod.GET)
 	public void loginGET(@ModelAttribute("dto") LoginDTO dto) {}
@@ -79,6 +76,7 @@ public class Logincontroller {
 		ModelAndView modelAndView = new ModelAndView();
 		try {
 			UserVo userVo = service.signup(user);
+			System.out.println(userVo);
 			if(userVo.getNum()==0) {
 				modelAndView.setViewName("layout/signupPage");
 			}else {
@@ -86,8 +84,8 @@ public class Logincontroller {
 				dto.setId(userVo.getId());
 				dto.setPw(userVo.getPw());
 				userVo = service.login(dto);
-				model.addAttribute("userVo",userVo);
-				modelAndView.setViewName("layout/loginPage");
+				session.setAttribute("login",userVo);
+				modelAndView.setViewName("redirect:/");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

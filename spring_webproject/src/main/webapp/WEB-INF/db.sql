@@ -266,7 +266,7 @@ create table contactUs(
 	email varchar2(320) not null,
 	text varchar2(4000) not null,
 	inTime timestamp not null,
-	anwer varchar2(4000),
+	answer varchar2(4000),
 	isanswer number(1) default 0 check(isanswer in(0,1))
 );
 

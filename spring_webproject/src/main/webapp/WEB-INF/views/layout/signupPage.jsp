@@ -13,7 +13,7 @@
 				<h4 class="text-center">회원 가입</h4>	
 			</div>
 			<div class="card-body">
-					<form action="../layout/signupPage" method="post" name="signup">
+					<form action="../layout/signupPage" method="post" name="signup" >
 						<div class="form-group">
 							<label for="id">아이디</label>
 							<input type="email" class="form-control" name="id" placeholder="email을 입력하세요">
@@ -73,53 +73,55 @@
 	<br><br><br>
 <script>
 var signupForm=document.forms.signup;
-	$(document).ready(function(){
-		signupForm.onsubmit=function(){
-			var submit = true;
-			if(!$(signupForm.id).is(".is-valid")){
-				$(signupForm.id).addClass("is-invalid");
-				submit=false;
-			}
-			if(!$(signupForm.pw_check).is(".is-valid")){
-				$(signupForm.pw_check).addClass("is-invalid");
-				submit=false;
-			}
-			return submit;
+$(document).ready(function(){
+	signupForm.onsubmit=function(){
+		var submit = true;
+		if(!$(signupForm.id).is(".is-valid")){
+			$(signupForm.id).addClass("is-invalid");
+			submit=false;
 		}
-		signupForm.onreset=function(){
-			$(this).find("input").removeClass("is-valid is-invalid");
+		if(!$(signupForm.pw_check).is(".is-valid")){
+			$(signupForm.pw_check).addClass("is-invalid");
+			submit=false;
 		}
-		/* id check ajax 통신 */
-		$(signupForm.id).blur(function(){
-			var id =$(signupForm.id).val()+"/";
-			console.log(id);
-			if(id){
-				$.ajax({
-					url:"checkId/"+id,
-					dataType: "json",
-					type: "get",
-					success: function(data,status,req){
-						if(data.checkId){
-							$(signupForm.id).removeClass("is-valid").addClass("is-invalid");
-						}else{
-							$(signupForm.id).removeClass("is-invalid").addClass("is-valid");
-						}
-					},	
-				});
-			}else{
-				$(this).removeClass("is-valid is-invalid");
-			}
-		});
-		
-		$(signupForm.pw_check).blur(function(){
-			if($(signupForm.pw).val()==$(signupForm.pw_check).val()){
-				$(signupForm.pw_check).addClass("is-valid").removeClass("is-invalid");
-			}else{
-				$(signupForm.pw_check).addClass("is-invalid").removeClass("is-valid");
-			}
-		});
-		
+		return submit;
+	}
+	
+	signupForm.onreset=function(){
+		$(this).find("input").removeClass("is-valid is-invalid");
+	}
+	
+	/* id check ajax 통신 */
+	$(signupForm.id).blur(function(){
+		var id =$(signupForm.id).val()+"/";
+		console.log(id);
+		if(id){
+			$.ajax({
+				url:"checkId/"+id,
+				dataType: "json",
+				type: "get",
+				success: function(data,status,req){
+					if(data.checkId){
+						$(signupForm.id).removeClass("is-valid").addClass("is-invalid");
+					}else{
+						$(signupForm.id).removeClass("is-invalid").addClass("is-valid");
+					}
+				},	
+			});
+		}else{
+			$(this).removeClass("is-valid is-invalid");
+		}
 	});
+	
+	$(signupForm.pw_check).blur(function(){
+		if($(signupForm.pw).val()==$(signupForm.pw_check).val()){
+			$(signupForm.pw_check).addClass("is-valid").removeClass("is-invalid");
+		}else{
+			$(signupForm.pw_check).addClass("is-invalid").removeClass("is-valid");
+		}
+	});
+	
+});
 </script>
 </body>
 </html>

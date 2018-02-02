@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.bitcamp.mapper.serviceMapper">
+	<select	id = "listContactus" resultType="com.bc.web_project.vo.ContactusVo">
+		select * from contactUs
+	</select>
+	<insert	id = "sendContactus" parameterType="com.bc.web_project.vo.ContactusVo">
+		insert into contactUs (num, email, text, inTime) 
+			values (contactUs_seq.nextval, #{mail}, #{text}, sysdate)
+	</insert>
+</mapper>
