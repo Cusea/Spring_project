@@ -1,4 +1,4 @@
-
+﻿
 -- tablespace 생성 전 삭제
 drop tablespace japan_DB including contents and datafiles;
 
@@ -42,13 +42,13 @@ create table users(
 );
 
 insert into users(num, id, pw, name, admin, gender, mypage, signupTime, imageadd)
-	values(users_seq.nextval, 'admin@test.com', '123', '관리자', 0, 'M', '/admin123', sysdate, '/resources/img/user.png');
+	values(users_seq.nextval, 'admin@test.com', '123', '관리자', 0, 'M', '/admin123', sysdate, '/img/user.png');
 insert into users(num, id, pw, name, admin, gender, mypage, signupTime, imageadd)
-	values(users_seq.nextval, 'user1@test.com', '123', '유저1', 1, 'M', '/user1', sysdate, '/resources/img/user.png');
+	values(users_seq.nextval, 'user1@test.com', '123', '유저1', 1, 'M', '/user1', sysdate, '/img/user.png');
 insert into users(num, id, pw, name, admin, gender, mypage, signupTime, imageadd)
-	values(users_seq.nextval, 'user2@test.com', '123', '유저2', 1, 'F', '/user2', sysdate, '/resources/img/user.png');
+	values(users_seq.nextval, 'user2@test.com', '123', '유저2', 1, 'F', '/user2', sysdate, '/img/user.png');
 insert into users(num, id, pw, name, admin, gender, mypage, signupTime, imageadd)
-	values(users_seq.nextval, 'user3@test.com', '123', '유저3', 1, 'F', '/user3', sysdate, '/resources/img/user.png');
+	values(users_seq.nextval, 'user3@test.com', '123', '유저3', 1, 'F', '/user3', sysdate, '/img/user.png');
 
 commit;
 
@@ -71,7 +71,7 @@ create sequence category_seq start with 1 increment by 1;
 create table category(
 	num number(8) constraint category_pk_num primary key,
 	main_category varchar2(60) not null,
-	mid_category varchar2(60),					-- main_category가 관광 명소이면 있고, 나머지는 없음
+	mid_category varchar2(60),					
 	sub_category varchar2(60) not null			
 );
 
@@ -87,62 +87,56 @@ insert into category(num, main_category, mid_category, sub_category)
 	values(category_seq.nextval,'관광명소','관광지','유명거리/이색장소');
 insert into category(num, main_category, mid_category, sub_category)
 	values(category_seq.nextval,'관광명소','관광지','랜드마크');
-insert into category(num, main_category, mid_category, sub_category)
+insert into category(num, main-category, mid-category, sub-category)
 	values(category_seq.nextval,'관광명소','관광지','박물관/미술관');
-insert into category(num, main_category, mid_category, sub_category)
+insert into category(num, main-category, mid-category, sub-category)
 	values(category_seq.nextval,'관광명소','관광지','역사/종교');
-insert into category(num, main_category, mid_category, sub_category)
+insert into category(num, main-category, mid-category, sub-category)
 	values(category_seq.nextval,'관광명소','레저/액티비티','데이투어/액티비티');
-insert into category(num, main_category, mid_category, sub_category)
+insert into category(num, main-category, mid-category, sub-category)
 	values(category_seq.nextval,'관광명소','레저/액티비티','스포츠');
-insert into category(num, main_category, mid_category, sub_category)
+insert into category(num, main-category, mid-category, sub-category)
 	values(category_seq.nextval,'관광명소','레저/액티비티','오락/이벤트');
-insert into category(num, main_category, mid_category, sub_category)
+insert into category(num, main-category, mid-category, sub-category)
 	values(category_seq.nextval,'관광명소','레저/액티비티','전시/공연/관람');
-insert into category(num, main_category, mid_category, sub_category)
+insert into category(num, main-category, mid-category, sub-category)
 	values(category_seq.nextval,'관광명소','레저/액티비티','테마파크/동물원');
-insert into category(num, main_category, mid_category, sub_category)
+insert into category(num, main-category, mid-category, sub-category)
 	values(category_seq.nextval,'관광명소','레저/액티비티','웰니스/스파');
-insert into category(num, main_category, mid_category, sub_category)
+insert into category(num, main-category, mid-category, sub-category)
 	values(category_seq.nextval,'관광명소','나이트라이프','나이트스팟');
-insert into category(num, main_category, mid_category, sub_category)
+insert into category(num, main-category, mid-category, sub-category)
 	values(category_seq.nextval,'관광명소','나이트라이프','펍/선술집');
-insert into category(num, main_category, sub_category)
+insert into category(num, main-category, sub-category)
 	values(category_seq.nextval,'음식점', '현지요리');
-insert into category(num, main_category, sub_category)
+insert into category(num, main-category, sub-category)
 	values(category_seq.nextval,'음식점', '카페/디저트/베이커리');
-insert into category(num, main_category, sub_category)
+insert into category(num, main-category, sub-category)
 	values(category_seq.nextval,'음식점', '돈까스');
-insert into category(num, main_category, sub_category)
+insert into category(num, main-category, sub-category)
 	values(category_seq.nextval,'음식점', '딤섬');
-insert into category(num, main_category, sub_category)
+insert into category(num, main-category, sub-category)
 	values(category_seq.nextval,'음식점', '면요리');
-insert into category(num, main_category, sub_category)
+insert into category(num, main-category, sub-category)
 	values(category_seq.nextval,'음식점', '북미요리');
-insert into category(num, main_category, sub_category)
+insert into category(num, main-category, sub-category)
 	values(category_seq.nextval,'음식점', '뷔페');
-insert into category(num, main_category, sub_category)
+insert into category(num, main-category, sub-category)
 	values(category_seq.nextval,'음식점', '스테이크/바비큐');
-insert into category(num, main_category, sub_category)
+insert into category(num, main-category, sub-category)
 	values(category_seq.nextval,'쇼핑', '마트/식료품');
-insert into category(num, main_category, sub_category)
+insert into category(num, main-category, sub-category)
 	values(category_seq.nextval,'쇼핑', '면세점/아울렛');
-insert into category(num, main_category, sub_category)
+insert into category(num, main-category, sub-category)
 	values(category_seq.nextval,'쇼핑', '생활소품/기념품');
-insert into category(num, main_category, sub_category)
+insert into category(num, main-category, sub-category)
 	values(category_seq.nextval,'쇼핑', '쇼핑몰/백화점');
-insert into category(num, main_category, sub_category)
+insert into category(num, main-category, sub-category)
 	values(category_seq.nextval,'쇼핑', '시장/쇼핑거리');
-insert into category(num, main_category, sub_category)
+insert into category(num, main-category, sub-category)
 	values(category_seq.nextval,'쇼핑', '의류/잡화');
-insert into category(num, main_category, sub_category)
+insert into category(num, main-category, sub-category)
 	values(category_seq.nextval,'쇼핑', '전문상점');
-insert into category(num, main_category, mid_category, sub_category)
-	values(category_seq.nextval,'관광명소','관광지','인포센터');
-insert into category(num, main_category, mid_category, sub_category)
-	values(category_seq.nextval,'관광명소','관광지','자연');
-insert into category(num, main_category, mid_category, sub_category)
-	values(category_seq.nextval,'관광명소','관광지','전경/전망대');
 	
 commit;
 -- 4. place table 생성
@@ -161,7 +155,7 @@ create table place(
 	category_num number(8) constraint place_fk_category_num references category(num) not null,
 	city_num number(8) constraint place_fk_city_num references city(num) not null,
 	clipCount number(8) default 0
-);
+);d
 
 -- 5. message table 생성
 create sequence message_seq start with 1 increment by 1;

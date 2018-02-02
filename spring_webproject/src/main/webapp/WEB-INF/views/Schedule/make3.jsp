@@ -6,62 +6,66 @@
 </div>	
 <hr>
 <div class="container">
-<div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')">개요</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">일정표</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">댓글</button>
-</div>
+		<div class="tab">
+		  <button class="tablinks" onclick="openCity(event, 'London')">개요</button>
+		  <button class="tablinks" onclick="openCity(event, 'Paris')">일정표</button>
+		  <button class="tablinks" onclick="openCity(event, 'Tokyo')">댓글</button>
+		</div>
 
-<div id="London" class="tabcontent active_jds">
-    <div class="tab-pane fade show acitve">
-		<div id="accordion" role="tablist">
-  		<div class="card">
-   		 <div class="card-header" role="tab" id="headingOne">
-      	<h5 class="mb-0 text-center">
-        <a data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne">
-         첫번째로 선택한 장소
-        </a>
-      </h5>
-    </div>
 
-    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
-      <div class="card-body">
- 			여기는 어쩌고 저쩌고~~~~~~~~
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab" id="headingTwo">
-      <h5 class="mb-0 text-center">
-        <a class="collapsed" data-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo">
-         두번째로 선택한 장소
-        </a>
-      </h5>
-    </div>
-    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
-      <div class="card-body">
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~``
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab" id="headingThree">
-      <h5 class="mb-0 text-center">
-        <a class="collapsed" data-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">
-          세번째로 선택한 장소
-        </a>
-      </h5>
-    </div>
-    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
-      <div class="card-body">
-       사랑랑ㄹ아랑사랑램냉러ㅏㄴㅇ래러;ㅣㅁ넹레[]
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-
+		
+		
+		<div id="London" class="tabcontent active_jds">
+		    <div class="tab-pane fade show acitve">
+				<div id="accordion" role="tablist">
+		  		<div class="card">
+		   		<div class="card-header" role="tab" id="headingOne">
+		      	<h5 class="mb-0 text-center">
+		        <a data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne">
+		       		 장소: ${planDetail.num}</a>
+		      </h5>
+		    </div>
+		
+		    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+		      <div class="card-body">
+		 			여기는 어쩌고 저쩌고~~~~~~~~
+		      </div>
+		    </div>
+		  </div>
+		  <div class="card">
+		    <div class="card-header" role="tab" id="headingTwo">
+		      <h5 class="mb-0 text-center">
+		        <a class="collapsed" data-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo">
+		         두번째로 선택한 장소
+		        </a>
+		      </h5>
+		    </div>
+		    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+		      <div class="card-body">
+		        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~``
+		      </div>
+		    </div>
+		  </div>
+		  <div class="card">
+		    <div class="card-header" role="tab" id="headingThree">
+		      <h5 class="mb-0 text-center">
+		        <a class="collapsed" data-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">
+		          세번째로 선택한 장소
+		        </a>
+		      </h5>
+		    </div>
+		    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+		      <div class="card-body">
+		       사랑랑ㄹ아랑사랑램냉러ㅏㄴㅇ래러;ㅣㅁ넹레[]
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		</div>
+		</div>
+	
+		
+<!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
 <div id="Paris" class="tabcontent">
   <table class="table">
 				<thead>
