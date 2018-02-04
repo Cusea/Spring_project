@@ -69,6 +69,7 @@
 						</button>
 					</div>	
 				</div>
+				
 				<div class="tab-pane fade" id="contactUsList" role="tabpanel" aria-labelledby="contactUsList-tab">
 					<h1>문의하기 글 목록</h1>
 					<div class="table-responsive-md">
@@ -81,28 +82,7 @@
 									<th scope="col">답변여부</th>
 								</tr>
 							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td>s@gmail.com</td>
-									<td>2018-01-13</td>
-									<td>
-										<button type="button" class="btn btn-success py-0" data-toggle="modal" data-target="#faq_Update" disabled>
-											답변완료
-										</button>
-									</td>	
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>s2@gmail.com</td>
-									<td>2018-01-13</td>
-									<td>
-										<button type="button" class="btn btn-outline-danger py-0" data-toggle="modal" data-target="#contactUsAnswer">
-											답변 미완료
-										</button>
-									</td>	
-								</tr>
-							</tbody>
+							<tbody id="tbody_list"></tbody>
 						</table>
 					</div>
 				</div>
@@ -209,5 +189,39 @@
 				"src":"${contextpath}"+this.id
 			});
 		});
+	});
+	
+	$("#contactUsList-tab").click(function(){
+		$.ajax({
+		    url : "<c:url value='/admin/contactUsList'/>",
+		    dataType: "json",
+		    type : "POST",
+		    success: function(data) {
+		        var cuList = data;
+		        var trHTML ="";
+		        $(cuList).each(function(i, cu){
+		        	console.log(cu);
+		        	trHTML += '<tr>'
+		        	trHTML += '<td>'+cu.num+'</td>'
+		        	trHTML += '<td>'+cu.email+'</td>'
+		        	trHTML += '<td>'+cu.intime+'</td>'
+		        	trHTML += '<td>'
+		        	if(cu.isanswer==1){
+		        		trHTML +=	'<button type="button" class="btn btn-success py-0" data-toggle="modal" data-target="#faq_Update" disabled>'
+		        		trHTML +=	'답변완료'
+		        		trHTML +=	'</button>'
+		        	}else{
+		        		trHTML +=	'<button type="button" class="btn btn-outline-danger py-0" data-toggle="modal" data-target="#contactUsAnswer">'
+		        		trHTML +=	'답변 미완료'
+		        		trHTML +=	'</button>'
+		        	}
+		        	trHTML += '</td></tr>'
+		        });
+		        $("#tbody_list").append(trHTML);
+		    },
+		    error:function(request,status,error){
+		        alert("code:"+request.status+"\n"+"error:"+error);
+		    }
+		}); 
 	});
 </script>

@@ -102,48 +102,66 @@
 		</div>
 		<div class="card-deck container-fluid">
 			<div class="row mx-auto my-2">
-				<div class="card col-sm-6" onclick="location.href='${contextpath}/KBJ/tipmain.do';">
-					<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
+				<div class="card col-sm-6 px-0" onclick="location.href='${contextpath}/KBJ/tipmain.do';">
+					<img class="card-img-top" src="${contextpath}/img/KBJ/6.jpg" alt="Card image cap" style="height: 300px;">
 					<div class="card-body">
-						<h5 class="text-primary card-title"><strong>Tip 제목</strong></h5>
-						<p class="card-text">Tip 내용들....~~~~~~~~~~~~~~~~</p>
+						<h5 class="card-title">후쿠오카 여행팁1</h5>
+					    <p class="card-text">여행팁1</p>
+					</div>
+				    <div class="card-footer">
+						<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+     				</div>
+				</div>
+				<div class="card col-sm-3 px-0" onclick="location.href='${contextpath}/KBJ/tipmain.do';">
+					<img class="card-img-top" src="${contextpath}/img/KBJ/5.jpg" alt="Card image cap" style="height: 300px;">
+					<div class="card-body">
+						<h5 class="card-title">여행팁 2</h5>
+						<p class="card-text">오사카 여행팁</p>
+					</div>
+					<div class="card-footer">
+						<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 					</div>
 				</div>
-				<div class="card col-sm-3" onclick="location.href='${contextpath}/KBJ/tipmain.do';">
-					<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
+				<div class="card col-sm-3 px-0" onclick="location.href='${contextpath}/KBJ/tipmain.do';">
+					<img class="card-img-top" src="${contextpath}/img/KBJ/4.jpg" alt="Card image cap" style="height: 300px;">
 					<div class="card-body">
-						<h5 class="text-primary card-title"><strong>Tip 제목</strong></h5>
-						<p class="card-text">Tip 내용들....~~~~~~~~~~~~~~~~</p>
+						<h5 class="card-title">여행팁 3</h5>
+						<p class="card-text">오사카 여행팁</p>
 					</div>
-				</div>
-				<div class="card col-sm-3" onclick="location.href='${contextpath}/KBJ/tipmain.do';">
-					<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
-					<div class="card-body">
-						<h5 class="text-primary card-title"><strong>Tip 제목</strong></h5>
-						<p class="card-text">Tip 내용들....~~~~~~~~~~~~~~~~</p>
+					<div class="card-footer">
+						<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 					</div>
 				</div>
 			</div>
 			<div class="row mx-auto my-2">
-				<div class="card col-sm-3" onclick="location.href='${contextpath}/KBJ/tipmain.do';">
-					<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
+				<div class="card col-sm-3 px-0" onclick="location.href='${contextpath}/KBJ/tipmain.do';">
+					<img class="card-img-top" src="${contextpath}/img/KBJ/3.jpg" alt="Card image cap" style="height: 300px;">
 					<div class="card-body">
-						<h5 class="text-primary card-title"><strong>Tip 제목</strong></h5>
-						<p class="card-text">Tip 내용들....~~~~~~~~~~~~~~~~</p>
+						<h5 class="card-title">여행팁 4</h5>
+						<p class="card-text">오사카 여행팁</p>
+					</div>
+					<div class="card-footer">
+						<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 					</div>
 				</div>
-				<div class="card col-sm-3" onclick="location.href='${contextpath}/KBJ/tipmain.do';">
-					<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
+				<div class="card col-sm-3 px-0" onclick="location.href='${contextpath}/KBJ/tipmain.do';">
+					<img class="card-img-top" src="${contextpath}/img/KBJ/2.jpg" alt="Card image cap" style="height: 300px;">
 					<div class="card-body">
-						<h5 class="text-primary card-title"><strong>Tip 제목</strong></h5>
-						<p class="card-text">Tip 내용들....~~~~~~~~~~~~~~~~</p>
+						<h5 class="card-title">여행팁 5</h5>
+						<p class="card-text">오사카 여행팁</p>
+					</div>
+					<div class="card-footer">
+						<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 					</div>
 				</div>
-				<div class="card col-sm-6" onclick="location.href='${contextpath}/KBJ/tipmain.do';">
-					<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
+				<div class="card col-sm-6 px-0" onclick="location.href='${contextpath}/KBJ/tipmain.do';">
+					<img class="card-img-top" src="${contextpath}/img/KBJ/1.jpg" alt="Card image cap" style="height: 300px;">
 					<div class="card-body">
-						<h5 class="text-primary card-title"><strong>Tip 제목</strong></h5>
-						<p class="card-text">Tip 내용들....~~~~~~~~~~~~~~~~</p>
+						<h5 class="card-title">여행팁 6</h5>
+						<p class="card-text">후쿠오카 여행팁</p>
+					</div>
+					<div class="card-footer">
+						<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 					</div>
 				</div>
 			</div>
