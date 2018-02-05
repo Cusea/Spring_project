@@ -28,7 +28,7 @@
 				</ul>
 				<div class="tab-content">
 					<div id="home" class="tab-pane fade in active">
-						<p>완성완성!</p>
+						<p>아직 완성된 일정이 없습니다.</p>
 					</div>
 					
 					<div id="menu1" class="tab-pane fade">
