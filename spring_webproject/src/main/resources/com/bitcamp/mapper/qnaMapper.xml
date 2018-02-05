@@ -4,9 +4,12 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bitcamp.mapper.qnaMapper">
 	<!-- 전체 질문게시판 list -->
-	<select id="select" resultType="com.bc.web_project.vo.QuestionVO">
-		select q.*, u.NAME USER_NAME, u.IMAGEADD USER_IMAGEADD from QUESTION q, USERS u where q.USERS_NUM=U.NUM
+	<select id="QnAselect" resultType="com.bc.web_project.vo.QuestionVO">
+		select q.*, u.NAME USER_NAME, u.IMAGEADD USER_IMAGEADD from QUESTION q, USERS u where q.USERS_NUM = U.NUM
 		<!-- select * from QUESTION -->
+		<!-- select q.*, u.NAME USER_NAME, u.IMAGEADD USER_IMAGEADD, a.users_num user_num 
+			from QUESTION q, USERS u, answer a 
+			where q.USERS_NUM=U.NUM and u.num=a.users_num -->
 	</select>
 	
 	<!-- 게시판 상세보기 -->
@@ -14,12 +17,24 @@
 		select * from QUESTION where NUM=#{NUM}
 	</select>
 	
-	<!-- 답변수 -->
-	<select id="answerCount" resultType="com.bc.web_project.vo.AnswerVO">
-		select count(*) from ANSWER QUESTION_NUM=#{NUM}
+	<!-- 게시판의 답변 내용 & 유저네임 -->
+	<select id="answerSelect" resultType="com.bc.web_project.vo.AnswerVO">
+		select a.*, u.name user_name from answer a, users u where a.num = u.num and a.num=#{num}
 	</select>
+	
+	<!-- 답변수 -->
+	<!-- <select id="answerCount" resultType="com.bc.web_project.vo.AnswerVO">
+		select count(*) from ANSWER where QUESTION_NUM=#{NUM}
+		질문테이블의 ?번호의 답변테이블 갯수
+	</select> -->
+	
+	<!-- 로그인 되어있는 id로 등록하려면?? -->
+	<!-- USERS_NUM 말고 USERS_NAME 으로 해야 게시작성자 NAME 뜨게 해야되는데? JOIN? -->
+	<insert id="insertQuestion">
+		insert into QUESTION (NUM, USERS_NUM, TAG_NAME, TEXT, TITLE, INDATE)
+		values (question_seq.nextval, 1, #{TAG_NAME}, #{TEXT}, #{TITLE}, sysdate)
+	</insert>
 </mapper>
-
 
 
 

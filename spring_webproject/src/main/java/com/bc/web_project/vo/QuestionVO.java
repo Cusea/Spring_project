@@ -12,6 +12,7 @@ public class QuestionVO {
 	 TITLE                                     NOT NULL VARCHAR2(300)
 	 INDATE                                    NOT NULL TIMESTAMP(6)
 	 */
+	
 	private int num;
 	private int users_num;
 	private String tag_name;
@@ -20,6 +21,8 @@ public class QuestionVO {
 	private String indate;
 	private String user_name;
 	private String user_imageadd;
+	
+	
 	public int getNum() {
 		return num;
 	}

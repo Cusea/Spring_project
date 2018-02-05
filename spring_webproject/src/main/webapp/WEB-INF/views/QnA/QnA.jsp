@@ -34,37 +34,11 @@
 		</div>  <!-- qa_mnu_box END -->
 		
 		
-		
-	<!-- 질문리스트 샘플 -->
-		<div class="qa_list">
-			<div class="box">
-				<a class="q_num_box" href="${contextpath}/QnA/DetailQnA.do">샘플 질문게시판</a>  
-				<div class="user_img" style="background-image: url(${contextpath}/img/QnA/작은표범.png)"></div>
-				<div class="content_box"> 
-					<div class="subject">샘플 제목: 오사카 추천좀요 </div>
-					<div class="content"><pre>내용: 맛집 위주로 추천해주세요.</pre></div>
-					<div class="tag_box">
-						<div class="tag">오사카</div>
-						<div class="tag">라멘</div>
-						<div class="clear"></div> 
-					</div>
-					<div class="info_box">
-						<div class="user_name">KDH</div>
-						<div class="info_line"></div>
-						<div class="write_datetime">2018-01-06 18:46</div>
-						<div class="a_cnt" style="background-image: url(${contextpath}/img/QnA/qa_btn.gif)">1</div>  <!-- 답변 수 -->
-						<div class="clear"></div> 
-					</div>
-				</div>
-			</div>
-		</div>
-	<!-- 질문리스트 샘플 end -->
-		
 		<!-- 실제 게시글 -->
 			<c:forEach items="${questionList}" var="questionVo">
 				<div class="qa_list">
-					<div class="box">												<!-- ?num="+num+"   ?num="${questionVo.num} -->
-						<a class="q_num_box" href="${contextpath}/QnA/DetailQnA/${questionVo.num}">${questionVo.num}번째 질문게시판</a>
+					<div class="box">											
+						<a class="q_num_box" href="${contextpath}/QnA/DetailQnA/${questionVo.num}">${questionVo.num}번째 질문게시판</a>  <!-- 왜 1,3,2 이렇게 뜨는거지? -->
 						<div class="user_img" style="background-image: url(${contextpath}${questionVo.user_imageadd})"></div>
 						<div class="content_box"> 
 							<div class="subject"><strong>제목: ${questionVo.title}</strong></div>
@@ -74,10 +48,10 @@
 								<div class="clear"></div> 
 							</div>
 							<div class="info_box">
-								<div class="user_name">${questionVo.user_name}</div>  <!-- 이건 user테이블 네임 -->
+								<div class="user_name">${questionVo.user_name}</div> 
 								<div class="info_line"></div>
 								<div class="write_datetime">${questionVo.indate}</div>
-								<div class="a_cnt" style="background-image: url(${contextpath}/img/QnA/qa_btn.gif)">${answerVO.num}</div>  <!-- 답변 수 count -->
+								<div class="a_cnt" style="background-image: url(${contextpath}/img/QnA/qa_btn.gif)">${answerVO}</div>  <!-- 답변 수 count -->
 								<div class="clear"></div> 
 							</div>
 						</div>
@@ -89,11 +63,9 @@
 	</div>  <!-- wrap qa end -->
 	
 	
-	
-	
 <!-- The Modal -->
 <!-- form해야 button reset 됨. -->
-<form action="QnA.do" method="post" name="insertForm">
+<form action="insertQuestion" method="post" name="insertForm">
 	<div class="modal fade" id="myModal">  <!-- modal뜨면 배경 div (배경은 안눌리게 하고싶은데) -->
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content pl-3" style="background-color: skyblue">  

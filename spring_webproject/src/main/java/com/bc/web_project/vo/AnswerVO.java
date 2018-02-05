@@ -12,12 +12,15 @@ public class AnswerVO {
 	 TEXT                                                  NOT NULL VARCHAR2(4000)
 	 INDATE                                                NOT NULL TIMESTAMP(6)
 	 */
+	
 	private int num;
 	private int users_num;
 	private int question_num;
 	private String tag_name;
 	private String text;
 	private String indate;
+	private String user_name;
+	
 	
 	public int getNum() {
 		return num;
@@ -55,11 +58,17 @@ public class AnswerVO {
 	public void setIndate(String indate) {
 		this.indate = indate;
 	}
+	public String getUser_name() {
+		return user_name;
+	}
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
+	}
 	
 	@Override
 	public String toString() {
 		return "{\"num\":" + num + ", \"users_num\":\"" + users_num + "\", \"question_num\":\"" + question_num + "\", "
-				+ "\"tag_name\":\"" + tag_name +"\", \"text\":" + text + ", \"indate\":\"" + indate + "\"}";
+				+ "\"tag_name\":\"" + tag_name +"\",\"user_name\":\"" + user_name +"\", \"text\":" + text + ", \"indate\":\"" + indate + "\"}";
 	}
 	
 }
