@@ -1,11 +1,14 @@
 package com.bc.web_project.dao;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.bc.web_project.dto.LoginDTO;
+import com.bc.web_project.vo.PagingVo;
 import com.bc.web_project.vo.UserVo;
 
 @Repository
@@ -38,6 +41,16 @@ public class UserDaoImpl implements UserDao{
 	@Override
 	public UserVo select(String id) {	// id 체크
 		return session.selectOne(namespace+".selectId",id);
+	}
+
+	@Override
+	public List<UserVo> selectList(PagingVo pagingVo) throws Exception {
+		return session.selectList(namespace+".selectList", pagingVo);
+	}
+
+	@Override
+	public int selectCount() throws Exception {
+		return session.selectOne(namespace+".selectCount");
 	}
 
 }

@@ -29,8 +29,12 @@
 						</div>
 						<div class="col-sm">
 							<div class="row justify-content-end">
-								<span class="col-sm-3"><a href="" class="text-dark">id 찾기</a></span>
-								<span class="col-sm-5 pl-0"><a href="" class="text-dark">password 찾기</a></span>
+								<span class="col-sm-3">
+									<a href="" class="text-dark" data-toggle="modal" data-target="#user_idsearch">id 찾기</a>
+								</span>
+								<span class="col-sm-5 pl-0">
+									<a href="" class="text-dark" data-toggle="modal" data-target="#user_pwsearch">password 찾기</a>
+								</span>
 							</div>
 						</div>
 					</div>
@@ -46,8 +50,68 @@
 		</div>
 	</div>
 	<br><br><br>
+	<!-- #user_idsearch -->
+	<div class="modal fade" id="user_idsearch" tabindex="-1" role="dialog" aria-labelledby="user_idsearch" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">아이디 찾기</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="${contextpath}/layout/searchId" method="post" id="searchidform">
+						<div class="gorm-group">
+							<label for="user_id">유저 id(이메일)</label>
+							<input type="email" class="form-control" id="id" name="id">
+						</div>
+						<br>
+						<div class="row justify-content-end mr-2 mb-2">
+							<button type="submit" class="btn btn-primary">찾기</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!-- "#user_pwsearch -->
+	<div class="modal fade" id="user_pwsearch" tabindex="-1" role="dialog" aria-labelledby="user_pwsearch" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">패스워드 찾기</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="">
+						<div class="gorm-group">
+							<label for="user_id">유저 id(이메일)</label>
+							<input type="email" class="form-control" id="pw_id" name="id">
+						</div>
+						<div class="gorm-group">
+							<label for="user_id">유저 이름(닉네임)</label>
+							<input type="email" class="form-control" id="pw_name" name="name">
+						</div>
+						<br>
+						<div class="row justify-content-end mr-2 mb-2">
+							<button type="submit" class="btn btn-primary">찾기</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 	<script>
-		
+		$("#searchidform").submit(function(data){
+			console.log(data);
+			return false;
+		});
 	</script>
 </body>
 </html>

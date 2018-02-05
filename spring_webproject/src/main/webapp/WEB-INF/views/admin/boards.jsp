@@ -11,10 +11,10 @@
 					<div class="collapse" id="collapseBoard" >
 						<ul class="nav nav-pills flex-column">
 							<li class="nav-item">
-								<a class="nav-link board_col" id="/Travel/Japan.jsp">여행정보 게시판</a>
+								<a class="nav-link board_col" id="/Travel/Japan.do">여행정보 게시판</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link board_col" id="/Schedule/make1.jsp">여행일정 게시판</a>
+								<a class="nav-link board_col" id="/Schedule/make1.do">여행일정 게시판</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link board_col" id="/QnA/QnA.do">커뮤니티 게시판</a>
@@ -23,13 +23,13 @@
 					</div>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="${contextpath}/admin/users">유저 관리</a>
+					<a class="nav-link" href="${contextpath}/admin/users/1">유저 관리</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="${contextpath}/admin/spotupdate">여행정보 update 관리</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="${contextpath}/admin/pp">고객센터 관리</a>
+					<a class="nav-link" href="${contextpath}/admin/pp/1">문의하기 관리</a>
 				</li>
 				
 			</ul>
@@ -37,7 +37,7 @@
 		</div>
 		<main role="main" class="col-sm-8 ml-sm-auto col-md-9 pt-3">
 			<h1>게시판 관리</h1>
-			<iframe id ="iBoard" src="${contextpath}/Travel/Japan.jsp" height="1000px" width="100%"></iframe>
+			<iframe id ="iBoard" src="${contextpath}/QnA/QnA.do" height="1000px" width="100%"></iframe>
 		</main>
 	</div>
 </div>

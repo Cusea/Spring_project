@@ -14,4 +14,17 @@
 	<select id="selectId" resultType="com.bc.web_project.vo.UserVo">
 		select * from users where id = #{id}
 	</select>
+	<select id="selectList" resultType="com.bc.web_project.vo.UserVo" parameterType="com.bc.web_project.vo.PagingVo">
+		<![CDATA[
+			SELECT * 
+				FROM (SELECT ROWNUM row_num, g.*
+					FROM (SELECT * FROM USERS ORDER BY SIGNUPTIME DESC) g
+					WHERE ROWNUM <=#{end})
+				WHERE row_num>=#{start}
+		]]>
+	</select>
+	<select id = "selectCount" resultType="int">
+		select count(*) total from users
+	</select>
+
 </mapper>

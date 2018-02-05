@@ -9,13 +9,13 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link active" href="${contextpath}/admin/users">유저 관리</a>
+					<a class="nav-link active" href="${contextpath}/admin/users/1">유저 관리</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="${contextpath}/admin/spotupdate">여행정보 update 관리</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="${contextpath}/admin/pp">고객센터 관리</a>
+					<a class="nav-link" href="${contextpath}/admin/pp/1">문의하기 관리</a>
 				</li>
 				
 			</ul>
@@ -36,11 +36,12 @@
 						</tr>
 					</thead>
 					<tbody>
+						<c:forEach items="${userList}" var="userVo">
 						<tr>
-							<td>1</td>
-							<td>admin@gmail.com</td>
-							<td>2018-01-14 00:00:00</td>
-							<td>0</td>
+							<td>${userVo.num}</td>
+							<td>${userVo.id}</td>
+							<td>${userVo.signupTime}</td>
+							<td>${userVo.admin}</td>
 							<td>
 								<a role="button" class="btn btn-outline-warning py-0" data-toggle="modal" data-target="#user_Update">
 									수정
@@ -52,8 +53,10 @@
 								</a>
 							</td>
 						</tr>
+						</c:forEach>
 					</tbody>
 				</table>
+				<c:import url="/resources/template/pagination.jsp"></c:import>
 			</div>
 			<br><br>
 			<h3 class="mt-3">보낸 메시지 목록</h3>

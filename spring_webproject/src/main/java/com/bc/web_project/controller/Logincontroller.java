@@ -107,4 +107,15 @@ public class Logincontroller {
 		return "{\"checkId\":"+((userVo!=null)?true:false)+"}";
 	}
 	
+	@RequestMapping(value="searchId", method=RequestMethod.POST)
+	public String searchId(@PathVariable String id) {
+		System.out.println(id);
+		UserVo userVo = null;
+		try {
+			userVo = service.selectId(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "{\"searchId\":"+((userVo!=null)?true:false)+"}";
+	}
 }

@@ -58,31 +58,31 @@
 		</div>
 		<div class="container-fluid card-deck" style="margin: auto;">
 			<div class="card mb-3" onclick="location.href='${contextpath}/Schedule/make3.do';">
-				<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
+				<img class="card-img-top" src='img/city/오사카1.jpg' alt="" style="height: 200px;">
 				<div class="card-body">
-					<h5 class="text-primary card-title"><strong>커뮤니티</strong></h5>
-					<p class="card-text">여행자들과 정보를 공유하고, 궁금한 것은 언제든 물어보세요</p>
+					<h5 class="text-primary card-title"><strong>오사카 여행</strong></h5>
+					<p class="card-text">오사카에 갔을 때 꼭 들려야할 곳들!!</p>
 				</div>
 			</div>
 			<div class="card mb-3" onclick="location.href='${contextpath}/Schedule/make3.do';">
-				<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
+				<img class="card-img-top" src='img/city/오사카2.jpg' alt="" style="height: 200px;">
 				<div class="card-body">
-					<h5 class="text-primary card-title"><strong>커뮤니티</strong></h5>
-					<p class="card-text">여행자들과 정보를 공유하고, 궁금한 것은 언제든 물어보세요</p>
+					<h5 class="text-primary card-title"><strong>오사카 여행2</strong></h5>
+					<p class="card-text">오사카에서 꼭 먹어야할 맛집 여행</p>
 				</div>
 			</div>
 			<div class="card mb-3" onclick="location.href='${contextpath}/Schedule/make3.do';">
-				<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
+				<img class="card-img-top" src='img/city/후쿠오카2.jpg' alt="" style="height: 200px;">
 				<div class="card-body">
-					<h5 class="text-primary card-title"><strong>커뮤니티</strong></h5>
-					<p class="card-text">여행자들과 정보를 공유하고, 궁금한 것은 언제든 물어보세요</p>
+					<h5 class="text-primary card-title"><strong>후쿠오카 여행2</strong></h5>
+					<p class="card-text">후쿠오카에 갔을 때 꼭 들려야할 곳들!!</p>
 				</div>
 			</div>
 			<div class="card mb-3" onclick="location.href='${contextpath}/Schedule/make3.do';">
-				<img class="card-img-top" src='img/hosang/imgbox.PNG' alt="">
+				<img class="card-img-top" src='img/city/후쿠오카1.jpg' alt="" style="height: 200px;">
 				<div class="card-body">
-					<h5 class="text-primary card-title"><strong>커뮤니티</strong></h5>
-					<p class="card-text">여행자들과 정보를 공유하고, 궁금한 것은 언제든 물어보세요</p>
+					<h5 class="text-primary card-title"><strong>후쿠오카 여행</strong></h5>
+					<p class="card-text">후쿠오카에서 꼭 먹어야할 맛집 여행</p>
 				</div>
 			</div>
 		</div>

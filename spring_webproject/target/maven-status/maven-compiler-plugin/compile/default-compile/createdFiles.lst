@@ -26,6 +26,7 @@ com\bc\web_project\controller\MainController.class
 com\bc\web_project\vo\UserVo.class
 com\bc\web_project\dto\LoginDTO.class
 com\bc\web_project\vo\AnswerVO.class
+com\bc\web_project\vo\PagingVo.class
 com\bc\web_project\controller\Logincontroller.class
 com\bc\web_project\vo\PlaceVo.class
 com\bc\web_project\service\UserServiceImpl.class

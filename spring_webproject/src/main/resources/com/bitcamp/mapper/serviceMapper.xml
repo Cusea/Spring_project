@@ -4,11 +4,24 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="com.bitcamp.mapper.serviceMapper">
-	<select	id = "listContactus" resultType="com.bc.web_project.vo.ContactusVo">
-		select * from contactUs
+	<select	id = "listContactus" resultType="com.bc.web_project.vo.ContactusVo" parameterType="com.bc.web_project.vo.PagingVo">
+		<![CDATA[
+			SELECT * 
+				FROM (SELECT ROWNUM row_num, g.*
+					FROM (SELECT * FROM contactUs ORDER BY isanswer) g
+					WHERE ROWNUM <=#{end})
+				WHERE row_num>=#{start}
+		]]>
 	</select>
 	<insert	id = "sendContactus" parameterType="com.bc.web_project.vo.ContactusVo">
 		insert into contactUs (num, email, text, inTime) 
 			values (contactUs_seq.nextval, #{email}, #{text}, sysdate)
 	</insert>
+	<update id="contactusUpdate" parameterType="com.bc.web_project.vo.ContactusVo">
+		update contactUs set answer = #{answer}, isanswer = 1 where num = #{num}
+	</update>
+	<select id = "selectCount" resultType="int">
+		select count(*) total from contactUs
+	</select>
+	
 </mapper>

@@ -87,25 +87,25 @@ insert into category(num, main_category, mid_category, sub_category)
 	values(category_seq.nextval,'관광명소','관광지','유명거리/이색장소');
 insert into category(num, main_category, mid_category, sub_category)
 	values(category_seq.nextval,'관광명소','관광지','랜드마크');
-insert into category(num, main_category, mid-category, sub-category)
+insert into category(num, main_category, mid_category, sub_category)
 	values(category_seq.nextval,'관광명소','관광지','박물관/미술관');
-insert into category(num, main_category, mid-category, sub-category)
+insert into category(num, main_category, mid_category, sub_category)
 	values(category_seq.nextval,'관광명소','관광지','역사/종교');
-insert into category(num, main_category, mid-category, sub-category)
+insert into category(num, main_category, mid_category, sub_category)
 	values(category_seq.nextval,'관광명소','레저/액티비티','데이투어/액티비티');
-insert into category(num, main_category, mid-category, sub-category)
+insert into category(num, main_category, mid_category, sub_category)
 	values(category_seq.nextval,'관광명소','레저/액티비티','스포츠');
-insert into category(num, main_category, mid-category, sub-category)
+insert into category(num, main_category, mid_category, sub_category)
 	values(category_seq.nextval,'관광명소','레저/액티비티','오락/이벤트');
 insert into category(num, main_category, mid-category, sub-category)
 	values(category_seq.nextval,'관광명소','레저/액티비티','전시/공연/관람');
-insert into category(num, main_category, mid-category, sub-category)
+insert into category(num, main_category, mid_category, sub_category)
 	values(category_seq.nextval,'관광명소','레저/액티비티','테마파크/동물원');
-insert into category(num, main_category, mid-category, sub-category)
+insert into category(num, main_category, mid_category, sub_category)
 	values(category_seq.nextval,'관광명소','레저/액티비티','웰니스/스파');
-insert into category(num, main_category, mid-category, sub-category)
+insert into category(num, main_category, mid_category, sub_category)
 	values(category_seq.nextval,'관광명소','나이트라이프','나이트스팟');
-insert into category(num, main_category, mid-category, sub-category)
+insert into category(num, main_category, mid_category, sub_category)
 	values(category_seq.nextval,'관광명소','나이트라이프','펍/선술집');
 insert into category(num, main_category, sub_category)
 	values(category_seq.nextval,'음식점', '현지요리');

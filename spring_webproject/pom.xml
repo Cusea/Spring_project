@@ -137,6 +137,7 @@
     	<artifactId>tiles-jsp</artifactId>
     	<version>3.0.0</version>
     </dependency>
+    <!-- mybatis 설정 -->
     <dependency>
     	<groupId>org.mybatis</groupId>
     	<artifactId>mybatis</artifactId>
