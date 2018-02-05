@@ -7,11 +7,14 @@
 					<h4>여행 기간</h4>
 									
 					 <button type="button" class="btn btn-secondary m-2" onclick="out">-</button>
-   					 <button type="button" class="btn btn-secondary m-2">+</button>
-						
+   					 <button type="button" class="btn btn-secondary m-2">+
+   					 <input value="${planDetail.day}">
+   					 </button>
+					<%-- <c:forEach >
+					</c:forEach>	 --%>
 					<div id="day_box">
-					<div class="flex-column border border-success" id=" db에서 가져오기">
-							<a class="btn btn-primary" href="#" role="button">1day</a>
+					<div class="flex-column border border-success" id="day">
+							<a class="btn btn-primary" href="${planDetail.data}" role="button">day+i</a>
 					</div>
 					</div>	
 					
