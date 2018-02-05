@@ -129,12 +129,12 @@
 				<br><br>
 			<form action="insert.do" method="post" name="insertForm">
 				<h3>1. 이름 정해주세요.</h3>
-				<input type="text" placeholder="여행이름을 지어주세요." value="">
+				<input type="text" placeholder="여행이름을 지어주세요." value="${planInfo.name}">
 				<br><br><br>
 				<h3>2.테마를 선택해주세요.</h3>
 			<div>
 				<div class="form-group col-sm-6 col-md-4">
-				<select name="admin" id="memberAdmin" class="form-control">
+				<select name="admin" id="memberAdmin" class="form-control" value="${planInfo.theme}">
 					<option value="0" 
 						<c:if test="0">selected</c:if>>
 						가족여행</option>
