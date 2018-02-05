@@ -222,11 +222,3 @@ table {
     line-height: 82px;
     height: 82px;
 }
-/* 이미지 변경 */
-.my_img_change {
-    top: 12px;
-    left: 2px;
-    z-index: 5;
-    height: 40px;
-    cursor: pointer;
-}
