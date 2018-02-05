@@ -1,14 +1,23 @@
 package com.bc.web_project.controller;
 
+import java.util.List;
+
+import javax.inject.Inject;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.bc.web_project.service.ServiceCenterService;
+import com.bc.web_project.vo.ContactusVo;
+
 @RestController
 @RequestMapping("/admin/*")
 public class AdminController {
 	
+	@Inject
+	private ServiceCenterService service;
 	
 	@RequestMapping(value="main", method=RequestMethod.GET)
 	public ModelAndView main() {
@@ -46,5 +55,9 @@ public class AdminController {
 		return model;
 	}
 	
+	@RequestMapping(value="contactUsList", method=RequestMethod.POST)
+	public List<ContactusVo> contactUsList() throws Exception{
+		return service.readCuList();
+	}
 	
 }

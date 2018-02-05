@@ -23,7 +23,7 @@ public class ServiceCenterDAOImpl implements ServiceCenterDAO{
 
 	@Override
 	public List<ContactusVo> contactusList() {
-		return null;
+		return session.selectList(namespace+".listContactus");
 	}
 
 }

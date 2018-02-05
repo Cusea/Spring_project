@@ -48,7 +48,7 @@
 						<form action="${contextpath}/ServiceCenter/SendContactUs" method="post" id="contactUsForm" name="contactUsForm">
 							<div class="form-group">
 								<label for="emailInput">이메일</label>
-								<input type="email" class="form-control" name="mail" placeholder="이메일을 입력하세요" value="${sessionScope.login.id}">
+								<input type="email" class="form-control" name="email" placeholder="이메일을 입력하세요" value="${sessionScope.login.id}">
 							</div>
 							<div class="form-group">
 								<label for="contactUsText">문의사항</label>

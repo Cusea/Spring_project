@@ -9,6 +9,6 @@
 	</select>
 	<insert	id = "sendContactus" parameterType="com.bc.web_project.vo.ContactusVo">
 		insert into contactUs (num, email, text, inTime) 
-			values (contactUs_seq.nextval, #{mail}, #{text}, sysdate)
+			values (contactUs_seq.nextval, #{email}, #{text}, sysdate)
 	</insert>
 </mapper>
