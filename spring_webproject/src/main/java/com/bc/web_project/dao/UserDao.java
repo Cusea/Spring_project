@@ -1,5 +1,6 @@
 package com.bc.web_project.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import com.bc.web_project.dto.LoginDTO;
@@ -13,4 +14,6 @@ public interface UserDao {
 	public List<UserVo> selectList(PagingVo pagingVo) throws Exception;
 	public int selectCount() throws Exception;
 	public UserVo searchPw(UserVo userVo) throws Exception;
+	public void keepLogin(String id, String sessionId, Date next);
+	public UserVo checkUserWithSessionKey(String value);
 }

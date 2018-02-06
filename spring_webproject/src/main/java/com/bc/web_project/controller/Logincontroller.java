@@ -1,8 +1,10 @@
 package com.bc.web_project.controller;
 
 import java.io.IOException;
+import java.util.Date;
 
 import javax.inject.Inject;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.util.WebUtils;
 
 import com.bc.web_project.dto.LoginDTO;
 import com.bc.web_project.service.UserService;
@@ -32,14 +35,23 @@ public class Logincontroller {
 	@RequestMapping(value="loginPage", method=RequestMethod.POST)
 	public ModelAndView loginPOST(LoginDTO dto, HttpSession session, Model model){
 		ModelAndView modelAndView = new ModelAndView();
+		System.out.println(dto);
 		try {
 			UserVo userVo = service.login(dto);
 			if(userVo ==null) {
 				modelAndView.setViewName("layout/loginPage");
-			}else {
-				model.addAttribute("userVo",userVo);
-				modelAndView.setViewName("/");
 			}
+			
+			model.addAttribute("userVo",userVo);
+			if(dto.isUserCookie()) {
+				System.out.println("쿠키로그인 되냐???????????????????????????????????????");
+				int amount = 60*60*24*7;
+				Date sessionLimit = new Date(System.currentTimeMillis()+(1000*amount));
+				service.keepLogin(userVo.getId(), session.getId(), sessionLimit);
+			}
+			
+			modelAndView.setViewName("/");
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -55,13 +67,23 @@ public class Logincontroller {
 	}
 	
 	@RequestMapping(value="logout", method=RequestMethod.GET)
-	public void logout(HttpSession session, HttpServletResponse response, HttpServletRequest request) {
-		session.removeAttribute("login");
-		try {
-			response.sendRedirect(request.getContextPath());
-		} catch (IOException e) {
-			e.printStackTrace();
+	public void logout(HttpSession session, HttpServletResponse response, HttpServletRequest request) throws Exception {
+		Object obj = session.getAttribute("login");
+		if(obj!=null) {
+			UserVo user = (UserVo) obj;
+			session.removeAttribute("login");
+			session.invalidate();
+			Cookie loginCookie = WebUtils.getCookie(request, "loginCookie");
+			if(loginCookie!= null) {
+				loginCookie.setPath("/");
+				loginCookie.setMaxAge(0);
+				response.addCookie(loginCookie);
+				service.keepLogin(user.getId(), session.getId(), new Date());
+			}
 		}
+		System.out.println(request.getContextPath());
+		response.sendRedirect(request.getContextPath());
+		
 	}
 	
 	@RequestMapping(value="signupPage", method=RequestMethod.GET)

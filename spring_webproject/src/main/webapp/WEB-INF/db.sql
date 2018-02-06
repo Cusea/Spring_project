@@ -286,3 +286,6 @@ create table Tip(
  	tipList_num number(8) constraint Tip_fk_tipList_num references TipList(num) not null
 );
 commit;
+
+alter table users add sessionkey varchar2(50) default 'none';
+alter table users add sessionlimit timestamp;

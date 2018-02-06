@@ -1,6 +1,9 @@
 package com.bc.web_project.dao;
 
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -56,6 +59,20 @@ public class UserDaoImpl implements UserDao{
 	@Override
 	public UserVo searchPw(UserVo userVo) throws Exception {
 		return session.selectOne(namespace+".searchPw", userVo);
+	}
+
+	@Override
+	public void keepLogin(String id, String sessionId, Date next) {
+		Map<String, Object> paramMap = new HashMap<>();
+		paramMap.put("id", id);
+		paramMap.put("sessionId", sessionId);
+		paramMap.put("next", next);
+		session.update(namespace+".keepLogin", paramMap);
+	}
+
+	@Override
+	public UserVo checkUserWithSessionKey(String value) {
+		return session.selectOne(namespace+".checkUserWithSessionKey", value);
 	}
 
 }

@@ -13,7 +13,7 @@
 				<h4 class="text-center">로그인</h4>
 			</div>	
 			<div class="card-body">
-				<form action="../layout/loginPage" method="post">
+				<form action="../layout/loginPage" method="post" id = "loginform">
 					<div class="form-group">
 						<label for="id">이메일</label>
 						<input type="email" class="form-control" name="id" placeholder="email을 입력하세요" value="${LoginDTO.id}" required>
@@ -24,7 +24,7 @@
 					</div>
 					<div class="form-row mb-2">
 						<div class="form-check-inline col-sm-4">
-							<input class="form-check-input" type="checkbox" value="${LoginDTO.userCookie}" id="userCookie">
+							<input class="form-check-input" type="checkbox" value="true" name="userCookie">
 							<label class="form-check-label" for="isAutoLogin">자동 로그인</label>
 						</div>
 						<div class="col-sm">
@@ -120,6 +120,10 @@
 		<script>alert("해당 id의 pw는 "+"${pw}"+"입니다")</script>
 	</c:if>
 	<script>
+	$("#loginform").submit(function(){
+		console.log($(this).serializeArray());
+	});
+	
 	</script>
 </body>
 </html>

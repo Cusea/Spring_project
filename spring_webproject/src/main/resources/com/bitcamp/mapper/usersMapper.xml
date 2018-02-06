@@ -29,5 +29,10 @@
 	<select id="searchPw" resultType="com.bc.web_project.vo.UserVo">
 		select * from users where id = #{id} and name = #{name}
 	</select>
-
+	<update id="keepLogin">
+		update users set sessionkey = #{sessionId}, sessionLimit = #{next} where id=#{id}
+	</update>
+	<select id = "checkUserWithSessionKey" resultType="com.bc.web_project.vo.UserVo">
+		select * from users where sessionKey = #{value} and sessionlimit>sysdate
+	</select>
 </mapper>

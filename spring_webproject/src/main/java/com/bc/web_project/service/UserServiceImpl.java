@@ -1,5 +1,6 @@
 package com.bc.web_project.service;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -66,6 +67,16 @@ public class UserServiceImpl implements UserService{
 		}
 		//System.out.println(pw);
 		return pw;
+	}
+
+	@Override
+	public void keepLogin(String id, String sessionId, Date next) throws Exception {
+		dao.keepLogin(id, sessionId, next);
+	}
+
+	@Override
+	public UserVo checkLoginBefore(String value) {
+		return dao.checkUserWithSessionKey(value);
 	}
 
 	

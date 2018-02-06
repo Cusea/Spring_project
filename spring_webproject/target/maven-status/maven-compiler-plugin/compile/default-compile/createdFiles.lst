@@ -27,6 +27,7 @@ com\bc\web_project\dao\ServiceCenterDAOImpl.class
 com\bc\web_project\controller\MainController.class
 com\bc\web_project\vo\UserVo.class
 com\bc\web_project\dto\LoginDTO.class
+com\bc\web_project\Interceptor\AuthInterceptor.class
 com\bc\web_project\vo\AnswerVO.class
 com\bc\web_project\vo\PagingVo.class
 com\bc\web_project\controller\Logincontroller.class

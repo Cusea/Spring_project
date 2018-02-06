@@ -35,11 +35,20 @@
 	
 	<!-- 인터셉터 설정 -->
 	<beans:bean id="Interceptor" class="com.bc.web_project.Interceptor.LoginInterceptor"></beans:bean>
+	<beans:bean id="authInterceptor" class="com.bc.web_project.Interceptor.AuthInterceptor"></beans:bean>
 	
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/layout/loginPage"/>
+			<mvc:exclude-mapping path="/resources/**"/>
 			<beans:ref bean="Interceptor" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>	
+			<mvc:exclude-mapping path="/resources/**"/>	
+			<mvc:exclude-mapping path="/"/>	
+			<mvc:exclude-mapping path="/layout/loginPage"/>	
+			<beans:ref bean="authInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
 	

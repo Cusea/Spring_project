@@ -3,7 +3,7 @@ package com.bc.web_project.dto;
 public class LoginDTO {
 	private String id;
 	private String pw;
-	private boolean userCookie;
+	private boolean userCookie=false;
 	
 	public String getId() {return id;}
 	public void setId(String id) {this.id = id;}
@@ -16,7 +16,7 @@ public class LoginDTO {
 	
 	@Override
 	public String toString() {
-		return "LoginDTO [id=" + id + ", pw=" + pw + ", userCookie=" + userCookie + "]";
+		return "{\"id\":\"" + id + "\", \"pw\":\"" + pw + "\", \"userCookie\":\"" + userCookie + "\"}";
 	}
 	
 }
