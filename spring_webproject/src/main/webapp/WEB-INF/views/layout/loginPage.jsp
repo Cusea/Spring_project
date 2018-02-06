@@ -88,14 +88,14 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form action="">
+					<form action="${contextpath}/layout/searchPw" method="post" id="searchPwForm" accept-charset="UTF-8">
 						<div class="gorm-group">
 							<label for="user_id">유저 id(이메일)</label>
 							<input type="email" class="form-control" id="pw_id" name="id">
 						</div>
 						<div class="gorm-group">
 							<label for="user_id">유저 이름(닉네임)</label>
-							<input type="email" class="form-control" id="pw_name" name="name">
+							<input type="text" class="form-control" id="pw_name" name="name">
 						</div>
 						<br>
 						<div class="row justify-content-end mr-2 mb-2">
@@ -106,12 +106,20 @@
 			</div>
 		</div>
 	</div>
-	
+	<c:choose>
+		<c:when test="${search}">
+			<script>alert("해당 id가 존재합니다")</script>
+			<c:remove var="search"/>
+		</c:when>
+		<c:when test="${search eq false}">
+			<script>alert("해당 id가 존재하지 않습니다")</script>
+			<c:remove var="search"/>
+		</c:when>
+	</c:choose>
+	<c:if test="${!empty pw}">
+		<script>alert("해당 id의 pw는 "+"${pw}"+"입니다")</script>
+	</c:if>
 	<script>
-		$("#searchidform").submit(function(data){
-			console.log(data);
-			return false;
-		});
 	</script>
 </body>
 </html>

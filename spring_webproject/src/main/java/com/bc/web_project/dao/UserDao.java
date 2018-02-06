@@ -12,4 +12,5 @@ public interface UserDao {
 	public UserVo select(String id);						//id 중복체크
 	public List<UserVo> selectList(PagingVo pagingVo) throws Exception;
 	public int selectCount() throws Exception;
+	public UserVo searchPw(UserVo userVo) throws Exception;
 }

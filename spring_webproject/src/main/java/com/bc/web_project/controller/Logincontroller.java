@@ -108,14 +108,39 @@ public class Logincontroller {
 	}
 	
 	@RequestMapping(value="searchId", method=RequestMethod.POST)
-	public String searchId(@PathVariable String id) {
-		System.out.println(id);
+	public ModelAndView searchId(UserVo user) {
+		//System.out.println(user);
+		ModelAndView model = new ModelAndView();
 		UserVo userVo = null;
 		try {
-			userVo = service.selectId(id);
+			userVo = service.selectId(user.getId());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "{\"searchId\":"+((userVo!=null)?true:false)+"}";
+		if(userVo!=null) {
+			model.addObject("search", true);
+		}else {
+			model.addObject("search", false);
+		}
+		model.setViewName("layout/loginPage");
+		return model;
+	}
+	
+	@RequestMapping(value="searchPw", method=RequestMethod.POST)
+	public ModelAndView searchPw(UserVo user) {
+		System.out.println(user);
+		ModelAndView model = new ModelAndView();
+		String pw = null;
+		try {
+			pw = service.searchPw(user);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		if(pw!=null) {
+			model.addObject("pw", pw);
+		}
+		System.out.println(pw);
+		model.setViewName("layout/loginPage");
+		return model;
 	}
 }

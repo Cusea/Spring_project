@@ -122,5 +122,5 @@
 		$('#email').val(email);
 		$('#text').val(text);
 	});
-	
+
 </script>

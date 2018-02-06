@@ -11,6 +11,21 @@
       		<include-prelude>/resources/template/taglibs.jsp</include-prelude>
       	</jsp-property-group>
   </jsp-config>
+  	<!-- 한글 깨짐 방지 filter -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>
+			org.springframework.web.filter.CharacterEncodingFilter
+		</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
   
   <context-param>
     <param-name>contextConfigLocation</param-name>

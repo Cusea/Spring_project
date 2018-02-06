@@ -46,6 +46,28 @@ public class UserServiceImpl implements UserService{
 		return list;
 	}
 
+	@Override
+	public String searchPw(UserVo userVo) throws Exception {
+		UserVo user = dao.searchPw(userVo);
+		String pw=user.getPw();
+		int pw_len = pw.length();
+		String pw_front;
+		String pw_end;
+		if(pw_len<5) {
+			
+		}else {
+			pw_front = pw.substring(0, 2);
+			pw_end = pw.substring(pw_len-2, pw_len);
+			String star ="";
+			for(int i=2; i<pw_len-2; i++) {
+				star +="*";
+			}
+			pw = pw_front+star+pw_end;			
+		}
+		//System.out.println(pw);
+		return pw;
+	}
+
 	
 
 }

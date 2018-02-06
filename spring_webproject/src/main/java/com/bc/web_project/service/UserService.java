@@ -10,5 +10,6 @@ public interface UserService {
 	public UserVo signup(UserVo userVo) throws Exception;
 	public UserVo selectId(String id) throws Exception;
 	public Map<String,Object> selectList(int page) throws Exception;
+	public String searchPw(UserVo userVo) throws Exception;
 }
 

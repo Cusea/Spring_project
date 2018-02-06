@@ -53,4 +53,9 @@ public class UserDaoImpl implements UserDao{
 		return session.selectOne(namespace+".selectCount");
 	}
 
+	@Override
+	public UserVo searchPw(UserVo userVo) throws Exception {
+		return session.selectOne(namespace+".searchPw", userVo);
+	}
+
 }
