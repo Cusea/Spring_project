@@ -3,7 +3,16 @@
 	PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bitcamp.mapper.PlaceMapper">
-	<select id="selectTest" resultType="com.bc.web_project.vo.PlaceVo">
-		SELECT * FROM PLACE; 
+	<select id="selectOne" resultType="com.bc.web_project.vo.PlaceVo">
+		SELECT * FROM PLACE where num=#{num}
+	</select>
+	<select id="selectByCity" resultType="com.bc.web_project.vo.PlaceVo">
+		SELECT * FROM PLACE where city_num =#{city_num}			
+	</select>
+	<select id="selectByCategoryListAndCity" resultType="com.bc.web_project.vo.PlaceVo"
+	parameterType="java.util.Map">
+		<!-- 파라메터를 csv문자열(a,b,c...)로 만들어서 넘겨야한다  -->
+		SELECT DISTINCT * FROM PLACE where category_num in(#{category_list})
+		and city_num=#{city_num}
 	</select>
 </mapper>

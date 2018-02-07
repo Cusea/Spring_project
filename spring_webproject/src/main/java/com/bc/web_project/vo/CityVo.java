@@ -11,9 +11,10 @@ public class CityVo {
 	private int num;
 	private String area;
 	private String imageAddList;
+	
 	@Override
 	public String toString() {
-		return "{\"num\":" + num + ", area\":" + area + ", imageAddList\":" + imageAddList + "}";
+		return "{\"num\":" + num + ", \"area\":" + area + ", \"imageAddList\":" + imageAddList + "\"}";
 	}
 	public int getNum() {
 		return num;

@@ -16,8 +16,12 @@ public class PlaceDaoImp implements PlaceDao{
 	private SqlSession session;
 	private String path="com.bitcamp.mapper.PlaceMapper";
 	@Override
-	public List<PlaceVo> selectList() throws Exception {		
-		return session.selectList(path+".selectTest");
+	public List<PlaceVo> selectList(int city){		
+		return session.selectList(path+".selectByCity",city);
+	}
+	@Override
+	public PlaceVo selectOne(int num){
+		return session.selectOne(path+".selectOne", num);
 	}
 
 }
