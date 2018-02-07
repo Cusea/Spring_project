@@ -10,5 +10,5 @@ public interface QnADAO {
 	public QuestionVO detail(int num);
 	public AnswerVO answerSelect(int num);
 	public int insertQuestion(QuestionVO questionVO);
-	
+	public int deleteQuestion(int num);
 }

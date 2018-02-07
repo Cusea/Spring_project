@@ -1,7 +1,8 @@
+<%@page import="com.bc.web_project.vo.QuestionVO"%>
 <%@ page  pageEncoding="UTF-8"%>
 
-<!-- 전체 QnA 보여주는 페이지?, 검색결과 보여주는 페이지? 전체 게시판들 보여주면서 검색을 하면 검색한 결과만 보여주게 한다? -->
 	<div class="wrap qa col-sm-12 text-center jumbotron container">  <!-- jumbotron (뭔가 회색배경을 주는데?) -->
+	
 		<div class="qa_nav_box col-sm-12 text-center">
 			<a href="${contextpath}/">일본여행사이트</a> >
 			<span>QnA</span>
@@ -34,38 +35,37 @@
 		</div>  <!-- qa_mnu_box END -->
 		
 		
-		<!-- 실제 게시글 -->
-			<c:forEach items="${questionList}" var="questionVo">
-				<div class="qa_list">
-					<div class="box">											
-						<a class="q_num_box" href="${contextpath}/QnA/DetailQnA/${questionVo.num}">${questionVo.num}번째 질문게시판</a>  <!-- 왜 1,3,2 이렇게 뜨는거지? -->
-						<div class="user_img" style="background-image: url(${contextpath}${questionVo.user_imageadd})"></div>
-						<div class="content_box"> 
-							<div class="subject"><strong>제목: ${questionVo.title}</strong></div>
-							<div class="content"><pre>내용: ${questionVo.text}</pre></div>
-							<div class="tag_box">
-								<div class="tag">${questionVo.tag_name}</div>  <!-- 여러개의 태그가 있으면? -->
-								<div class="clear"></div> 
-							</div>
-							<div class="info_box">
-								<div class="user_name">${questionVo.user_name}</div> 
-								<div class="info_line"></div>
-								<div class="write_datetime">${questionVo.indate}</div>
-								<div class="a_cnt" style="background-image: url(${contextpath}/img/QnA/qa_btn.gif)">${answerVO}</div>  <!-- 답변 수 count -->
-								<div class="clear"></div> 
-							</div>
+	<!-- 실제 게시글 -->
+		<c:forEach items="${questionList}" var="questionVo">
+			<div class="qa_list">
+				<div class="box">											
+					<a class="q_num_box" href="${contextpath}/QnA/DetailQnA/${questionVo.num}">${questionVo.num}번째 질문게시판</a>  <!-- 왜 1,3,2 이렇게 뜨는거지? -->
+					<div class="user_img" style="background-image: url(${contextpath}${questionVo.user_imageadd})"></div>
+					<div class="content_box"> 
+						<div class="subject"><strong>제목: ${questionVo.title}</strong></div>
+						<div class="content"><pre>내용: ${questionVo.text}</pre></div>
+						<div class="tag_box">
+							<div class="tag">${questionVo.tag_name}</div>  <!-- 여러개의 태그가 있으면? -->
+							<div class="clear"></div> 
+						</div>
+						<div class="info_box">
+							<div class="user_name">${questionVo.user_name}</div> 
+							<div class="info_line"></div>
+							<div class="write_datetime">${questionVo.indate}</div>
+							<div class="a_cnt" style="background-image: url(${contextpath}/img/QnA/qa_btn.gif)">${answerVO}</div>  <!-- 답변 수 count -->
+							<div class="clear"></div> 
 						</div>
 					</div>
 				</div>
-			</c:forEach>
-		
-		<div class="more_btn" onclick="get_list('2');$(this).remove();">더보기</div>  <!-- 더보기 버튼 누를때마다 get_list('up') --> <!-- $(this).remove(); 이건뭐임??? -->
+			</div>
+		</c:forEach>
+		<c:import url="/resources/template/pagination.jsp"></c:import>
 	</div>  <!-- wrap qa end -->
 	
 	
 <!-- The Modal -->
 <!-- form해야 button reset 됨. -->
-<form action="insertQuestion" method="post" name="insertForm">
+<form action="insertQuestion" method="post" name="insertQuestion">
 	<div class="modal fade" id="myModal">  <!-- modal뜨면 배경 div (배경은 안눌리게 하고싶은데) -->
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content pl-3" style="background-color: skyblue">  
@@ -76,21 +76,23 @@
 			<br>
 			<div class="modal-header_qa pl-3 pr-3 pb-1" align="left">
 				<label for="modal_title_text"><strong>제목 </strong></label>
-				<input type="text" class="qa_title_te px-1 form-control pr-1" id="modal_title_text" placeholder="제목" maxlength="30" data-length="30"> 
+				<input type="text" class="qa_title_te px-1 form-control pr-1" id="modal_title_text" name="title" value="${questionVO.title}"
+					placeholder="제목" maxlength="30" data-length="30"> 
 				<small style="display: inline-block;" id="modal_title_text">0/30</small>
 				<hr>
 			</div>
 			<div class="modal-body">
 				<label for="modal_body_text"><strong>내용:</strong></label>
-				<textarea class="q_textarea px-1 form-control pr-1" rows="10" cols="60" maxlength="1000" onkeyup="keyup()"></textarea>
+				<textarea class="q_textarea px-1 form-control pr-1" rows="10" cols="60" maxlength="1000"  name="text" >${questionVO.text}</textarea>
 				<small id="modal_body_text">0/1000</small>
 			</div>
 			<div class="modal-footer">
 				<div class="modal_footer_tagText">  <!-- modal-footer  -->
 					<label>태그</label>
-				   <input type="text" class="modal_footer_tagText" maxlength="30" placeholder="태그입력"> 
+				   <input type="text" class="modal_footer_tagText" maxlength="30" placeholder="태그입력" name="tag_name" value="${questionVO.tag_name}"> 
 					<small>0/30</small>
 				</div>
+				<%-- <input type="hidden" name="users_num" value="${login.num}"> --%>
 				<button type="reset" class="btn btn-info">초기화</button>
 				<button type="submit" class="btn btn-primary">완료</button>  <!-- data-dismiss="modal" ??? -->
 			</div>

@@ -1,6 +1,4 @@
 <%@ page pageEncoding="UTF-8"%>
-<!-- 질문게시판 클릭하면 해당 게시글의 내용과 답변(답변도 달수 있게)들만 볼수 있다. -->
-<!-- 클릭하면 해당 게시판 번호로 내용,댓글, 등등 정보를 받아야 하겠군 -->
 
 <div class="wrap qa col-sm-12 text-center jumbotron container">
 	<div class="qa_nav_box col-sm-12 text-center">
@@ -29,10 +27,12 @@
 					<div class="clear"></div> 
 				</div>
 				<div class="info_box">
-					<div class="user_name">${questionVo.user_name}</div>
+					<div class="user_name">${questionVO.user_name}</div>
 					<div class="info_line"></div>
-					<div class="write_datetime">${questionVo.indate}</div>
-					<div class="a_cnt" style="background-image: url(${contextpath}/img/QnA/qa_btn.gif)">1</div>  <!-- 답변 수 -->
+					<div class="write_datetime">${questionVO.indate}</div>
+					<a class="a_delete btn btn-outline-danger" href="${contextpath}/QnA/deleteQuestion/${questionVO.num}">
+						<small>${questionVO.num}삭제</small>
+					</a>
 					<div class="clear"></div> 
 				</div>
 			</div>

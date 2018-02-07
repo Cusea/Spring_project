@@ -24,10 +24,8 @@ public class QnADAOImp implements QnADAO{
 	public List<QuestionVO> QnAselect() {
 		
 		return sqlSession.selectList(qnaMapper+".QnAselect");
-		//com.bitcamp.mapper.usersMapper 안에 있는 id=select 인것의 쿼리문
 	}
 	
-	//List말고 Vo는 하나니까 selectOne
 	@Override
 	public QuestionVO detail(int num) {
 		
@@ -42,21 +40,15 @@ public class QnADAOImp implements QnADAO{
 
 	@Override
 	public int insertQuestion(QuestionVO questionVO) {
-		
-		return sqlSession.selectOne(qnaMapper+".insertQuestion", questionVO);
+		System.out.println(questionVO+"QnADAOImpQnADAOImpQnADAOImpQnADAOImpQnADAOImpQnADAOImpQnADAOImpQnADAOImpQnADAOImp");
+		return sqlSession.insert(qnaMapper+".insertQuestion", questionVO);
 	}
-	
-	
-/*	@Override
-	public QuestionVO select() {
-		return sqlSession.selectList(usersMapper+".select");
-	}*/
-	
-	/*@Override
-	public List<QuestionVO> QnAdetail(int num) {
+
+	@Override
+	public int deleteQuestion(int num) {
 		
-		return sqlSession.selectList(qnaMapper+".detail");
-	}*/
+		return sqlSession.delete(qnaMapper+".deleteQuestion", num);
+	}
 
 }
 
