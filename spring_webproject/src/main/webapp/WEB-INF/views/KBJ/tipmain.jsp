@@ -3,9 +3,14 @@
 <div class="bg-white pt-1 mb-4">
 	<div class="container-fluid text-center">
 		<h3 class="pt-4"><strong>일정 목록</strong></h3>
-		<a class="btn btn-primary" onclick="location.href='${contextpath}/KBJ/TipofTravel.do';">새로운 일정 만들기</a>
-		<a class="btn btn-primary" href="#">나의 일정 보기</a>
+		<div>
+			<c:if test="${login.admin eq 0}">
+				<a class="btn btn-primary" onclick="location.href='${contextpath}/KBJ/TipofTravel.do';">새로운 Tip 만들기</a>
+				<a class="btn btn-primary" onclick="location.href='${contextpath}/LSH/04tip.do';">나의 Tip 보기</a>
+			</c:if>
+		</div>
 	</div>
+
 	<div class="card-deck">
 	  <div class="card">
 	    <img class="card-img-top" src="${contextpath}/img/KBJ/6.jpg" alt="Card image cap">
