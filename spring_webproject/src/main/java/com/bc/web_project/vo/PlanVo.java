@@ -12,7 +12,7 @@ public class PlanVo {
 			ISOPEN                                             NUMBER(1)*/
 	
 	private int num;
-	private int user_num;
+	private int users_num;
 	private String name;
 	private int planday;
 	private int theme;
@@ -23,12 +23,6 @@ public class PlanVo {
 	}
 	public void setNum(int num) {
 		this.num = num;
-	}
-	public int getUser_num() {
-		return user_num;
-	}
-	public void setUser_num(int user_num) {
-		this.user_num = user_num;
 	}
 	public String getName() {
 		return name;
@@ -60,10 +54,16 @@ public class PlanVo {
 	public void setIsOpen(int isOpen) {
 		IsOpen = isOpen;
 	}
+	public int getUsers_num() {
+		return users_num;
+	}
+	public void setUsers_num(int users_num) {
+		this.users_num = users_num;
+	}
 	@Override
 	public String toString() {
-		return "PlanVo [num=" + num + ", user_num=" + user_num + ", name=" + name + ", planday=" + planday + ", theme="
-				+ theme + ", Isfinish=" + Isfinish + ", IsOpen=" + IsOpen + "]";
+		return "PlanVo [num=" + num + ", users_num=" + users_num + ", name=" + name + ", planday=" + planday
+				+ ", theme=" + theme + ", Isfinish=" + Isfinish + ", IsOpen=" + IsOpen + "]";
 	}
 	
 	
