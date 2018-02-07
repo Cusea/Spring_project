@@ -286,3 +286,15 @@ create table Tip(
  	tipList_num number(8) constraint Tip_fk_tipList_num references TipList(num) not null
 );
 commit;
+
+--- 16. User_My table 생성
+create sequence user_my_seq start with 1 increment by 1;
+create table user_my(
+	user_my_num number(8),
+	user_num number(8),
+	city_num number(8),
+	CONSTRAINT fk_user_id FOREIGN KEY (user_num) REFERENCES users(num),
+	CONSTRAINT fk_city_id FOREIGN KEY (city_num) REFERENCES city(num),
+	CONSTRAINT pk_user_my PRIMARY KEY(user_my_num)
+);
+commit;
