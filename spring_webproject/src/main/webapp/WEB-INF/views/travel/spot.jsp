@@ -3,9 +3,10 @@
 	<header class="row jumbotron">
 		<div class="col-9">
 			<ul class="list-inline">
-			<li><h2>스팟이름</h2>
-			<li>주소
-			<li>부가정보
+			<li><h2>${placeVo.name_ko}</h2>
+			<li><h3>${placeVo.name_en}</h3>
+			<li>${placeVo.address}
+			<li>클립횟수 ${placeVo.clipCount}
 			</ul>
 		</div>
 		<div class="col-3 float-right">
@@ -61,11 +62,15 @@
 				</div>
 			</div>
 <!-- 정보  ------------------------------------------------------------------------------->
-			<div class="card">간략정보~~~~~~~~~~~~~~~~<br>~~~~~~~~~~<br>~~~~~~~~~~~~~~~~~~~
+			<div class="card">${placeVo.summary}
 			
 			</div>
-			<div class="card">설명~~~~~~~~``~~~<br>~~~~~~~~~```~<br>~~~~~~~~~~~~~<br><br><br><br><br><br><br>~~~~~~~~~<br>11111111~~~<br>~~~~~~~~~~~~~
-			
+			<div class="card">
+				<div>카테고리	${placeVo.category_num}</div>
+				<div>가는방법	${placeVo.wayToGo}</div>			
+				<div>전화번호	${placeVo.tel}</div>
+				<div>오픈시간	${placeVo.open_time}</div>
+				<div>홈페이지	<a href="${placeVo.homepage}">${placeVo.homepage}</a></div>
 			</div>
 <!----커뮤니티(리뷰&qna)------------------------------------------------------------------->
 			<div class="card">
@@ -96,12 +101,14 @@
 		<div class="col-sm-3 right">
 			<div class="card">
 				<div id="map-body" style="width:243px;height:243px"></div>
-				<ul class="list-group">인근의 클립장소
-					<li class="list-group-item">dlkfljkasdjf</li>
-				</ul>
+				<div id="clip-list">
+					<ul class="list-group">인근의 클립장소
+						<li class="list-group-item">dlkfljkasdjf</li>
+					</ul>
+				</div>
 			</div>
-			<div class="card">여행팁</div>
-			<div class="card">음식점</div>
+			<div class="card">이 장소의 여행팁</div>
+			<div class="card">인근의 음식점</div>
 			<div class="card">관광명소</div>
 		</div>
 	</div>
@@ -112,9 +119,25 @@ var map;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map-body'), {
     center: {lat: -34.397, lng: 150.644},
-    zoom: 11
+    zoom: 15
   });
+  var geocoder=new google.maps.Geocoder();
+  geocodeAddress(geocoder,map);
 }
+function geocodeAddress(geocoder, resultsMap) {
+	var address='${placeVo.name_ko}';
+	geocoder.geocode({'address': address}, function(results, status) {
+      if (status === 'OK') {
+        resultsMap.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+          map: resultsMap,
+          title:address,
+          animation: google.maps.Animation.DROP,
+          position: results[0].geometry.location
+        });
+      }
+    });
+  }
 </script>
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPPCQRIoQIAN_I1d5l0b1oveSd1j_2J_U&callback=initMap">

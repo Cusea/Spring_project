@@ -7,13 +7,16 @@ public class PlaceVo {
  NUM                                       NOT NULL NUMBER(8)			PK
  NAME_KO                                            VARCHAR2(300)
  NAME_EN                                            VARCHAR2(300)
+ ----기본정보----
  SUMMARY                                   NOT NULL VARCHAR2(1200)
+ ----부가정보----
  WAYTOGO                                   NOT NULL VARCHAR2(1200)
  TEL                                                VARCHAR2(50)
  OPEN_TIME                                 NOT NULL VARCHAR2(1200)
  ADDRESS                                   NOT NULL VARCHAR2(600)
  IMAGEADDLIST                              NOT NULL VARCHAR2(4000)
  HOMEPAGE                                           VARCHAR2(1000)
+ -------------
  CATEGORY_NUM                              NOT NULL NUMBER(8)			FK
  CITY_NUM                                  NOT NULL NUMBER(8)			FK
  CLIPCOUNT                                          NUMBER(8) 
@@ -31,12 +34,13 @@ public class PlaceVo {
 	private String category_num;
 	private String city_num;
 	private String clipCount;
+	
 	@Override
 	public String toString() {
-		return "{\"num\":" + num + ", name_ko\":" + name_ko + ", name_en\":" + name_en + ", summary\":" + summary
-				+ ", wayToGo\":" + wayToGo + ", tel\":" + tel + ", open_time\":" + open_time + ", address\":" + address
-				+ ", imageAddList\":" + imageAddList + ", homepage\":" + homepage + ", category_num\":" + category_num
-				+ ", city_num\":" + city_num + ", clipCount\":" + clipCount + "}";
+		return "{\"num\":" + num + ", \"name_ko\":" + name_ko + ", \"name_en\":" + name_en + ", \"summary\":" + summary
+				+ ", \"wayToGo\":" + wayToGo + ", \"tel\":" + tel + ", \"open_time\":" + open_time + ", \"address\":"
+				+ address + ", \"imageAddList\":" + imageAddList + ", \"homepage\":" + homepage + ", \"category_num\":"
+				+ category_num + ", \"city_num\":" + city_num + ", \"clipCount\":" + clipCount + "\"}";
 	}
 	public int getNum() {
 		return num;

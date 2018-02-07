@@ -13,10 +13,14 @@ public class CategoryVo {
 	private String main_category;
 	private String mid_category;
 	private String sub_category;
+	
+	public String toString2() {
+		return "{\"name\":" + sub_category + ",\"value\":" + num + "\"}";
+	}
 	@Override
 	public String toString() {
-		return "{\"num\":" + num + ", main_category\":" + main_category + ", mid_category\":" + mid_category
-				+ ", sub_category\":" + sub_category + "}";
+		return "{\"num\":" + num + ", \"main_category\":" + main_category + ", \"mid_category\":" + mid_category
+				+ ", \"sub_category\":" + sub_category + "\"}";
 	}
 	public int getNum() {
 		return num;

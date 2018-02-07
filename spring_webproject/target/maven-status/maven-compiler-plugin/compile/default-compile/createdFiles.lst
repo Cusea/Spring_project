@@ -1,10 +1,12 @@
 com\bc\web_project\dao\PlaceDao.class
 com\bc\web_project\controller\AdminController.class
+com\bc\web_project\service\SpotServiceImp.class
 com\bc\web_project\dao\CityDaoImp.class
 com\bc\web_project\Interceptor\LoginInterceptor.class
 com\bc\web_project\service\UserService.class
 com\bc\web_project\vo\MyVo.class
 com\bc\web_project\controller\ServiceCenterController.class
+com\bc\web_project\service\SpotService.class
 com\bc\web_project\dao\ServiceCenterDAO.class
 com\bc\web_project\dao\QnADAO.class
 com\bc\web_project\controller\MypageController.class
@@ -32,9 +34,11 @@ com\bc\web_project\controller\Q_list.class
 com\bc\web_project\vo\PlanVo.class
 com\bc\web_project\controller\TipController.class
 com\bc\web_project\vo\CategoryVo.class
+com\bc\web_project\dao\CategoryDaoImp.class
 com\bc\web_project\dao\PlanDao.class
 com\bc\web_project\dao\ServiceCenterDAOImpl.class
 com\bc\web_project\controller\MainController.class
 com\bc\web_project\Interceptor\AuthInterceptor.class
 com\bc\web_project\service\UserServiceImpl.class
+com\bc\web_project\dao\CityDao.class
 com\bc\web_project\controller\SpotController.class
