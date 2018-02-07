@@ -28,7 +28,7 @@
 		
 		    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
 		      <div class="card-body">
-		 			여기는 어쩌고 저쩌고~~~~~~~~
+		 			여기는 어쩌고 저쩌고~~~~
 		      </div>
 		    </div>
 		  </div>
@@ -42,7 +42,7 @@
 		    </div>
 		    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
 		      <div class="card-body">
-		        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~``
+		        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~``
 		      </div>
 		    </div>
 		  </div>
@@ -56,7 +56,7 @@
 		    </div>
 		    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
 		      <div class="card-body">
-		       사랑랑ㄹ아랑사랑램냉러ㅏㄴㅇ래러;ㅣㅁ넹레[]
+		       사랑랑ㄹ아랑사냉러ㅏ;ㅣㅁ넹레[]
 		      </div>
 		    </div>
 		  </div>
@@ -67,6 +67,7 @@
 		
 <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
 <div id="Paris" class="tabcontent">
+<form >
   <table class="table">
 				<thead>
 						<tr>
@@ -79,6 +80,7 @@
 				</tbody>		
 
 		</table>
+</form>
 </div>
 
 <div id="Tokyo" class="tabcontent">

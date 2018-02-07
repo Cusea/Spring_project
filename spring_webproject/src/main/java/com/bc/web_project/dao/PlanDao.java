@@ -5,8 +5,13 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.bc.web_project.vo.PlanVo;
+
 @Repository
 public interface PlanDao {
-	public List<PlanVo> planList() throws Exception; 
-	public int insert(PlanVo planVo) throws Exception;
+	//public PlanVo select(String id,String pwd); 
+	public PlanVo select(int num);
+	public int insert(PlanVo planVo);
+	//public int delete(int num) throws Exception; //admin=3 으로 update 하면 탈퇴
+	int update(PlanVo planVo);
+	
 }

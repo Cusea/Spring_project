@@ -1,20 +1,20 @@
 <%@ page  pageEncoding="UTF-8"%>
-
-  
-  		<div class="container">
+	
+			
+		<div class="container">
 				<div class="row">
 				<div class="col-md-2 text-center  border border-dark">
 					<h4>여행 기간</h4>
 									
 					 <button type="button" class="btn btn-secondary m-2" onclick="out">-</button>
    					 <button type="button" class="btn btn-secondary m-2">+
-   					 <input value="${planDetail.day}">
+   					
    					 </button>
 					<%-- <c:forEach >
 					</c:forEach>	 --%>
 					<div id="day_box">
 					<div class="flex-column border border-success" id="day">
-							<a class="btn btn-primary" href="${planDetail.data}" role="button">day+i</a>
+							<a class="btn btn-primary" href="${planDetail.data}" role="button">day</a>
 					</div>
 					</div>	
 					
@@ -36,19 +36,19 @@
 				<div class="col-md-2 text-center border border-dark">
 					<h3>일정담기</h3>
 				<div class="card" >
-				  <img class="card-img-top" src="..." alt="Card image cap">
+				  <img class="card-img-top" src="${contextpath}/img/schedule/2.jpg">
 				  <div class="card-body">
 				    <p class="card-text">장소 이름</p>
 				  </div>
 				</div>
 				<div class="card" >
-				  <img class="card-img-top" src="..." alt="Card image cap">
+				  <img class="card-img-top" src="${contextpath}/img/schedule/3.jpg">
 				  <div class="card-body">
 				    <p class="card-text">장소 이름2</p>
 				  </div>
 				</div>
 				<div class="card" >
-				  <img class="card-img-top" src="..." alt="Card image cap">
+				  <img class="card-img-top" src="${contextpath}/img/schedule/4.jpg">
 				  <div class="card-body">
 				    <p class="card-text">장소 이름3</p>
 				  </div>
@@ -67,7 +67,9 @@
   		</div>
   
 </div>
-
+<script>alert("등록성공")</script>
+			
+	
 	<script >
 	function out(){
 		
