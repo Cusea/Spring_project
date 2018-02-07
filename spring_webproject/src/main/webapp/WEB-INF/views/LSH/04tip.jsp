@@ -23,7 +23,7 @@
 					<h5>　|　</h5>
 					<li><a data-toggle="pill" href="#menu2">좋아한 여행Tip</a></li>
 					<h5>　　　　　　　　　　　　　　　　　　　　　　</h5>
-					<li><button class="mtop_btn" target="_blank">여행Tip 만들기</button></li>
+					<li><button class="mtop_btn" target="_blank" onclick="location.href='${contextpath}/KBJ/TipofTravel.do';">여행Tip 만들기</button></li>
 				</ul>
 				<div class="tab-content">
 					<div id="home" class="tab-pane fade in active">

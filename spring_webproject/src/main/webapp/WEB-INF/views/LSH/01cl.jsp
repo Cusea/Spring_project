@@ -19,7 +19,7 @@
 		</div>
 	</div>
 	
-	
+	<h1>로그인:	${login.num}, ${login.name},  ${login.id}</h1>
 	
 </div><!-- 바디끝 -->
 

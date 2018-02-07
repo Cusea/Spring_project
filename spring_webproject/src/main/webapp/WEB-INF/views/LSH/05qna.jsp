@@ -17,18 +17,17 @@
 			<br><br>
 			<div class="container">
 				<ul class="nav nav-pills">
-					<li class="nav-item"><a data-toggle="pill" href="#home">나의 질문</a></li>
+					<li class="nav-item"><a data-toggle="pill" href="#home" id="myq">나의 질문</a></li>
 					<h5>　|　</h5>
 					<li><a data-toggle="pill" href="#menu1">나의 답변</a></li>
 					<h5>　|　</h5>
 					<li><a data-toggle="pill" href="#menu2">북마크</a></li>
 					<h5>　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　</h5>
-					<li><button class="mtop_btn" target="_blank">질문하기</button></li>
+					<li><button class="mtop_btn" target="_blank" onclick="location.href='${contextpath}/QnA/QnA.do';">질문하기</button></li>
 				</ul>
 				<div class="tab-content">
 					<div id="home" class="tab-pane fade in active">
-						<img src="${contextpath}/img/SH/로마.jpg" alt class="box_img">
-						<p>로마</p>
+						
 					</div>
 					<div id="menu1" class="tab-pane fade">
 						<p>나의 답변</p>
@@ -40,5 +39,19 @@
 			</div>
 		</div>
 	</div>
+<script>
+	$("#myq").click(function(){
+		console.log(${login.num});
+		$.ajax({
+			url:"myq/"+${login.num},
+			dataType: "json",
+			type: "get",
+			success: function(data,status,req){
+				console.log(data);
+			},	
+		});
+		
+	});
+</script>
 </div><!-- 바디끝 -->
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
