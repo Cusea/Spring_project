@@ -8,8 +8,8 @@
 		select * from users where id = #{id} and pw=#{pw} and admin in(0,1)
 	</select>
 	<insert	id = "signup" parameterType="com.bc.web_project.vo.UserVo">
-		insert into users (num, id, pw, name, admin, gender, mypage, signupTime, imageadd) 
-			values (users_seq.nextval, #{id}, #{pw}, #{name}, 1, #{gender}, #{name}, sysdate, '/img/user.png')
+		insert into users(num, id, pw, name, admin, gender, mypage, signupTime, imageadd) 
+			values(users_seq.nextval, #{id}, #{pw}, #{name}, 1, #{gender}, #{name}, sysdate, '/img/user.png')
 	</insert>
 	<select id="selectId" resultType="com.bc.web_project.vo.UserVo">
 		select * from users where id = #{id}

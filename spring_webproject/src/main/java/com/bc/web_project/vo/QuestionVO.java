@@ -35,12 +35,14 @@ public class QuestionVO {
 	public void setUsers_num(int users_num) {
 		this.users_num = users_num;
 	}
+	
 	public String getTag_name() {
 		return tag_name;
 	}
 	public void setTag_name(String tag_name) {
 		this.tag_name = tag_name;
 	}
+	
 	public String getText() {
 		return text;
 	}
@@ -73,7 +75,7 @@ public class QuestionVO {
 	}
 	@Override
 	public String toString() {
-		return "{ \"num\":" + num + ", \"users_num\":" + users_num + ", \"tag_name\":" + tag_name + ", \"text\":\"" + text
+		return "{ \"num\":" + num + ", \"users_num\":" + users_num + ", \"tag_name\":\"" + tag_name + "\", \"text\":\"" + text
 				+ "\", \"title\":\"" + title + "\", \"indate\":\"" + indate + "\", \"user_name\":\"" + user_name + "\""
 				+ ", \"user_imageadd\":\"" + user_imageadd + "\" }";
 	}
