@@ -55,10 +55,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter{
 					return true;
 				}
 			}
-			request.getRequestDispatcher("/layout/loginPage").forward(request, response);
-			return false;
 		}
-		
 		return true;
 	}
 	

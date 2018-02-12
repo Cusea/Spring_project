@@ -15,7 +15,7 @@
 					<a class="nav-link" href="${contextpath}/admin/spotupdate">여행정보 update 관리</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="${contextpath}/admin/pp/1">문의하기 관리</a>
+					<a class="nav-link active" href="${contextpath}/admin/pp/1">문의하기 관리</a>
 				</li>
 				
 			</ul>
